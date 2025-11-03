@@ -224,7 +224,8 @@
                                                                              owl:equivalentClass [ rdf:type owl:Restriction ;
                                                                                                    owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasParent> ;
                                                                                                    owl:hasValue <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/John>
-                                                                                                 ] .
+                                                                                                 ] ;
+                                                                             rdfs:comment "tes tes github" .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Man
