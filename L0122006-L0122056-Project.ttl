@@ -26,7 +26,8 @@ xsd:time rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#berlokasiDi
-l0122006-l0122056-project:berlokasiDi rdf:type owl:ObjectProperty ;
+l0122006-l0122056-project:berlokasiDi rdf:type owl:ObjectProperty ,
+                                               owl:FunctionalProperty ;
                                       rdfs:domain [ rdf:type owl:Class ;
                                                     owl:unionOf ( :Hotel
                                                                   :Restoran
@@ -47,7 +48,8 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/berjarakDengan
-:berjarakDengan rdf:type owl:ObjectProperty ;
+:berjarakDengan rdf:type owl:ObjectProperty ,
+                         owl:SymmetricProperty ;
                 rdfs:domain [ rdf:type owl:Class ;
                               owl:unionOf ( :Hotel
                                             :Restoran
@@ -136,7 +138,8 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/memilikiWaktuOperasional
-:memilikiWaktuOperasional rdf:type owl:ObjectProperty ;
+:memilikiWaktuOperasional rdf:type owl:ObjectProperty ,
+                                   owl:FunctionalProperty ;
                           rdfs:domain [ rdf:type owl:Class ;
                                         owl:unionOf ( :Event
                                                       :Hotel
@@ -170,7 +173,8 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/deskripsiTempat
-:deskripsiTempat rdf:type owl:DatatypeProperty ;
+:deskripsiTempat rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
                  rdfs:domain :TempatWisata ;
                  rdfs:range xsd:string .
 
@@ -194,13 +198,15 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/jumlahUlasan
-:jumlahUlasan rdf:type owl:DatatypeProperty ;
+:jumlahUlasan rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
               rdfs:domain :Rating ;
               rdfs:range xsd:integer .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/kapasitasPengunjung
-:kapasitasPengunjung rdf:type owl:DatatypeProperty ;
+:kapasitasPengunjung rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
                      rdfs:domain :TempatWisata ;
                      rdfs:range xsd:integer .
 
@@ -218,31 +224,36 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/namaHotel
-:namaHotel rdf:type owl:DatatypeProperty ;
+:namaHotel rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
            rdfs:domain :Hotel ;
            rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/namaTempat
-:namaTempat rdf:type owl:DatatypeProperty ;
+:namaTempat rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain :TempatWisata ;
             rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/nilaiHarga
-:nilaiHarga rdf:type owl:DatatypeProperty ;
+:nilaiHarga rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain :Harga ;
             rdfs:range xsd:float .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/nilaiRating
-:nilaiRating rdf:type owl:DatatypeProperty ;
+:nilaiRating rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
              rdfs:domain :Rating ;
              rdfs:range xsd:float .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/satuanHarga
-:satuanHarga rdf:type owl:DatatypeProperty ;
+:satuanHarga rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
              rdfs:domain :Harga ;
              rdfs:range xsd:string .
 
