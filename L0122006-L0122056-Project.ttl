@@ -1,0 +1,210 @@
+@prefix : <http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/> .
+
+<http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project> rdf:type owl:Ontology .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Event
+:Event rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#EventBudaya
+:EventBudaya rdf:type owl:Class ;
+             rdfs:subClassOf :Event .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#EventReligi
+:EventReligi rdf:type owl:Class ;
+             rdfs:subClassOf :Event .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Fasilitas
+:Fasilitas rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FasilitasKhusus
+:FasilitasKhusus rdf:type owl:Class ;
+                 rdfs:subClassOf :Fasilitas .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FasilitasUmum
+:FasilitasUmum rdf:type owl:Class ;
+               rdfs:subClassOf :Fasilitas .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Harga
+:Harga rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HargaKamar
+:HargaKamar rdf:type owl:Class ;
+            rdfs:subClassOf :Harga .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HargaMakanan
+:HargaMakanan rdf:type owl:Class ;
+              rdfs:subClassOf :Harga .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HargaTiket
+:HargaTiket rdf:type owl:Class ;
+            rdfs:subClassOf :Harga .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HargaTransportasi
+:HargaTransportasi rdf:type owl:Class ;
+                   rdfs:subClassOf :Harga .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HariOperasional
+:HariOperasional rdf:type owl:Class ;
+                 rdfs:subClassOf :WaktuOperasi .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Hotel
+:Hotel rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HotelBIntangEmpat
+:HotelBIntangEmpat rdf:type owl:Class ;
+                   rdfs:subClassOf :Hotel .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HotelBIntangLima
+:HotelBIntangLima rdf:type owl:Class ;
+                  rdfs:subClassOf :Hotel .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HotelBIntangTiga
+:HotelBIntangTiga rdf:type owl:Class ;
+                  rdfs:subClassOf :Hotel .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KakiLima
+:KakiLima rdf:type owl:Class ;
+          rdfs:subClassOf :Restoran .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Kecamatan
+:Kecamatan rdf:type owl:Class ;
+           rdfs:subClassOf :Lokasi .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Kota
+:Kota rdf:type owl:Class ;
+      rdfs:subClassOf :Lokasi .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Lokasi
+:Lokasi rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Rating
+:Rating rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#RatingEvent
+:RatingEvent rdf:type owl:Class ;
+             rdfs:subClassOf :Rating .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#RatingHotel
+:RatingHotel rdf:type owl:Class ;
+             rdfs:subClassOf :Rating .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#RatingRestoran
+:RatingRestoran rdf:type owl:Class ;
+                rdfs:subClassOf :Rating .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#RatingTempatWisata
+:RatingTempatWisata rdf:type owl:Class ;
+                    rdfs:subClassOf :Rating .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Restoran
+:Restoran rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#RestoranModern
+:RestoranModern rdf:type owl:Class ;
+                rdfs:subClassOf :Restoran .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#RestoranTradisional
+:RestoranTradisional rdf:type owl:Class ;
+                     rdfs:subClassOf :Restoran .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TempatWisata
+:TempatWisata rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Transportasi
+:Transportasi rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TransportasiOnline
+:TransportasiOnline rdf:type owl:Class ;
+                    rdfs:subClassOf :Transportasi .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TransportasiPribadi
+:TransportasiPribadi rdf:type owl:Class ;
+                     rdfs:subClassOf :Transportasi .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TransportasiUmum
+:TransportasiUmum rdf:type owl:Class ;
+                  rdfs:subClassOf :Transportasi .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WaktuBukaHarian
+:WaktuBukaHarian rdf:type owl:Class ;
+                 rdfs:subClassOf :WaktuOperasi .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WaktuOperasi
+:WaktuOperasi rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataAlam
+:WisataAlam rdf:type owl:Class ;
+            rdfs:subClassOf :TempatWisata .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataBudaya
+:WisataBudaya rdf:type owl:Class ;
+              rdfs:subClassOf :TempatWisata .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataEdukasi
+:WisataEdukasi rdf:type owl:Class ;
+               rdfs:subClassOf :TempatWisata .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataKuliner
+:WisataKuliner rdf:type owl:Class ;
+               rdfs:subClassOf :TempatWisata .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataReligi
+:WisataReligi rdf:type owl:Class ;
+              rdfs:subClassOf :TempatWisata .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataSejarah
+:WisataSejarah rdf:type owl:Class ;
+               rdfs:subClassOf :TempatWisata .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
