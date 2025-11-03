@@ -1,0 +1,429 @@
+@prefix : <http://www.semanticweb.org/acer/ontologies/2025/8/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/acer/ontologies/2025/8/> .
+
+<http://www.semanticweb.org/acer/ontologies/2025/8/L0122056-Q1> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/majorAge
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/majorAge> rdf:type rdfs:Datatype ;
+                                                                        owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                                                                              owl:intersectionOf ( <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/personAge>
+                                                                                                                   [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:datatypeComplementOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/minorAge>
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                            ] .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/minorAge
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/minorAge> rdf:type rdfs:Datatype ;
+                                                                        owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                                                                              owl:onDatatype xsd:integer ;
+                                                                                              owl:withRestrictions ( [ xsd:minInclusive 2
+                                                                                                                     ]
+                                                                                                                     [ xsd:maxInclusive 17
+                                                                                                                     ]
+                                                                                                                   )
+                                                                                            ] .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/personAge
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/personAge> rdf:type rdfs:Datatype ;
+                                                                         owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                                                                               owl:onDatatype xsd:integer ;
+                                                                                               owl:withRestrictions ( [ xsd:minInclusive 0
+                                                                                                                      ]
+                                                                                                                      [ xsd:maxInclusive 150
+                                                                                                                      ]
+                                                                                                                    )
+                                                                                             ] .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/toddlerAge
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/toddlerAge> rdf:type rdfs:Datatype ;
+                                                                          owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                                                                                owl:oneOf [ rdf:type rdf:List ;
+                                                                                                            rdf:first 1 ;
+                                                                                                            rdf:rest [ rdf:type rdf:List ;
+                                                                                                                       rdf:first 2 ;
+                                                                                                                       rdf:rest rdf:nil
+                                                                                                                     ]
+                                                                                                          ]
+                                                                                              ] .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/divorcedWith
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/divorcedWith> rdf:type owl:ObjectProperty ,
+                                                                                     owl:SymmetricProperty ;
+                                                                            rdfs:domain <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/MarriedPerson> ;
+                                                                            rdfs:range <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/MarriedPerson> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasAncestor
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasAncestor> rdf:type owl:ObjectProperty ,
+                                                                                    owl:TransitiveProperty .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasChild
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasChild> rdf:type owl:ObjectProperty ;
+                                                                        owl:inverseOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasParent> ;
+                                                                        rdf:type owl:AsymmetricProperty .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasDivorced
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasDivorced> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:domain <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/MarriedPerson> ;
+                                                                           rdfs:range <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/MarriedPerson> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasHusband
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasHusband> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:subPropertyOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasSpouse> ;
+                                                                          owl:inverseOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasWife> ;
+                                                                          rdf:type owl:FunctionalProperty ,
+                                                                                   owl:InverseFunctionalProperty ;
+                                                                          rdfs:domain <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Woman> ;
+                                                                          rdfs:range <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Man> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasParent
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasParent> rdf:type owl:ObjectProperty ;
+                                                                         owl:propertyDisjointWith <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasSpouse> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasRelative
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasRelative> rdf:type owl:ObjectProperty ,
+                                                                                    owl:ReflexiveProperty .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasSpouse
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasSpouse> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                         rdf:type owl:SymmetricProperty .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasWife
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasWife> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasSpouse> ;
+                                                                       rdf:type owl:FunctionalProperty ,
+                                                                                owl:InverseFunctionalProperty ;
+                                                                       rdfs:domain <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Man> ;
+                                                                       rdfs:range <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Woman> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/loves
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/loves> rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/parentOf
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/parentOf> rdf:type owl:ObjectProperty ,
+                                                                                 owl:IrreflexiveProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasAge
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasAge> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/ChildlessPerson
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/ChildlessPerson> rdf:type owl:Class ;
+                                                                               owl:equivalentClass [ owl:intersectionOf ( <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person>
+                                                                                                                          [ rdf:type owl:Class ;
+                                                                                                                            owl:complementOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Parent>
+                                                                                                                          ]
+                                                                                                                        ) ;
+                                                                                                     rdf:type owl:Class
+                                                                                                   ] .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Dead
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Dead> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Divorce
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Divorce> rdf:type owl:Class ;
+                                                                       owl:equivalentClass [ owl:intersectionOf ( <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person>
+                                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                                    owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasSpouse> ;
+                                                                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                    owl:onClass <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person>
+                                                                                                                  ]
+                                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                                    owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasAge> ;
+                                                                                                                    owl:someValuesFrom <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/majorAge>
+                                                                                                                  ]
+                                                                                                                ) ;
+                                                                                             rdf:type owl:Class
+                                                                                           ] .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Father
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Father> rdf:type owl:Class ;
+                                                                      owl:equivalentClass [ owl:intersectionOf ( <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Man>
+                                                                                                                 <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Parent>
+                                                                                                               ) ;
+                                                                                            rdf:type owl:Class
+                                                                                          ] .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Grandfather
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Grandfather> rdf:type owl:Class ;
+                                                                           owl:equivalentClass [ owl:intersectionOf ( <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Man>
+                                                                                                                      <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Parent>
+                                                                                                                    ) ;
+                                                                                                 rdf:type owl:Class
+                                                                                               ] ;
+                                                                           rdfs:subClassOf [ owl:intersectionOf ( <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Father>
+                                                                                                                  <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Parent>
+                                                                                                                ) ;
+                                                                                             rdf:type owl:Class
+                                                                                           ] .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/GrayDivorce
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/GrayDivorce> rdf:type owl:Class ;
+                                                                           owl:equivalentClass [ owl:intersectionOf ( <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Divorce>
+                                                                                                                      <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/NarcisticPerson>
+                                                                                                                    ) ;
+                                                                                                 rdf:type owl:Class
+                                                                                               ] ,
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasAge> ;
+                                                                                                 owl:minQualifiedCardinality "50"^^xsd:nonNegativeInteger ;
+                                                                                                 owl:onDataRange <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/majorAge>
+                                                                                               ] ;
+                                                                           rdfs:subClassOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Divorce> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Human
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Human> rdf:type owl:Class ;
+                                                                     owl:equivalentClass <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/JohnsChildren
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/JohnsChildren> rdf:type owl:Class ;
+                                                                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasParent> ;
+                                                                                                   owl:hasValue <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/John>
+                                                                                                 ] .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Man
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Man> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person> ;
+                                                                   owl:disjointWith <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Woman> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/MarriedPerson
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/MarriedPerson> rdf:type owl:Class ;
+                                                                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasSpouse> ;
+                                                                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                   owl:onClass <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person>
+                                                                                                 ] ;
+                                                                             rdfs:subClassOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Mother
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Mother> rdf:type owl:Class ;
+                                                                      owl:equivalentClass [ owl:intersectionOf ( <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Parent>
+                                                                                                                 <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Woman>
+                                                                                                               ) ;
+                                                                                            rdf:type owl:Class
+                                                                                          ] .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/MyBirthdayGuest
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/MyBirthdayGuest> rdf:type owl:Class ;
+                                                                               owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                                     owl:oneOf ( <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Bill>
+                                                                                                                 <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/John>
+                                                                                                                 <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Mary>
+                                                                                                               )
+                                                                                                   ] .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/NarcisticPerson
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/NarcisticPerson> rdf:type owl:Class ;
+                                                                               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                     owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/loves> ;
+                                                                                                     owl:hasSelf "true"^^xsd:boolean
+                                                                                                   ] ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Orphan
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Orphan> rdf:type owl:Class ;
+                                                                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                            owl:onProperty [ owl:inverseOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasChild>
+                                                                                                           ] ;
+                                                                                            owl:allValuesFrom <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Dead>
+                                                                                          ] .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Parent
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Parent> rdf:type owl:Class ;
+                                                                      owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                            owl:unionOf ( <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Father>
+                                                                                                          <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Mother>
+                                                                                                        )
+                                                                                          ] ,
+                                                                                          [ rdf:type owl:Restriction ;
+                                                                                            owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasChild> ;
+                                                                                            owl:someValuesFrom <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person>
+                                                                                          ] .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/RoyalBlood
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/RoyalBlood> rdf:type owl:Class ;
+                                                                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasAncestor> ;
+                                                                                                owl:someValuesFrom <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/RoyalFamily>
+                                                                                              ] ;
+                                                                          rdfs:subClassOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/RoyalFamily
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/RoyalFamily> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Woman
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Woman> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Person> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Bill
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Bill> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Man> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Diana
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Diana> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/RoyalBlood> ;
+                                                                     <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasAncestor> <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/ElizabethII> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Edward
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Edward> rdf:type owl:NamedIndividual ,
+                                                                               <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/RoyalBlood> ;
+                                                                      <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasAncestor> <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/ElizabethII> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/ElizabethII
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/ElizabethII> rdf:type owl:NamedIndividual ,
+                                                                                    <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/RoyalFamily> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/GeorgeVI
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/GeorgeVI> rdf:type owl:NamedIndividual ,
+                                                                                 <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/RoyalFamily> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Jack
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Jack> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Man> ;
+                                                                    <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasAge> "30"^^xsd:nonNegativeInteger .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/James
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/James> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Man> ;
+                                                                     owl:sameAs <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Jim> ;
+                                                                     <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasWife> <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Mary> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Jim
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Jim
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Jim> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Man> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/John
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/John> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Man> ,
+                                                                             <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Parent> ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasChild> ;
+                                                                               owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                               owl:onClass <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Parent>
+                                                                             ] ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasChild> ;
+                                                                               owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                                                                               owl:onClass <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Parent>
+                                                                             ] ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasChild> ;
+                                                                               owl:cardinality "5"^^xsd:nonNegativeInteger
+                                                                             ] ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasChild> ;
+                                                                               owl:maxQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
+                                                                               owl:onClass <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Parent>
+                                                                             ] .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Margaret
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Margaret> rdf:type owl:NamedIndividual ,
+                                                                                 <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/RoyalBlood> ;
+                                                                        <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasAncestor> <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/GeorgeVI> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Mary
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Mary> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Woman> ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasChild> ;
+                                                                               owl:cardinality "4"^^xsd:nonNegativeInteger
+                                                                             ] ;
+                                                                    <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasHusband> <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/James> .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/William
+<http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/William> rdf:type owl:NamedIndividual ,
+                                                                                <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/RoyalBlood> ;
+                                                                       <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/hasAncestor> <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/ElizabethII> .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Man>
+                <http://www.semanticweb.org/acer/ontologies/2025/8/L012256-Q1/Woman>
+                owl:Thing
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
