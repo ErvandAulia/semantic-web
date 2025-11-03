@@ -25,6 +25,27 @@ xsd:time rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#berlokasiDi
+l0122006-l0122056-project:berlokasiDi rdf:type owl:ObjectProperty ;
+                                      rdfs:domain [ rdf:type owl:Class ;
+                                                    owl:unionOf ( :Hotel
+                                                                  :Restoran
+                                                                  :TempatWisata
+                                                                )
+                                                  ] ;
+                                      rdfs:range :Lokasi .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#terletakDi
+l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
+                                     rdfs:domain :Event ;
+                                     rdfs:range [ rdf:type owl:Class ;
+                                                  owl:unionOf ( :Lokasi
+                                                                :TempatWisata
+                                                              )
+                                                ] .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/berjarakDengan
 :berjarakDengan rdf:type owl:ObjectProperty ;
                 rdfs:domain [ rdf:type owl:Class ;
@@ -39,17 +60,6 @@ xsd:time rdf:type rdfs:Datatype .
                                            :TempatWisata
                                          )
                            ] .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/berlokasiDI
-:berlokasiDI rdf:type owl:ObjectProperty ;
-             rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( :Hotel
-                                         :Restoran
-                                         :TempatWisata
-                                       )
-                         ] ;
-             rdfs:range :Lokasi .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/dekatDenganHotel
@@ -143,16 +153,6 @@ xsd:time rdf:type rdfs:Datatype .
                   rdfs:range :Event .
 
 
-###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/terletakDI
-:terletakDI rdf:type owl:ObjectProperty ;
-            rdfs:domain :Event ;
-            rdfs:range [ rdf:type owl:Class ;
-                         owl:unionOf ( :Lokasi
-                                       :TempatWisata
-                                     )
-                       ] .
-
-
 #################################################################
 #    Data properties
 #################################################################
@@ -232,7 +232,7 @@ xsd:time rdf:type rdfs:Datatype .
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/nilaiHarga
 :nilaiHarga rdf:type owl:DatatypeProperty ;
             rdfs:domain :Harga ;
-            rdfs:range xsd:integer .
+            rdfs:range xsd:float .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/nilaiRating
@@ -395,7 +395,15 @@ xsd:time rdf:type rdfs:Datatype .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/TempatWisata
-:TempatWisata rdf:type owl:Class .
+:TempatWisata rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :memilikiHarga ;
+                                owl:someValuesFrom :Harga
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :memilikiWaktuOperasional ;
+                                owl:someValuesFrom :WaktuOperasional
+                              ] .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/Transportasi
