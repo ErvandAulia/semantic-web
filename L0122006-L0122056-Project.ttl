@@ -160,6 +160,12 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#namaWisata
+l0122006-l0122056-project:namaWisata rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain :TempatWisata ;
+                                     rdfs:range xsd:string .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/alamat
 :alamat rdf:type owl:DatatypeProperty ;
         rdfs:domain [ owl:intersectionOf ( :Hotel
@@ -408,6 +414,10 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/TempatWisata
 :TempatWisata rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :memilikiFasilitas ;
+                                owl:someValuesFrom :FasilitasUmum
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :memilikiHarga ;
                                 owl:someValuesFrom :Harga
                               ] ,
