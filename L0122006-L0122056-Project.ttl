@@ -161,6 +161,19 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#namaEvent
+l0122006-l0122056-project:namaEvent rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain :Event ;
+                                    rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#namaRestoran
+l0122006-l0122056-project:namaRestoran rdf:type owl:DatatypeProperty ,
+                                                owl:FunctionalProperty ;
+                                       rdfs:domain :Restoran ;
+                                       rdfs:range xsd:string .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/alamat
 :alamat rdf:type owl:DatatypeProperty ;
         rdfs:domain [ rdf:type owl:Class ;
@@ -301,8 +314,17 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                          owl:someValuesFrom :HargaTiket
                        ] ,
                        [ rdf:type owl:Restriction ;
+                         owl:onProperty :memilikiRating ;
+                         owl:allValuesFrom :RatingEvent
+                       ] ,
+                       [ rdf:type owl:Restriction ;
                          owl:onProperty :tanggalEvent ;
                          owl:someValuesFrom xsd:date
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty l0122006-l0122056-project:namaEvent ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:string
                        ] .
 
 
@@ -371,6 +393,19 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :memilikiHarga ;
                          owl:someValuesFrom :HargaKamar
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :memilikiFasilitas ;
+                         owl:allValuesFrom :Fasilitas
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :memilikiRating ;
+                         owl:allValuesFrom :RatingHotel
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :namaHotel ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:string
                        ] .
 
 
@@ -436,12 +471,30 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/Restoran
 :Restoran rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                            owl:onProperty l0122006-l0122056-project:berlokasiDi ;
-                            owl:someValuesFrom :Lokasi
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :memilikiHarga ;
                             owl:someValuesFrom :HargaMakanan
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :memilikiWaktuOperasional ;
+                            owl:someValuesFrom :WaktuOperasional
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :memilikiFasilitas ;
+                            owl:allValuesFrom :Fasilitas
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :memilikiRating ;
+                            owl:allValuesFrom :RatingRestoran
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty l0122006-l0122056-project:berlokasiDi ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Lokasi
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty l0122006-l0122056-project:namaRestoran ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
                           ] .
 
 
@@ -458,10 +511,6 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/TempatWisata
 :TempatWisata rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty :memilikiFasilitas ;
-                                owl:someValuesFrom :FasilitasUmum
-                              ] ,
-                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :memilikiHarga ;
                                 owl:someValuesFrom :Harga
                               ] ,
@@ -470,9 +519,12 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                                 owl:someValuesFrom :WaktuOperasional
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty :memilikiFasilitas ;
+                                owl:allValuesFrom :Fasilitas
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :memilikiRating ;
-                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onClass :RatingTempatWisata
+                                owl:allValuesFrom :RatingTempatWisata
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty l0122006-l0122056-project:berlokasiDi ;
