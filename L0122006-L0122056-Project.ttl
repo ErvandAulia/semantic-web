@@ -106,6 +106,7 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf :memilikiFasilitas ;
                          rdfs:domain [ rdf:type owl:Class ;
                                        owl:unionOf ( :Hotel
+                                                     :Restoran
                                                      :TempatWisata
                                                    )
                                      ] ;
@@ -159,12 +160,6 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
 #################################################################
 #    Data properties
 #################################################################
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#namaWisata
-l0122006-l0122056-project:namaWisata rdf:type owl:DatatypeProperty ;
-                                     rdfs:domain :TempatWisata ;
-                                     rdfs:range xsd:string .
-
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/alamat
 :alamat rdf:type owl:DatatypeProperty ;
@@ -274,8 +269,41 @@ l0122006-l0122056-project:namaWisata rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataPopuler
+l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
+                                        owl:equivalentClass [ owl:intersectionOf ( :TempatWisata
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :memilikiRating ;
+                                                                                     owl:someValuesFrom [ owl:intersectionOf ( :RatingTempatWisata
+                                                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                                                 owl:onProperty :nilaiRating ;
+                                                                                                                                 owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                                                      owl:onDatatype xsd:float ;
+                                                                                                                                                      owl:withRestrictions ( [ xsd:minInclusive "4.5"^^xsd:float
+                                                                                                                                                                             ]
+                                                                                                                                                                           )
+                                                                                                                                                    ]
+                                                                                                                               ]
+                                                                                                                             ) ;
+                                                                                                          rdf:type owl:Class
+                                                                                                        ]
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ] ;
+                                        rdfs:subClassOf :TempatWisata .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/Event
-:Event rdf:type owl:Class .
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :memilikiHarga ;
+                         owl:someValuesFrom :HargaTiket
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :tanggalEvent ;
+                         owl:someValuesFrom xsd:date
+                       ] .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/EventBudaya
@@ -335,7 +363,15 @@ l0122006-l0122056-project:namaWisata rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/Hotel
-:Hotel rdf:type owl:Class .
+:Hotel rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty l0122006-l0122056-project:berlokasiDi ;
+                         owl:someValuesFrom :Lokasi
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :memilikiHarga ;
+                         owl:someValuesFrom :HargaKamar
+                       ] .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/HotelBIntangEmpat
@@ -398,7 +434,15 @@ l0122006-l0122056-project:namaWisata rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/Restoran
-:Restoran rdf:type owl:Class .
+:Restoran rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty l0122006-l0122056-project:berlokasiDi ;
+                            owl:someValuesFrom :Lokasi
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :memilikiHarga ;
+                            owl:someValuesFrom :HargaMakanan
+                          ] .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/RestoranModern
@@ -424,6 +468,21 @@ l0122006-l0122056-project:namaWisata rdf:type owl:DatatypeProperty ;
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :memilikiWaktuOperasional ;
                                 owl:someValuesFrom :WaktuOperasional
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :memilikiRating ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :RatingTempatWisata
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty l0122006-l0122056-project:berlokasiDi ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Lokasi
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :namaTempat ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
                               ] .
 
 
@@ -462,6 +521,14 @@ l0122006-l0122056-project:namaWisata rdf:type owl:DatatypeProperty ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/WisataBudaya
 :WisataBudaya rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( :TempatWisata
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :menyelenggarakan ;
+                                                           owl:someValuesFrom :EventBudaya
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
               rdfs:subClassOf :TempatWisata .
 
 
@@ -477,12 +544,35 @@ l0122006-l0122056-project:namaWisata rdf:type owl:DatatypeProperty ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/WisataReligi
 :WisataReligi rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( :TempatWisata
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :menyelenggarakan ;
+                                                           owl:someValuesFrom :EventReligi
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
               rdfs:subClassOf :TempatWisata .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/WisataSejarah
 :WisataSejarah rdf:type owl:Class ;
                rdfs:subClassOf :TempatWisata .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KeratonSolo
+l0122006-l0122056-project:KeratonSolo rdf:type owl:NamedIndividual ,
+                                               :TempatWisata ;
+                                      :menyelenggarakan l0122006-l0122056-project:Sekaten .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Sekaten
+l0122006-l0122056-project:Sekaten rdf:type owl:NamedIndividual ,
+                                           :EventBudaya .
 
 
 #################################################################
