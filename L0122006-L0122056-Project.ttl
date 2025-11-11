@@ -163,12 +163,12 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/alamat
 :alamat rdf:type owl:DatatypeProperty ;
-        rdfs:domain [ owl:intersectionOf ( :Hotel
-                                           :Lokasi
-                                           :Restoran
-                                           :TempatWisata
-                                         ) ;
-                      rdf:type owl:Class
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :Hotel
+                                    :Lokasi
+                                    :Restoran
+                                    :TempatWisata
+                                  )
                     ] ;
         rdfs:range xsd:string .
 
