@@ -37,6 +37,12 @@ l0122006-l0122056-project:berlokasiDi rdf:type owl:ObjectProperty ,
                                       rdfs:range :Lokasi .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#memilikiDayaTarik
+l0122006-l0122056-project:memilikiDayaTarik rdf:type owl:ObjectProperty ;
+                                            rdfs:domain :TempatWisata ;
+                                            rdfs:range l0122006-l0122056-project:DayaTarikAlam .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#terletakDi
 l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
                                      rdfs:domain :Event ;
@@ -281,6 +287,25 @@ l0122006-l0122056-project:namaRestoran rdf:type owl:DatatypeProperty ,
 #################################################################
 #    Classes
 #################################################################
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#AirTerjun
+l0122006-l0122056-project:AirTerjun rdf:type owl:Class ;
+                                    rdfs:subClassOf l0122006-l0122056-project:DayaTarikAlam .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Bukit
+l0122006-l0122056-project:Bukit rdf:type owl:Class ;
+                                rdfs:subClassOf l0122006-l0122056-project:DayaTarikAlam .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikAlam
+l0122006-l0122056-project:DayaTarikAlam rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Gunung
+l0122006-l0122056-project:Gunung rdf:type owl:Class ;
+                                 rdfs:subClassOf l0122006-l0122056-project:DayaTarikAlam .
+
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataPopuler
 l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
@@ -568,6 +593,14 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/WisataAlam
 :WisataAlam rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :TempatWisata
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty l0122006-l0122056-project:memilikiDayaTarik ;
+                                                         owl:someValuesFrom l0122006-l0122056-project:DayaTarikAlam
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
             rdfs:subClassOf :TempatWisata .
 
 
@@ -615,6 +648,17 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BukitSekipan
+l0122006-l0122056-project:BukitSekipan rdf:type owl:NamedIndividual ,
+                                                :TempatWisata ;
+                                       l0122006-l0122056-project:memilikiDayaTarik l0122006-l0122056-project:DayaTarikBukit .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikBukit
+l0122006-l0122056-project:DayaTarikBukit rdf:type owl:NamedIndividual ,
+                                                  l0122006-l0122056-project:Bukit .
+
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KeratonSolo
 l0122006-l0122056-project:KeratonSolo rdf:type owl:NamedIndividual ,
