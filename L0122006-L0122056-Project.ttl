@@ -40,7 +40,7 @@ l0122006-l0122056-project:berlokasiDi rdf:type owl:ObjectProperty ,
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#memilikiDayaTarik
 l0122006-l0122056-project:memilikiDayaTarik rdf:type owl:ObjectProperty ;
                                             rdfs:domain :TempatWisata ;
-                                            rdfs:range l0122006-l0122056-project:DayaTarikAlam .
+                                            rdfs:range l0122006-l0122056-project:DayaTarik .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#terletakDi
@@ -293,13 +293,58 @@ l0122006-l0122056-project:AirTerjun rdf:type owl:Class ;
                                     rdfs:subClassOf l0122006-l0122056-project:DayaTarikAlam .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BintangEmpat
+l0122006-l0122056-project:BintangEmpat rdf:type owl:Class ;
+                                       rdfs:subClassOf :RatingHotel .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BintangLima
+l0122006-l0122056-project:BintangLima rdf:type owl:Class ;
+                                      rdfs:subClassOf :RatingHotel .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BintangTiga
+l0122006-l0122056-project:BintangTiga rdf:type owl:Class ;
+                                      rdfs:subClassOf :RatingHotel .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Bukit
 l0122006-l0122056-project:Bukit rdf:type owl:Class ;
                                 rdfs:subClassOf l0122006-l0122056-project:DayaTarikAlam .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarik
+l0122006-l0122056-project:DayaTarik rdf:type owl:Class .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikAlam
-l0122006-l0122056-project:DayaTarikAlam rdf:type owl:Class .
+l0122006-l0122056-project:DayaTarikAlam rdf:type owl:Class ;
+                                        rdfs:subClassOf l0122006-l0122056-project:DayaTarik .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikEdukasi
+l0122006-l0122056-project:DayaTarikEdukasi rdf:type owl:Class ;
+                                           rdfs:subClassOf l0122006-l0122056-project:DayaTarik .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikKuliner
+l0122006-l0122056-project:DayaTarikKuliner rdf:type owl:Class ;
+                                           rdfs:subClassOf l0122006-l0122056-project:DayaTarik .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikSejarah
+l0122006-l0122056-project:DayaTarikSejarah rdf:type owl:Class ;
+                                           rdfs:subClassOf l0122006-l0122056-project:DayaTarik .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FasilitasAkomodasi
+l0122006-l0122056-project:FasilitasAkomodasi rdf:type owl:Class ;
+                                             rdfs:subClassOf :Fasilitas .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FasilitasEdukasi
+l0122006-l0122056-project:FasilitasEdukasi rdf:type owl:Class ;
+                                           rdfs:subClassOf :Fasilitas .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Gunung
@@ -370,8 +415,7 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/FasilitasKhusus
 :FasilitasKhusus rdf:type owl:Class ;
-                 rdfs:subClassOf :Fasilitas ;
-                 owl:disjointWith :FasilitasUmum .
+                 rdfs:subClassOf :Fasilitas .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/FasilitasUmum
@@ -416,12 +460,16 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                          owl:someValuesFrom :Lokasi
                        ] ,
                        [ rdf:type owl:Restriction ;
+                         owl:onProperty :memilikiFasilitas ;
+                         owl:someValuesFrom l0122006-l0122056-project:FasilitasAkomodasi
+                       ] ,
+                       [ rdf:type owl:Restriction ;
                          owl:onProperty :memilikiHarga ;
                          owl:someValuesFrom :HargaKamar
                        ] ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :memilikiFasilitas ;
-                         owl:allValuesFrom :Fasilitas
+                         owl:onProperty :memilikiWaktuOperasional ;
+                         owl:someValuesFrom :WaktuOperasional
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :memilikiRating ;
@@ -434,18 +482,42 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                        ] .
 
 
-###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/HotelBIntangEmpat
-:HotelBIntangEmpat rdf:type owl:Class ;
+###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/HotelBintangEmpat
+:HotelBintangEmpat rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :Hotel
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :memilikiRating ;
+                                                                owl:someValuesFrom l0122006-l0122056-project:BintangEmpat
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
                    rdfs:subClassOf :Hotel .
 
 
-###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/HotelBIntangLima
-:HotelBIntangLima rdf:type owl:Class ;
+###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/HotelBintangLima
+:HotelBintangLima rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :Hotel
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :memilikiRating ;
+                                                               owl:someValuesFrom l0122006-l0122056-project:BintangLima
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
                   rdfs:subClassOf :Hotel .
 
 
-###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/HotelBIntangTiga
-:HotelBIntangTiga rdf:type owl:Class ;
+###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/HotelBintangTiga
+:HotelBintangTiga rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :Hotel
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :memilikiRating ;
+                                                               owl:someValuesFrom l0122006-l0122056-project:BintangTiga
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
                   rdfs:subClassOf :Hotel .
 
 
@@ -536,20 +608,25 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/TempatWisata
 :TempatWisata rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :memilikiFasilitas ;
+                                owl:someValuesFrom :FasilitasUmum
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :memilikiHarga ;
-                                owl:someValuesFrom :Harga
+                                owl:someValuesFrom :HargaTiket
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :memilikiWaktuOperasional ;
                                 owl:someValuesFrom :WaktuOperasional
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty :memilikiFasilitas ;
-                                owl:allValuesFrom :Fasilitas
-                              ] ,
-                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :memilikiRating ;
                                 owl:allValuesFrom :RatingTempatWisata
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :memilikiFasilitas ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :FasilitasUmum
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty l0122006-l0122056-project:berlokasiDi ;
@@ -619,11 +696,27 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/WisataEdukasi
 :WisataEdukasi rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :TempatWisata
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty l0122006-l0122056-project:memilikiDayaTarik ;
+                                                            owl:someValuesFrom l0122006-l0122056-project:DayaTarikEdukasi
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
                rdfs:subClassOf :TempatWisata .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/WisataKuliner
 :WisataKuliner rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :TempatWisata
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty l0122006-l0122056-project:memilikiDayaTarik ;
+                                                            owl:someValuesFrom l0122006-l0122056-project:DayaTarikKuliner
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
                rdfs:subClassOf :TempatWisata .
 
 
@@ -642,6 +735,14 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/WisataSejarah
 :WisataSejarah rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :TempatWisata
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty l0122006-l0122056-project:memilikiDayaTarik ;
+                                                            owl:someValuesFrom l0122006-l0122056-project:DayaTarikSejarah
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
                rdfs:subClassOf :TempatWisata .
 
 
@@ -660,6 +761,17 @@ l0122006-l0122056-project:DayaTarikBukit rdf:type owl:NamedIndividual ,
                                                   l0122006-l0122056-project:Bukit .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HotelBintangEmpat
+l0122006-l0122056-project:HotelBintangEmpat rdf:type owl:NamedIndividual ,
+                                                     l0122006-l0122056-project:BintangEmpat .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HotelSunan
+l0122006-l0122056-project:HotelSunan rdf:type owl:NamedIndividual ,
+                                              :Hotel ;
+                                     :memilikiRating l0122006-l0122056-project:HotelBintangEmpat .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KeratonSolo
 l0122006-l0122056-project:KeratonSolo rdf:type owl:NamedIndividual ,
                                                :TempatWisata ;
@@ -674,6 +786,15 @@ l0122006-l0122056-project:Sekaten rdf:type owl:NamedIndividual ,
 #################################################################
 #    General axioms
 #################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( l0122006-l0122056-project:DayaTarikAlam
+                l0122006-l0122056-project:DayaTarikEdukasi
+                l0122006-l0122056-project:DayaTarikKuliner
+                l0122006-l0122056-project:DayaTarikSejarah
+              )
+] .
+
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Event
@@ -700,9 +821,9 @@ l0122006-l0122056-project:Sekaten rdf:type owl:NamedIndividual ,
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :HotelBIntangEmpat
-                :HotelBIntangLima
-                :HotelBIntangTiga
+  owl:members ( :HotelBintangEmpat
+                :HotelBintangLima
+                :HotelBintangTiga
               )
 ] .
 
