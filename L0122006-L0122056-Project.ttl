@@ -43,6 +43,12 @@ l0122006-l0122056-project:memilikiDayaTarik rdf:type owl:ObjectProperty ;
                                             rdfs:range l0122006-l0122056-project:DayaTarik .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#menghidangkan
+l0122006-l0122056-project:menghidangkan rdf:type owl:ObjectProperty ;
+                                        rdfs:domain :Restoran ;
+                                        rdfs:range l0122006-l0122056-project:Makanan .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#terletakDi
 l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
                                      rdfs:domain :Event ;
@@ -342,6 +348,11 @@ l0122006-l0122056-project:FasilitasAkomodasi rdf:type owl:Class ;
                                              rdfs:subClassOf :Fasilitas .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FasilitasAnak
+l0122006-l0122056-project:FasilitasAnak rdf:type owl:Class ;
+                                        rdfs:subClassOf :Fasilitas .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FasilitasEdukasi
 l0122006-l0122056-project:FasilitasEdukasi rdf:type owl:Class ;
                                            rdfs:subClassOf :Fasilitas .
@@ -350,6 +361,40 @@ l0122006-l0122056-project:FasilitasEdukasi rdf:type owl:Class ;
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Gunung
 l0122006-l0122056-project:Gunung rdf:type owl:Class ;
                                  rdfs:subClassOf l0122006-l0122056-project:DayaTarikAlam .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Mahal
+l0122006-l0122056-project:Mahal rdf:type owl:Class ;
+                                rdfs:subClassOf :HargaMakanan .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Makanan
+l0122006-l0122056-project:Makanan rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MakananCepatSaji
+l0122006-l0122056-project:MakananCepatSaji rdf:type owl:Class ;
+                                           rdfs:subClassOf l0122006-l0122056-project:Makanan .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MakananModern
+l0122006-l0122056-project:MakananModern rdf:type owl:Class ;
+                                        rdfs:subClassOf l0122006-l0122056-project:Makanan .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MakananTradisional
+l0122006-l0122056-project:MakananTradisional rdf:type owl:Class ;
+                                             rdfs:subClassOf l0122006-l0122056-project:Makanan .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Murah
+l0122006-l0122056-project:Murah rdf:type owl:Class ;
+                                rdfs:subClassOf :HargaMakanan .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Sedang
+l0122006-l0122056-project:Sedang rdf:type owl:Class ;
+                                 rdfs:subClassOf :HargaMakanan .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataPopuler
@@ -568,6 +613,14 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/Restoran
 :Restoran rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty l0122006-l0122056-project:berlokasiDi ;
+                            owl:someValuesFrom :Lokasi
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :memilikiFasilitas ;
+                            owl:someValuesFrom :FasilitasUmum
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty :memilikiHarga ;
                             owl:someValuesFrom :HargaMakanan
                           ] ,
@@ -576,17 +629,8 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                             owl:someValuesFrom :WaktuOperasional
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :memilikiFasilitas ;
-                            owl:allValuesFrom :Fasilitas
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :memilikiRating ;
                             owl:allValuesFrom :RatingRestoran
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty l0122006-l0122056-project:berlokasiDi ;
-                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass :Lokasi
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty l0122006-l0122056-project:namaRestoran ;
@@ -595,13 +639,29 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                           ] .
 
 
-###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/RestoranModern
-:RestoranModern rdf:type owl:Class ;
-                rdfs:subClassOf :Restoran .
+###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/RestoranCepatSaji
+:RestoranCepatSaji rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :Restoran
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty l0122006-l0122056-project:menghidangkan ;
+                                                                owl:someValuesFrom l0122006-l0122056-project:MakananCepatSaji
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf :Restoran .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/RestoranTradisional
 :RestoranTradisional rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :Restoran
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty l0122006-l0122056-project:menghidangkan ;
+                                                                  owl:someValuesFrom l0122006-l0122056-project:MakananTradisional
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
                      rdfs:subClassOf :Restoran .
 
 
@@ -792,6 +852,14 @@ l0122006-l0122056-project:Sekaten rdf:type owl:NamedIndividual ,
                 l0122006-l0122056-project:DayaTarikEdukasi
                 l0122006-l0122056-project:DayaTarikKuliner
                 l0122006-l0122056-project:DayaTarikSejarah
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( l0122006-l0122056-project:Mahal
+                l0122006-l0122056-project:Murah
+                l0122006-l0122056-project:Sedang
               )
 ] .
 
