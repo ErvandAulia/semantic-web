@@ -37,6 +37,11 @@ l0122006-l0122056-project:berlokasiDi rdf:type owl:ObjectProperty ,
                                       rdfs:range :Lokasi .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#memilikiBagian
+l0122006-l0122056-project:memilikiBagian rdf:type owl:ObjectProperty ;
+                                         owl:inverseOf l0122006-l0122056-project:merupakanBagianDari .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#memilikiDayaTarik
 l0122006-l0122056-project:memilikiDayaTarik rdf:type owl:ObjectProperty ;
                                             rdfs:domain :TempatWisata ;
@@ -47,6 +52,13 @@ l0122006-l0122056-project:memilikiDayaTarik rdf:type owl:ObjectProperty ;
 l0122006-l0122056-project:menghidangkan rdf:type owl:ObjectProperty ;
                                         rdfs:domain :Restoran ;
                                         rdfs:range l0122006-l0122056-project:Makanan .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#merupakanBagianDari
+l0122006-l0122056-project:merupakanBagianDari rdf:type owl:ObjectProperty ,
+                                                       owl:TransitiveProperty ;
+                                              rdfs:domain :Lokasi ;
+                                              rdfs:range :Lokasi .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#terletakDi
@@ -365,6 +377,19 @@ l0122006-l0122056-project:Gunung rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Mahal
 l0122006-l0122056-project:Mahal rdf:type owl:Class ;
+                                owl:equivalentClass [ owl:intersectionOf ( :HargaMakanan
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :nilaiHarga ;
+                                                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                  owl:onDatatype xsd:float ;
+                                                                                                  owl:withRestrictions ( [ xsd:minExclusive "100000.0"^^xsd:float
+                                                                                                                         ]
+                                                                                                                       )
+                                                                                                ]
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] ;
                                 rdfs:subClassOf :HargaMakanan .
 
 
@@ -389,11 +414,97 @@ l0122006-l0122056-project:MakananTradisional rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Murah
 l0122006-l0122056-project:Murah rdf:type owl:Class ;
+                                owl:equivalentClass [ owl:intersectionOf ( :HargaMakanan
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :nilaiHarga ;
+                                                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                  owl:onDatatype xsd:float ;
+                                                                                                  owl:withRestrictions ( [ xsd:maxExclusive "25000.0"^^xsd:float
+                                                                                                                         ]
+                                                                                                                       )
+                                                                                                ]
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] ;
                                 rdfs:subClassOf :HargaMakanan .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#RestoranMahal
+l0122006-l0122056-project:RestoranMahal rdf:type owl:Class ;
+                                        owl:equivalentClass [ owl:intersectionOf ( :Restoran
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :memilikiHarga ;
+                                                                                     owl:someValuesFrom l0122006-l0122056-project:Mahal
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ] ;
+                                        rdfs:subClassOf :Restoran .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#RestoranMurah
+l0122006-l0122056-project:RestoranMurah rdf:type owl:Class ;
+                                        owl:equivalentClass [ owl:intersectionOf ( :Restoran
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :memilikiHarga ;
+                                                                                     owl:someValuesFrom l0122006-l0122056-project:Murah
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ] ;
+                                        rdfs:subClassOf :Restoran .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#RestoranPopuler
+l0122006-l0122056-project:RestoranPopuler rdf:type owl:Class ;
+                                          owl:equivalentClass [ owl:intersectionOf ( :Restoran
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :memilikiRating ;
+                                                                                       owl:someValuesFrom [ owl:intersectionOf ( :RatingRestoran
+                                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                                   owl:onProperty :nilaiRating ;
+                                                                                                                                   owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                                                        owl:onDatatype xsd:float ;
+                                                                                                                                                        owl:withRestrictions ( [ xsd:minInclusive "4.5"^^xsd:float
+                                                                                                                                                                               ]
+                                                                                                                                                                             )
+                                                                                                                                                      ]
+                                                                                                                                 ]
+                                                                                                                               ) ;
+                                                                                                            rdf:type owl:Class
+                                                                                                          ]
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] ;
+                                          rdfs:subClassOf :Restoran .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Sedang
 l0122006-l0122056-project:Sedang rdf:type owl:Class ;
+                                 owl:equivalentClass [ owl:intersectionOf ( :HargaMakanan
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :nilaiHarga ;
+                                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                   owl:onDatatype xsd:float ;
+                                                                                                   owl:withRestrictions ( [ xsd:minInclusive "25000.0"^^xsd:float
+                                                                                                                          ]
+                                                                                                                        )
+                                                                                                 ]
+                                                                            ]
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :nilaiHarga ;
+                                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                   owl:onDatatype xsd:float ;
+                                                                                                   owl:withRestrictions ( [ xsd:maxInclusive "100000.0"^^xsd:float
+                                                                                                                          ]
+                                                                                                                        )
+                                                                                                 ]
+                                                                            ]
+                                                                          ) ;
+                                                       rdf:type owl:Class
+                                                     ] ;
                                  rdfs:subClassOf :HargaMakanan .
 
 
@@ -573,13 +684,27 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/Kecamatan
 :Kecamatan rdf:type owl:Class ;
-           rdfs:subClassOf :Lokasi ;
+           owl:equivalentClass [ owl:intersectionOf ( :Lokasi
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty l0122006-l0122056-project:merupakanBagianDari ;
+                                                        owl:someValuesFrom :Kota
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
            owl:disjointWith :Kota .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/Kota
 :Kota rdf:type owl:Class ;
-      rdfs:subClassOf :Lokasi .
+      owl:equivalentClass [ owl:intersectionOf ( :Lokasi
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty l0122006-l0122056-project:memilikiBagian ;
+                                                   owl:someValuesFrom :Kecamatan
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/Lokasi
@@ -829,6 +954,7 @@ l0122006-l0122056-project:HotelBintangEmpat rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HotelSunan
 l0122006-l0122056-project:HotelSunan rdf:type owl:NamedIndividual ,
                                               :Hotel ;
+                                     l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:Laweyan ;
                                      :memilikiRating l0122006-l0122056-project:HotelBintangEmpat .
 
 
@@ -838,9 +964,38 @@ l0122006-l0122056-project:KeratonSolo rdf:type owl:NamedIndividual ,
                                       :menyelenggarakan l0122006-l0122056-project:Sekaten .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Laweyan
+l0122006-l0122056-project:Laweyan rdf:type owl:NamedIndividual ,
+                                           :Kecamatan .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MakananMahal
+l0122006-l0122056-project:MakananMahal rdf:type owl:NamedIndividual ,
+                                                :HargaMakanan ;
+                                       :nilaiHarga "120000.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MakananMurah
+l0122006-l0122056-project:MakananMurah rdf:type owl:NamedIndividual ,
+                                                :HargaMakanan ;
+                                       :nilaiHarga "15000.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PracimaTuin
+l0122006-l0122056-project:PracimaTuin rdf:type owl:NamedIndividual ,
+                                               :Restoran ;
+                                      :memilikiHarga l0122006-l0122056-project:MakananMahal .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Sekaten
 l0122006-l0122056-project:Sekaten rdf:type owl:NamedIndividual ,
                                            :EventBudaya .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#SotoGading
+l0122006-l0122056-project:SotoGading rdf:type owl:NamedIndividual ,
+                                              :Restoran ;
+                                     :memilikiHarga l0122006-l0122056-project:MakananMurah .
 
 
 #################################################################
@@ -860,6 +1015,14 @@ l0122006-l0122056-project:Sekaten rdf:type owl:NamedIndividual ,
   owl:members ( l0122006-l0122056-project:Mahal
                 l0122006-l0122056-project:Murah
                 l0122006-l0122056-project:Sedang
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( l0122006-l0122056-project:RestoranMahal
+                l0122006-l0122056-project:RestoranMurah
+                :KakiLima
               )
 ] .
 
