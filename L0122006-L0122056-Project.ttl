@@ -37,6 +37,17 @@ l0122006-l0122056-project:berlokasiDi rdf:type owl:ObjectProperty ,
                                       rdfs:range :Lokasi .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#dilaluiOlehTransportasi
+l0122006-l0122056-project:dilaluiOlehTransportasi rdf:type owl:ObjectProperty ;
+                                                  owl:inverseOf :dekatDenganTransportasi .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#dipesanMelalui
+l0122006-l0122056-project:dipesanMelalui rdf:type owl:ObjectProperty ;
+                                         rdfs:domain :Transportasi ;
+                                         rdfs:range l0122006-l0122056-project:Aplikasi .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#memilikiBagian
 l0122006-l0122056-project:memilikiBagian rdf:type owl:ObjectProperty ;
                                          owl:inverseOf l0122006-l0122056-project:merupakanBagianDari .
@@ -182,6 +193,7 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
                                                       :Hotel
                                                       :Restoran
                                                       :TempatWisata
+                                                      :Transportasi
                                                     )
                                       ] ;
                           rdfs:range :WaktuOperasional .
@@ -323,6 +335,15 @@ l0122006-l0122056-project:AirTerjun rdf:type owl:Class ;
                                     rdfs:subClassOf l0122006-l0122056-project:DayaTarikAlam .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Aplikasi
+l0122006-l0122056-project:Aplikasi rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#AplikasiTransportasi
+l0122006-l0122056-project:AplikasiTransportasi rdf:type owl:Class ;
+                                               rdfs:subClassOf l0122006-l0122056-project:Aplikasi .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BintangEmpat
 l0122006-l0122056-project:BintangEmpat rdf:type owl:Class ;
                                        rdfs:subClassOf :RatingHotel .
@@ -380,6 +401,16 @@ l0122006-l0122056-project:FasilitasAnak rdf:type owl:Class ;
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FasilitasEdukasi
 l0122006-l0122056-project:FasilitasEdukasi rdf:type owl:Class ;
                                            rdfs:subClassOf :Fasilitas .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#GojekApp
+l0122006-l0122056-project:GojekApp rdf:type owl:Class ;
+                                   rdfs:subClassOf l0122006-l0122056-project:AplikasiTransportasi .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#GrabApp
+l0122006-l0122056-project:GrabApp rdf:type owl:Class ;
+                                  rdfs:subClassOf l0122006-l0122056-project:AplikasiTransportasi .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Gunung
@@ -486,6 +517,11 @@ l0122006-l0122056-project:MakananTradisional rdf:type owl:Class ;
                                                                    rdf:type owl:Class
                                                                  ] ;
                                              rdfs:subClassOf l0122006-l0122056-project:Makanan .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MaximApp
+l0122006-l0122056-project:MaximApp rdf:type owl:Class ;
+                                   rdfs:subClassOf l0122006-l0122056-project:AplikasiTransportasi .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Murah
@@ -902,21 +938,36 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/Transportasi
-:Transportasi rdf:type owl:Class .
+:Transportasi rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :memilikiHarga ;
+                                owl:someValuesFrom :HargaTransportasi
+                              ] .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/TransportasiOnline
 :TransportasiOnline rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( :Transportasi
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty l0122006-l0122056-project:dipesanMelalui ;
+                                                                 owl:someValuesFrom l0122006-l0122056-project:AplikasiTransportasi
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
                     rdfs:subClassOf :Transportasi .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/TransportasiPribadi
-:TransportasiPribadi rdf:type owl:Class ;
-                     rdfs:subClassOf :Transportasi .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/TransportasiUmum
 :TransportasiUmum rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :Transportasi
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :memilikiWaktuOperasional ;
+                                                               owl:someValuesFrom :WaktuOperasional
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
                   rdfs:subClassOf :Transportasi .
 
 
@@ -1106,6 +1157,14 @@ l0122006-l0122056-project:SotoGading rdf:type owl:NamedIndividual ,
 
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( l0122006-l0122056-project:GojekApp
+                l0122006-l0122056-project:GrabApp
+                l0122006-l0122056-project:MaximApp
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( l0122006-l0122056-project:KategoriCepatSaji
                 l0122006-l0122056-project:KategoriModern
                 l0122006-l0122056-project:KategoriTradisional
@@ -1166,14 +1225,6 @@ l0122006-l0122056-project:SotoGading rdf:type owl:NamedIndividual ,
                 :RatingHotel
                 :RatingRestoran
                 :RatingTempatWisata
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :TransportasiOnline
-                :TransportasiPribadi
-                :TransportasiUmum
               )
 ] .
 
