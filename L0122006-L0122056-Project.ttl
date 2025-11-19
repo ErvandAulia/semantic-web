@@ -71,6 +71,12 @@ l0122006-l0122056-project:memilikiKategoriMakanan rdf:type owl:ObjectProperty ;
                                                   rdfs:range l0122006-l0122056-project:KategoriMakanan .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#mengaksesTransportasi
+l0122006-l0122056-project:mengaksesTransportasi rdf:type owl:ObjectProperty ;
+                                                rdfs:domain l0122006-l0122056-project:Aplikasi ;
+                                                rdfs:range :Transportasi .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#menghidangkan
 l0122006-l0122056-project:menghidangkan rdf:type owl:ObjectProperty ;
                                         rdfs:domain :Restoran ;
@@ -209,6 +215,12 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#namaAplikasi
+l0122006-l0122056-project:namaAplikasi rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain l0122006-l0122056-project:Aplikasi ;
+                                       rdfs:range xsd:string .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#namaEvent
 l0122006-l0122056-project:namaEvent rdf:type owl:DatatypeProperty ;
                                     rdfs:domain :Event ;
@@ -302,7 +314,11 @@ l0122006-l0122056-project:namaRestoran rdf:type owl:DatatypeProperty ,
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/nilaiHarga
 :nilaiHarga rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
-            rdfs:domain :HargaMakanan ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :HargaMakanan
+                                        :HargaTransportasi
+                                      )
+                        ] ;
             rdfs:range xsd:float .
 
 
@@ -336,11 +352,23 @@ l0122006-l0122056-project:AirTerjun rdf:type owl:Class ;
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Aplikasi
-l0122006-l0122056-project:Aplikasi rdf:type owl:Class .
+l0122006-l0122056-project:Aplikasi rdf:type owl:Class ;
+                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                     owl:onProperty l0122006-l0122056-project:mengaksesTransportasi ;
+                                                     owl:someValuesFrom :Transportasi
+                                                   ] .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#AplikasiTransportasi
 l0122006-l0122056-project:AplikasiTransportasi rdf:type owl:Class ;
+                                               owl:equivalentClass [ owl:intersectionOf ( l0122006-l0122056-project:Aplikasi
+                                                                                          [ rdf:type owl:Restriction ;
+                                                                                            owl:onProperty l0122006-l0122056-project:mengaksesTransportasi ;
+                                                                                            owl:someValuesFrom :TransportasiOnline
+                                                                                          ]
+                                                                                        ) ;
+                                                                     rdf:type owl:Class
+                                                                   ] ;
                                                rdfs:subClassOf l0122006-l0122056-project:Aplikasi .
 
 
@@ -905,6 +933,10 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/TempatWisata
 :TempatWisata rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty l0122006-l0122056-project:mengaksesTransportasi ;
+                                owl:someValuesFrom :Transportasi
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :memilikiFasilitas ;
                                 owl:someValuesFrom :FasilitasUmum
                               ] ,
@@ -942,6 +974,10 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
                                 owl:onProperty :memilikiHarga ;
                                 owl:someValuesFrom :HargaTransportasi
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :memilikiWaktuOperasional ;
+                                owl:someValuesFrom :WaktuOperasional
                               ] .
 
 
@@ -1062,6 +1098,19 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#AplikasiGojek
+l0122006-l0122056-project:AplikasiGojek rdf:type owl:NamedIndividual ,
+                                                 l0122006-l0122056-project:Aplikasi ;
+                                        l0122006-l0122056-project:mengaksesTransportasi l0122006-l0122056-project:GoRide .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BatikSoloTrans
+l0122006-l0122056-project:BatikSoloTrans rdf:type owl:NamedIndividual ,
+                                                  :Transportasi ;
+                                         :memilikiHarga l0122006-l0122056-project:HargaBst ;
+                                         :memilikiWaktuOperasional l0122006-l0122056-project:JamBst .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BukitSekipan
 l0122006-l0122056-project:BukitSekipan rdf:type owl:NamedIndividual ,
                                                 :TempatWisata ;
@@ -1071,6 +1120,18 @@ l0122006-l0122056-project:BukitSekipan rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikBukit
 l0122006-l0122056-project:DayaTarikBukit rdf:type owl:NamedIndividual ,
                                                   l0122006-l0122056-project:Bukit .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#GoRide
+l0122006-l0122056-project:GoRide rdf:type owl:NamedIndividual ,
+                                          :TransportasiOnline ;
+                                 :memilikiWaktuOperasional l0122006-l0122056-project:OperasionalGoRide .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HargaBst
+l0122006-l0122056-project:HargaBst rdf:type owl:NamedIndividual ,
+                                            :HargaTransportasi ;
+                                   :nilaiHarga "3700.0"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HargaNasiLiwet
@@ -1089,6 +1150,14 @@ l0122006-l0122056-project:HotelSunan rdf:type owl:NamedIndividual ,
                                               :Hotel ;
                                      l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:Laweyan ;
                                      :memilikiRating l0122006-l0122056-project:HotelBintangEmpat .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#JamBst
+l0122006-l0122056-project:JamBst rdf:type owl:NamedIndividual ,
+                                          :WaktuOperasional ;
+                                 :hariBuka "Senin-Minggu" ;
+                                 :jamBuka "05:00:00"^^xsd:time ;
+                                 :jamTutup "21:00:00"^^xsd:time .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KategoriTradisional
@@ -1124,6 +1193,12 @@ l0122006-l0122056-project:NasiLiwet rdf:type owl:NamedIndividual ,
                                              l0122006-l0122056-project:Makanan ;
                                     l0122006-l0122056-project:memilikiKategoriMakanan l0122006-l0122056-project:KategoriTradisional ;
                                     :memilikiHarga l0122006-l0122056-project:HargaNasiLiwet .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#OperasionalGoRide
+l0122006-l0122056-project:OperasionalGoRide rdf:type owl:NamedIndividual ,
+                                                     :WaktuOperasional ;
+                                            :hariBuka "Senin-Minggu" .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PracimaTuin
