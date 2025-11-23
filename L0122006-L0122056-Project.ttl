@@ -267,13 +267,13 @@ l0122006-l0122056-project:namaRestoran rdf:type owl:DatatypeProperty ,
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/jamBuka
 :jamBuka rdf:type owl:DatatypeProperty ;
          rdfs:domain :WaktuOperasional ;
-         rdfs:range xsd:time .
+         rdfs:range xsd:integer .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/jamTutup
 :jamTutup rdf:type owl:DatatypeProperty ;
           rdfs:domain :WaktuOperasional ;
-          rdfs:range xsd:time .
+          rdfs:range xsd:integer .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/jumlahUlasan
@@ -475,21 +475,81 @@ l0122006-l0122056-project:Gunung rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#JamMalam
 l0122006-l0122056-project:JamMalam rdf:type owl:Class ;
+                                   owl:equivalentClass [ owl:intersectionOf ( :WaktuOperasional
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :jamBuka ;
+                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                     owl:onDatatype xsd:int ;
+                                                                                                     owl:withRestrictions ( [ xsd:minInclusive "1800"^^xsd:int
+                                                                                                                            ]
+                                                                                                                            [ xsd:maxInclusive "2359"^^xsd:int
+                                                                                                                            ]
+                                                                                                                          )
+                                                                                                   ]
+                                                                              ]
+                                                                            ) ;
+                                                         rdf:type owl:Class
+                                                       ] ;
                                    rdfs:subClassOf :WaktuOperasional .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#JamPagi
 l0122006-l0122056-project:JamPagi rdf:type owl:Class ;
+                                  owl:equivalentClass [ owl:intersectionOf ( :WaktuOperasional
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :jamBuka ;
+                                                                               owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                    owl:onDatatype xsd:int ;
+                                                                                                    owl:withRestrictions ( [ xsd:minInclusive "500"^^xsd:int
+                                                                                                                           ]
+                                                                                                                           [ xsd:maxInclusive "1100"^^xsd:int
+                                                                                                                           ]
+                                                                                                                         )
+                                                                                                  ]
+                                                                             ]
+                                                                           ) ;
+                                                        rdf:type owl:Class
+                                                      ] ;
                                   rdfs:subClassOf :WaktuOperasional .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#JamSiang
 l0122006-l0122056-project:JamSiang rdf:type owl:Class ;
+                                   owl:equivalentClass [ owl:intersectionOf ( :WaktuOperasional
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :jamBuka ;
+                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                     owl:onDatatype xsd:int ;
+                                                                                                     owl:withRestrictions ( [ xsd:minInclusive "1200"^^xsd:int
+                                                                                                                            ]
+                                                                                                                            [ xsd:maxInclusive "1400"^^xsd:int
+                                                                                                                            ]
+                                                                                                                          )
+                                                                                                   ]
+                                                                              ]
+                                                                            ) ;
+                                                         rdf:type owl:Class
+                                                       ] ;
                                    rdfs:subClassOf :WaktuOperasional .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#JamSore
 l0122006-l0122056-project:JamSore rdf:type owl:Class ;
+                                  owl:equivalentClass [ owl:intersectionOf ( :WaktuOperasional
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :jamBuka ;
+                                                                               owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                    owl:onDatatype xsd:int ;
+                                                                                                    owl:withRestrictions ( [ xsd:minInclusive "1500"^^xsd:int
+                                                                                                                           ]
+                                                                                                                           [ xsd:maxInclusive "1700"^^xsd:int
+                                                                                                                           ]
+                                                                                                                         )
+                                                                                                  ]
+                                                                             ]
+                                                                           ) ;
+                                                        rdf:type owl:Class
+                                                      ] ;
                                   rdfs:subClassOf :WaktuOperasional .
 
 
@@ -1116,12 +1176,12 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
                                     owl:onProperty :jamBuka ;
                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onDataRange xsd:time
+                                    owl:onDataRange xsd:integer
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty :jamTutup ;
                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onDataRange xsd:time
+                                    owl:onDataRange xsd:integer
                                   ] .
 
 
@@ -1265,8 +1325,8 @@ l0122006-l0122056-project:HotelSunan rdf:type owl:NamedIndividual ,
 l0122006-l0122056-project:JamBst rdf:type owl:NamedIndividual ,
                                           :WaktuOperasional ;
                                  :hariBuka "Senin-Minggu" ;
-                                 :jamBuka "05:00:00"^^xsd:time ;
-                                 :jamTutup "21:00:00"^^xsd:time .
+                                 :jamBuka 500 ;
+                                 :jamTutup 2100 .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KategoriTradisional
