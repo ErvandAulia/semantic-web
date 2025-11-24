@@ -45,7 +45,6 @@ l0122006-l0122056-project:dilaluiOlehTransportasi rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#dipesanMelalui
 l0122006-l0122056-project:dipesanMelalui rdf:type owl:ObjectProperty ;
-                                         rdfs:domain :Transportasi ;
                                          rdfs:range l0122006-l0122056-project:Aplikasi .
 
 
@@ -107,7 +106,8 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/berjarakDengan
 :berjarakDengan rdf:type owl:ObjectProperty ,
-                         owl:SymmetricProperty ;
+                         owl:SymmetricProperty ,
+                         owl:IrreflexiveProperty ;
                 rdfs:domain [ rdf:type owl:Class ;
                               owl:unionOf ( :Hotel
                                             :Restoran
@@ -691,6 +691,45 @@ l0122006-l0122056-project:Masyarakat rdf:type owl:Class ;
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MaximApp
 l0122006-l0122056-project:MaximApp rdf:type owl:Class ;
                                    rdfs:subClassOf l0122006-l0122056-project:AplikasiTransportasi .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MitraGoFood
+l0122006-l0122056-project:MitraGoFood rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( :Restoran
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty l0122006-l0122056-project:dipesanMelalui ;
+                                                                                   owl:hasValue l0122006-l0122056-project:GoFood
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] ;
+                                      rdfs:subClassOf :Restoran .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MitraGrabFood
+l0122006-l0122056-project:MitraGrabFood rdf:type owl:Class ;
+                                        owl:equivalentClass [ owl:intersectionOf ( :Restoran
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty l0122006-l0122056-project:dipesanMelalui ;
+                                                                                     owl:hasValue l0122006-l0122056-project:GrabFood
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ] ;
+                                        rdfs:subClassOf :Restoran .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MitraShopeeFood
+l0122006-l0122056-project:MitraShopeeFood rdf:type owl:Class ;
+                                          owl:equivalentClass [ owl:intersectionOf ( :Restoran
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty l0122006-l0122056-project:dipesanMelalui ;
+                                                                                       owl:hasValue l0122006-l0122056-project:ShopeeFood
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] ;
+                                          rdfs:subClassOf :Restoran .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Murah
@@ -1291,10 +1330,20 @@ l0122006-l0122056-project:DayaTarikBukit rdf:type owl:NamedIndividual ,
                                                   l0122006-l0122056-project:Bukit .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#GoFood
+l0122006-l0122056-project:GoFood rdf:type owl:NamedIndividual ,
+                                          l0122006-l0122056-project:Aplikasi .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#GoRide
 l0122006-l0122056-project:GoRide rdf:type owl:NamedIndividual ,
                                           :TransportasiOnline ;
                                  :memilikiWaktuOperasional l0122006-l0122056-project:OperasionalGoRide .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#GrabFood
+l0122006-l0122056-project:GrabFood rdf:type owl:NamedIndividual ,
+                                            l0122006-l0122056-project:Aplikasi .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HargaBst
@@ -1381,9 +1430,17 @@ l0122006-l0122056-project:Sekaten rdf:type owl:NamedIndividual ,
                                            :EventBudaya .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#ShopeeFood
+l0122006-l0122056-project:ShopeeFood rdf:type owl:NamedIndividual ,
+                                              l0122006-l0122056-project:Aplikasi .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#SotoGading
 l0122006-l0122056-project:SotoGading rdf:type owl:NamedIndividual ,
                                               :Restoran ;
+                                     l0122006-l0122056-project:dipesanMelalui l0122006-l0122056-project:GoFood ,
+                                                                              l0122006-l0122056-project:GrabFood ,
+                                                                              l0122006-l0122056-project:ShopeeFood ;
                                      :memilikiHarga l0122006-l0122056-project:MakananMurah .
 
 
