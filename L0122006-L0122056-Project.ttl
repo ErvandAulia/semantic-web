@@ -1714,7 +1714,11 @@ l0122006-l0122056-project:Rating_SotoGading rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Sekaten
 l0122006-l0122056-project:Sekaten rdf:type owl:NamedIndividual ,
-                                           :EventBudaya .
+                                           :Event ;
+                                  l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:PasarKliwon ;
+                                  l0122006-l0122056-project:kategoriEvent "budaya" ;
+                                  l0122006-l0122056-project:namaEvent "Sekatan Solo" ;
+                                  :tanggalEvent "2025-09-09"^^xsd:date .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#ShopeeFood
