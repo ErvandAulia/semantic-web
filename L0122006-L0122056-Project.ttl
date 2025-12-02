@@ -108,7 +108,7 @@ l0122006-l0122056-project:memprosesPesanan rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#menghidangkan
 l0122006-l0122056-project:menghidangkan rdf:type owl:ObjectProperty ;
-                                        rdfs:subPropertyOf l0122006-l0122056-project:memilikiDayaTarik ;
+                                        rdfs:subPropertyOf owl:topObjectProperty ;
                                         rdfs:domain [ rdf:type owl:Class ;
                                                       owl:unionOf ( l0122006-l0122056-project:KategoriMakanan
                                                                     :Restoran
@@ -544,16 +544,6 @@ l0122006-l0122056-project:FasilitasEdukasi rdf:type owl:Class ;
                                            rdfs:subClassOf :Fasilitas .
 
 
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#GojekApp
-l0122006-l0122056-project:GojekApp rdf:type owl:Class ;
-                                   rdfs:subClassOf l0122006-l0122056-project:AplikasiTransportasi .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#GrabApp
-l0122006-l0122056-project:GrabApp rdf:type owl:Class ;
-                                  rdfs:subClassOf l0122006-l0122056-project:AplikasiTransportasi .
-
-
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Gunung
 l0122006-l0122056-project:Gunung rdf:type owl:Class ;
                                  rdfs:subClassOf l0122006-l0122056-project:DayaTarikAlam .
@@ -778,11 +768,6 @@ l0122006-l0122056-project:MakananTradisional rdf:type owl:Class ;
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Masyarakat
 l0122006-l0122056-project:Masyarakat rdf:type owl:Class ;
                                      rdfs:subClassOf l0122006-l0122056-project:PemangkuKepentingan .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MaximApp
-l0122006-l0122056-project:MaximApp rdf:type owl:Class ;
-                                   rdfs:subClassOf l0122006-l0122056-project:AplikasiTransportasi .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MitraGoFood
@@ -1158,7 +1143,7 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
       owl:equivalentClass [ owl:intersectionOf ( :Lokasi
                                                  [ rdf:type owl:Restriction ;
                                                    owl:onProperty l0122006-l0122056-project:memilikiBagian ;
-                                                   owl:someValuesFrom :Kecamatan
+                                                   owl:someValuesFrom :Lokasi
                                                  ]
                                                ) ;
                             rdf:type owl:Class
@@ -1345,10 +1330,6 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
                                 owl:onProperty :memilikiHarga ;
                                 owl:someValuesFrom :HargaTransportasi
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :memilikiWaktuOperasional ;
-                                owl:someValuesFrom :WaktuOperasional
                               ] .
 
 
@@ -1357,7 +1338,7 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                     owl:equivalentClass [ owl:intersectionOf ( :Transportasi
                                                                [ rdf:type owl:Restriction ;
                                                                  owl:onProperty l0122006-l0122056-project:dipesanMelalui ;
-                                                                 owl:someValuesFrom l0122006-l0122056-project:AplikasiTransportasi
+                                                                 owl:someValuesFrom l0122006-l0122056-project:Aplikasi
                                                                ]
                                                              ) ;
                                           rdf:type owl:Class
@@ -1492,7 +1473,7 @@ l0122006-l0122056-project:AksesKursiRoda rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#AplikasiGojek
 l0122006-l0122056-project:AplikasiGojek rdf:type owl:NamedIndividual ,
-                                                 l0122006-l0122056-project:GojekApp ;
+                                                 l0122006-l0122056-project:Aplikasi ;
                                         l0122006-l0122056-project:memprosesPesanan l0122006-l0122056-project:GoFood ,
                                                                                    l0122006-l0122056-project:GoRide .
 
@@ -1505,7 +1486,7 @@ l0122006-l0122056-project:AreaBermainAnak rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Banjarsari
 l0122006-l0122056-project:Banjarsari rdf:type owl:NamedIndividual ,
-                                              :Kecamatan ;
+                                              :Lokasi ;
                                      l0122006-l0122056-project:merupakanBagianDari l0122006-l0122056-project:KotaSurakarta .
 
 
@@ -1526,6 +1507,16 @@ l0122006-l0122056-project:BukitSekipan rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikBukit
 l0122006-l0122056-project:DayaTarikBukit rdf:type owl:NamedIndividual ,
                                                   l0122006-l0122056-project:Bukit .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikEdukasi
+l0122006-l0122056-project:DayaTarikEdukasi rdf:type owl:NamedIndividual ,
+                                                    l0122006-l0122056-project:DayaTarikEdukasi .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikKuliner
+l0122006-l0122056-project:DayaTarikKuliner rdf:type owl:NamedIndividual ,
+                                                    l0122006-l0122056-project:DayaTarikKuliner .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FasilitasAnak
@@ -1556,8 +1547,7 @@ l0122006-l0122056-project:GoFood rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#GoRide
 l0122006-l0122056-project:GoRide rdf:type owl:NamedIndividual ,
-                                          :Transportasi ;
-                                 :memilikiWaktuOperasional l0122006-l0122056-project:OperasionalGoRide .
+                                          :Transportasi .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#GrabFood
@@ -1622,12 +1612,12 @@ l0122006-l0122056-project:KeratonSolo rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KotaSurakarta
 l0122006-l0122056-project:KotaSurakarta rdf:type owl:NamedIndividual ,
-                                                 :Kota .
+                                                 :Lokasi .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Laweyan
 l0122006-l0122056-project:Laweyan rdf:type owl:NamedIndividual ,
-                                           :Kecamatan ;
+                                           :Lokasi ;
                                   l0122006-l0122056-project:merupakanBagianDari l0122006-l0122056-project:KotaSurakarta .
 
 
@@ -1636,6 +1626,16 @@ l0122006-l0122056-project:Lift rdf:type owl:NamedIndividual ,
                                         :Fasilitas ;
                                l0122006-l0122056-project:melayaniTujuan l0122006-l0122056-project:FasilitasKhusus ;
                                l0122006-l0122056-project:aksesDisabilitas "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#LokanantaBloc
+l0122006-l0122056-project:LokanantaBloc rdf:type owl:NamedIndividual ,
+                                                 :TempatWisata ;
+                                        l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:Laweyan ;
+                                        l0122006-l0122056-project:memilikiDayaTarik l0122006-l0122056-project:DayaTarikEdukasi ;
+                                        :dekatDenganHotel l0122006-l0122056-project:HotelSunan ;
+                                        :dekatDenganTransportasi l0122006-l0122056-project:BatikSoloTrans ;
+                                        :memilikiRating l0122006-l0122056-project:Rating_LokanantaBloc .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MakananMahal
@@ -1671,7 +1671,7 @@ l0122006-l0122056-project:OperasionalGoRide rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PasarKliwon
 l0122006-l0122056-project:PasarKliwon rdf:type owl:NamedIndividual ,
-                                               :Kecamatan ;
+                                               :Lokasi ;
                                       l0122006-l0122056-project:merupakanBagianDari l0122006-l0122056-project:KotaSurakarta .
 
 
@@ -1698,8 +1698,16 @@ l0122006-l0122056-project:PracimaTuin rdf:type owl:NamedIndividual ,
                                       :memilikiHarga l0122006-l0122056-project:MakananMahal .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Rating_LokanantaBloc
+l0122006-l0122056-project:Rating_LokanantaBloc rdf:type owl:NamedIndividual ,
+                                                        :Rating ;
+                                               l0122006-l0122056-project:ratingDari l0122006-l0122056-project:LokanantaBloc ;
+                                               :nilaiRating "4.8"^^xsd:float .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Rating_SotoGading
-l0122006-l0122056-project:Rating_SotoGading rdf:type owl:NamedIndividual ;
+l0122006-l0122056-project:Rating_SotoGading rdf:type owl:NamedIndividual ,
+                                                     :Rating ;
                                             l0122006-l0122056-project:ratingDari l0122006-l0122056-project:SotoGading ;
                                             :nilaiRating "4.5"^^xsd:float .
 
@@ -1722,7 +1730,7 @@ l0122006-l0122056-project:SotoGading rdf:type owl:NamedIndividual ,
                                      l0122006-l0122056-project:dipesanMelalui l0122006-l0122056-project:GoFood ,
                                                                               l0122006-l0122056-project:GrabFood ,
                                                                               l0122006-l0122056-project:ShopeeFood ;
-                                     l0122006-l0122056-project:menghidangkan l0122006-l0122056-project:NasiLiwet ;
+                                     l0122006-l0122056-project:memilikiDayaTarik l0122006-l0122056-project:DayaTarikKuliner ;
                                      :memilikiHarga l0122006-l0122056-project:MakananMurah ;
                                      :memilikiRating l0122006-l0122056-project:Rating_SotoGading .
 
@@ -1748,14 +1756,6 @@ l0122006-l0122056-project:ToiletUmum rdf:type owl:NamedIndividual ,
                 l0122006-l0122056-project:DayaTarikEdukasi
                 l0122006-l0122056-project:DayaTarikKuliner
                 l0122006-l0122056-project:DayaTarikSejarah
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( l0122006-l0122056-project:GojekApp
-                l0122006-l0122056-project:GrabApp
-                l0122006-l0122056-project:MaximApp
               )
 ] .
 
