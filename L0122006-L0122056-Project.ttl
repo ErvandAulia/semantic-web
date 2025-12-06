@@ -101,6 +101,19 @@ l0122006-l0122056-project:memilikiPeringkat rdf:type owl:ObjectProperty ;
                                             rdfs:range l0122006-l0122056-project:PeringkatHotel .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#memilikiWaktuTutup
+l0122006-l0122056-project:memilikiWaktuTutup rdf:type owl:ObjectProperty ;
+                                             rdfs:domain [ rdf:type owl:Class ;
+                                                           owl:unionOf ( :Event
+                                                                         :Hotel
+                                                                         :Restoran
+                                                                         :TempatWisata
+                                                                         :Transportasi
+                                                                       )
+                                                         ] ;
+                                             rdfs:range l0122006-l0122056-project:WaktuTutupHarian .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#memprosesPesanan
 l0122006-l0122056-project:memprosesPesanan rdf:type owl:ObjectProperty ;
                                            rdfs:domain l0122006-l0122056-project:Aplikasi ;
@@ -238,18 +251,18 @@ l0122006-l0122056-project:terletakDi rdf:type owl:ObjectProperty ;
                 rdfs:range :Rating .
 
 
-###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/memilikiWaktuOperasional
-:memilikiWaktuOperasional rdf:type owl:ObjectProperty ,
-                                   owl:FunctionalProperty ;
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:unionOf ( :Event
-                                                      :Hotel
-                                                      :Restoran
-                                                      :TempatWisata
-                                                      :Transportasi
-                                                    )
-                                      ] ;
-                          rdfs:range :WaktuOperasional .
+###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/memilikiWaktuBuka
+:memilikiWaktuBuka rdf:type owl:ObjectProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Event
+                                               :Hotel
+                                               :Restoran
+                                               :TempatWisata
+                                               :Transportasi
+                                             )
+                               ] ;
+                   rdfs:range :WaktuBukaHarian .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/menyelenggarakan
@@ -289,6 +302,12 @@ l0122006-l0122056-project:kategoriEvent rdf:type owl:DatatypeProperty ;
 l0122006-l0122056-project:kategoriHarga rdf:type owl:DatatypeProperty ;
                                         rdfs:domain :Harga ;
                                         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#kategoriMakanan
+l0122006-l0122056-project:kategoriMakanan rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain l0122006-l0122056-project:KategoriMakanan ;
+                                          rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#namaAplikasi
@@ -337,19 +356,19 @@ l0122006-l0122056-project:tujuanLayanan rdf:type owl:DatatypeProperty ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/hariBuka
 :hariBuka rdf:type owl:DatatypeProperty ;
-          rdfs:domain :WaktuOperasional ;
+          rdfs:domain :WaktuBukaHarian ;
           rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/jamBuka
 :jamBuka rdf:type owl:DatatypeProperty ;
-         rdfs:domain :WaktuOperasional ;
+         rdfs:domain :WaktuBukaHarian ;
          rdfs:range xsd:integer .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/jamTutup
 :jamTutup rdf:type owl:DatatypeProperty ;
-          rdfs:domain :WaktuOperasional ;
+          rdfs:domain l0122006-l0122056-project:WaktuTutupHarian ;
           rdfs:range xsd:integer .
 
 
@@ -499,6 +518,86 @@ l0122006-l0122056-project:BintangTiga rdf:type owl:Class ;
                                                             rdf:type owl:Class
                                                           ] ;
                                       rdfs:subClassOf l0122006-l0122056-project:PeringkatHotel .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BukaMalam
+l0122006-l0122056-project:BukaMalam rdf:type owl:Class ;
+                                    owl:equivalentClass [ owl:intersectionOf ( :WaktuBukaHarian
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :jamBuka ;
+                                                                                 owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                      owl:onDatatype xsd:int ;
+                                                                                                      owl:withRestrictions ( [ xsd:minInclusive "1900"^^xsd:int
+                                                                                                                             ]
+                                                                                                                             [ xsd:maxInclusive "2359"^^xsd:int
+                                                                                                                             ]
+                                                                                                                           )
+                                                                                                    ]
+                                                                               ]
+                                                                             ) ;
+                                                          rdf:type owl:Class
+                                                        ] ;
+                                    rdfs:subClassOf :WaktuBukaHarian .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BukaPagi
+l0122006-l0122056-project:BukaPagi rdf:type owl:Class ;
+                                   owl:equivalentClass [ owl:intersectionOf ( :WaktuBukaHarian
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :jamBuka ;
+                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                     owl:onDatatype xsd:int ;
+                                                                                                     owl:withRestrictions ( [ xsd:minInclusive "500"^^xsd:int
+                                                                                                                            ]
+                                                                                                                            [ xsd:maxInclusive "1059"^^xsd:int
+                                                                                                                            ]
+                                                                                                                          )
+                                                                                                   ]
+                                                                              ]
+                                                                            ) ;
+                                                         rdf:type owl:Class
+                                                       ] ;
+                                   rdfs:subClassOf :WaktuBukaHarian .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BukaSiang
+l0122006-l0122056-project:BukaSiang rdf:type owl:Class ;
+                                    owl:equivalentClass [ owl:intersectionOf ( :WaktuBukaHarian
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :jamBuka ;
+                                                                                 owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                      owl:onDatatype xsd:int ;
+                                                                                                      owl:withRestrictions ( [ xsd:minInclusive "1100"^^xsd:int
+                                                                                                                             ]
+                                                                                                                             [ xsd:maxInclusive "1500"^^xsd:int
+                                                                                                                             ]
+                                                                                                                           )
+                                                                                                    ]
+                                                                               ]
+                                                                             ) ;
+                                                          rdf:type owl:Class
+                                                        ] ;
+                                    rdfs:subClassOf :WaktuBukaHarian .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BukaSore
+l0122006-l0122056-project:BukaSore rdf:type owl:Class ;
+                                   owl:equivalentClass [ owl:intersectionOf ( :WaktuBukaHarian
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :jamBuka ;
+                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                     owl:onDatatype xsd:int ;
+                                                                                                     owl:withRestrictions ( [ xsd:minInclusive "1501"^^xsd:int
+                                                                                                                            ]
+                                                                                                                            [ xsd:maxInclusive "1830"^^xsd:int
+                                                                                                                            ]
+                                                                                                                          )
+                                                                                                   ]
+                                                                              ]
+                                                                            ) ;
+                                                         rdf:type owl:Class
+                                                       ] ;
+                                   rdfs:subClassOf :WaktuBukaHarian .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarik
@@ -651,92 +750,12 @@ l0122006-l0122056-project:FasilitasEdukasi rdf:type owl:Class ;
                                            rdfs:subClassOf :Fasilitas .
 
 
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#JamMalam
-l0122006-l0122056-project:JamMalam rdf:type owl:Class ;
-                                   owl:equivalentClass [ owl:intersectionOf ( :WaktuOperasional
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty :jamBuka ;
-                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                                                     owl:onDatatype xsd:int ;
-                                                                                                     owl:withRestrictions ( [ xsd:minInclusive "1800"^^xsd:int
-                                                                                                                            ]
-                                                                                                                            [ xsd:maxInclusive "2359"^^xsd:int
-                                                                                                                            ]
-                                                                                                                          )
-                                                                                                   ]
-                                                                              ]
-                                                                            ) ;
-                                                         rdf:type owl:Class
-                                                       ] ;
-                                   rdfs:subClassOf :WaktuOperasional .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#JamPagi
-l0122006-l0122056-project:JamPagi rdf:type owl:Class ;
-                                  owl:equivalentClass [ owl:intersectionOf ( :WaktuOperasional
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :jamBuka ;
-                                                                               owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                                                    owl:onDatatype xsd:int ;
-                                                                                                    owl:withRestrictions ( [ xsd:minInclusive "500"^^xsd:int
-                                                                                                                           ]
-                                                                                                                           [ xsd:maxInclusive "1100"^^xsd:int
-                                                                                                                           ]
-                                                                                                                         )
-                                                                                                  ]
-                                                                             ]
-                                                                           ) ;
-                                                        rdf:type owl:Class
-                                                      ] ;
-                                  rdfs:subClassOf :WaktuOperasional .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#JamSiang
-l0122006-l0122056-project:JamSiang rdf:type owl:Class ;
-                                   owl:equivalentClass [ owl:intersectionOf ( :WaktuOperasional
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty :jamBuka ;
-                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                                                     owl:onDatatype xsd:int ;
-                                                                                                     owl:withRestrictions ( [ xsd:minInclusive "1200"^^xsd:int
-                                                                                                                            ]
-                                                                                                                            [ xsd:maxInclusive "1400"^^xsd:int
-                                                                                                                            ]
-                                                                                                                          )
-                                                                                                   ]
-                                                                              ]
-                                                                            ) ;
-                                                         rdf:type owl:Class
-                                                       ] ;
-                                   rdfs:subClassOf :WaktuOperasional .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#JamSore
-l0122006-l0122056-project:JamSore rdf:type owl:Class ;
-                                  owl:equivalentClass [ owl:intersectionOf ( :WaktuOperasional
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :jamBuka ;
-                                                                               owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                                                    owl:onDatatype xsd:int ;
-                                                                                                    owl:withRestrictions ( [ xsd:minInclusive "1500"^^xsd:int
-                                                                                                                           ]
-                                                                                                                           [ xsd:maxInclusive "1700"^^xsd:int
-                                                                                                                           ]
-                                                                                                                         )
-                                                                                                  ]
-                                                                             ]
-                                                                           ) ;
-                                                        rdf:type owl:Class
-                                                      ] ;
-                                  rdfs:subClassOf :WaktuOperasional .
-
-
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KategoriCepatSaji
 l0122006-l0122056-project:KategoriCepatSaji rdf:type owl:Class ;
                                             owl:equivalentClass [ owl:intersectionOf ( l0122006-l0122056-project:KategoriMakanan
                                                                                        [ rdf:type owl:Restriction ;
-                                                                                         owl:onProperty l0122006-l0122056-project:menghidangkan ;
-                                                                                         owl:someValuesFrom l0122006-l0122056-project:MakananCepatSaji
+                                                                                         owl:onProperty l0122006-l0122056-project:kategoriMakanan ;
+                                                                                         owl:hasValue "makanancepatsaji"
                                                                                        ]
                                                                                      ) ;
                                                                   rdf:type owl:Class
@@ -757,8 +776,8 @@ l0122006-l0122056-project:KategoriMakanan rdf:type owl:Class ;
 l0122006-l0122056-project:KategoriModern rdf:type owl:Class ;
                                          owl:equivalentClass [ owl:intersectionOf ( l0122006-l0122056-project:KategoriMakanan
                                                                                     [ rdf:type owl:Restriction ;
-                                                                                      owl:onProperty l0122006-l0122056-project:menghidangkan ;
-                                                                                      owl:someValuesFrom l0122006-l0122056-project:MakananModern
+                                                                                      owl:onProperty l0122006-l0122056-project:kategoriMakanan ;
+                                                                                      owl:hasValue "makananmodern"
                                                                                     ]
                                                                                   ) ;
                                                                rdf:type owl:Class
@@ -770,8 +789,8 @@ l0122006-l0122056-project:KategoriModern rdf:type owl:Class ;
 l0122006-l0122056-project:KategoriTradisional rdf:type owl:Class ;
                                               owl:equivalentClass [ owl:intersectionOf ( l0122006-l0122056-project:KategoriMakanan
                                                                                          [ rdf:type owl:Restriction ;
-                                                                                           owl:onProperty l0122006-l0122056-project:menghidangkan ;
-                                                                                           owl:someValuesFrom l0122006-l0122056-project:MakananTradisional
+                                                                                           owl:onProperty l0122006-l0122056-project:kategoriMakanan ;
+                                                                                           owl:hasValue "tradisional"
                                                                                          ]
                                                                                        ) ;
                                                                     rdf:type owl:Class
@@ -950,6 +969,10 @@ l0122006-l0122056-project:PeringkatHotel rdf:type owl:Class ;
                                          rdfs:comment "Ini adalah Class yang menunjukkan hotel bintang berapa nya" .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Regulasi
+l0122006-l0122056-project:Regulasi rdf:type owl:Class .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#RestoranMahal
 l0122006-l0122056-project:RestoranMahal rdf:type owl:Class ;
                                         owl:equivalentClass [ owl:intersectionOf ( :Restoran
@@ -1038,6 +1061,86 @@ l0122006-l0122056-project:TujuanFasilitas rdf:type owl:Class ;
                                           rdfs:comment "Class untuk mengkategorikan tujuan Fasilitas yang disediakan" .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TutupMalam
+l0122006-l0122056-project:TutupMalam rdf:type owl:Class ;
+                                     owl:equivalentClass [ owl:intersectionOf ( l0122006-l0122056-project:WaktuTutupHarian
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :jamTutup ;
+                                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                       owl:onDatatype xsd:int ;
+                                                                                                       owl:withRestrictions ( [ xsd:minInclusive "1900"^^xsd:int
+                                                                                                                              ]
+                                                                                                                              [ xsd:maxInclusive "2359"^^xsd:int
+                                                                                                                              ]
+                                                                                                                            )
+                                                                                                     ]
+                                                                                ]
+                                                                              ) ;
+                                                           rdf:type owl:Class
+                                                         ] ;
+                                     rdfs:subClassOf l0122006-l0122056-project:WaktuTutupHarian .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TutupPagi
+l0122006-l0122056-project:TutupPagi rdf:type owl:Class ;
+                                    owl:equivalentClass [ owl:intersectionOf ( l0122006-l0122056-project:WaktuTutupHarian
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :jamTutup ;
+                                                                                 owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                      owl:onDatatype xsd:int ;
+                                                                                                      owl:withRestrictions ( [ xsd:minInclusive "0001"^^xsd:int
+                                                                                                                             ]
+                                                                                                                             [ xsd:maxInclusive "1059"^^xsd:int
+                                                                                                                             ]
+                                                                                                                           )
+                                                                                                    ]
+                                                                               ]
+                                                                             ) ;
+                                                          rdf:type owl:Class
+                                                        ] ;
+                                    rdfs:subClassOf l0122006-l0122056-project:WaktuTutupHarian .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TutupSiang
+l0122006-l0122056-project:TutupSiang rdf:type owl:Class ;
+                                     owl:equivalentClass [ owl:intersectionOf ( l0122006-l0122056-project:WaktuTutupHarian
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :jamTutup ;
+                                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                       owl:onDatatype xsd:int ;
+                                                                                                       owl:withRestrictions ( [ xsd:minInclusive "1059"^^xsd:int
+                                                                                                                              ]
+                                                                                                                              [ xsd:maxInclusive "1500"^^xsd:int
+                                                                                                                              ]
+                                                                                                                            )
+                                                                                                     ]
+                                                                                ]
+                                                                              ) ;
+                                                           rdf:type owl:Class
+                                                         ] ;
+                                     rdfs:subClassOf l0122006-l0122056-project:WaktuTutupHarian .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TutupSore
+l0122006-l0122056-project:TutupSore rdf:type owl:Class ;
+                                    owl:equivalentClass [ owl:intersectionOf ( l0122006-l0122056-project:WaktuTutupHarian
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty :jamTutup ;
+                                                                                 owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                      owl:onDatatype xsd:int ;
+                                                                                                      owl:withRestrictions ( [ xsd:minInclusive "1501"^^xsd:int
+                                                                                                                             ]
+                                                                                                                             [ xsd:maxInclusive "1859"^^xsd:int
+                                                                                                                             ]
+                                                                                                                           )
+                                                                                                    ]
+                                                                               ]
+                                                                             ) ;
+                                                          rdf:type owl:Class
+                                                        ] ;
+                                    rdfs:subClassOf l0122006-l0122056-project:WaktuTutupHarian .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Umum
 l0122006-l0122056-project:Umum rdf:type owl:Class ;
                                owl:equivalentClass [ owl:intersectionOf ( l0122006-l0122056-project:TujuanFasilitas
@@ -1049,6 +1152,15 @@ l0122006-l0122056-project:Umum rdf:type owl:Class ;
                                                      rdf:type owl:Class
                                                    ] ;
                                rdfs:subClassOf l0122006-l0122056-project:TujuanFasilitas .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WaktuTutupHarian
+l0122006-l0122056-project:WaktuTutupHarian rdf:type owl:Class ;
+                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :jamTutup ;
+                                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onDataRange xsd:integer
+                                                           ] .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataPopuler
@@ -1202,9 +1314,7 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/HariOperasional
-:HariOperasional rdf:type owl:Class ;
-                 rdfs:subClassOf :WaktuOperasional ;
-                 owl:disjointWith :WaktuBukaHarian .
+:HariOperasional rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/Hotel
@@ -1222,8 +1332,8 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                          owl:someValuesFrom :HargaKamar
                        ] ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :memilikiWaktuOperasional ;
-                         owl:someValuesFrom :WaktuOperasional
+                         owl:onProperty :memilikiWaktuBuka ;
+                         owl:someValuesFrom :WaktuBukaHarian
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :memilikiRating ;
@@ -1273,11 +1383,6 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                                         rdf:type owl:Class
                                       ] ;
                   rdfs:subClassOf :Hotel .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/KakiLima
-:KakiLima rdf:type owl:Class ;
-          rdfs:subClassOf :Restoran .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/Kecamatan
@@ -1417,6 +1522,10 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                             owl:someValuesFrom :Lokasi
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty l0122006-l0122056-project:memilikiWaktuTutup ;
+                            owl:someValuesFrom l0122006-l0122056-project:WaktuTutupHarian
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty :memilikiFasilitas ;
                             owl:someValuesFrom :FasilitasUmum
                           ] ,
@@ -1425,8 +1534,8 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                             owl:someValuesFrom :HargaMakanan
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :memilikiWaktuOperasional ;
-                            owl:someValuesFrom :WaktuOperasional
+                            owl:onProperty :memilikiWaktuBuka ;
+                            owl:someValuesFrom :WaktuBukaHarian
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty :memilikiRating ;
@@ -1468,6 +1577,10 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/TempatWisata
 :TempatWisata rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty l0122006-l0122056-project:memilikiWaktuTutup ;
+                                owl:someValuesFrom l0122006-l0122056-project:WaktuTutupHarian
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :memilikiFasilitas ;
                                 owl:someValuesFrom :FasilitasUmum
                               ] ,
@@ -1476,8 +1589,8 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
                                 owl:someValuesFrom :HargaTiket
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty :memilikiWaktuOperasional ;
-                                owl:someValuesFrom :WaktuOperasional
+                                owl:onProperty :memilikiWaktuBuka ;
+                                owl:someValuesFrom :WaktuBukaHarian
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :memilikiRating ;
@@ -1525,8 +1638,8 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 :TransportasiUmum rdf:type owl:Class ;
                   owl:equivalentClass [ owl:intersectionOf ( :Transportasi
                                                              [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :memilikiWaktuOperasional ;
-                                                               owl:someValuesFrom :WaktuOperasional
+                                                               owl:onProperty :memilikiWaktuBuka ;
+                                                               owl:someValuesFrom :WaktuBukaHarian
                                                              ]
                                                            ) ;
                                         rdf:type owl:Class
@@ -1536,21 +1649,11 @@ l0122006-l0122056-project:WisataPopuler rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/WaktuBukaHarian
 :WaktuBukaHarian rdf:type owl:Class ;
-                 rdfs:subClassOf :WaktuOperasional .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/WaktuOperasional
-:WaktuOperasional rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                    owl:onProperty :jamBuka ;
-                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onDataRange xsd:integer
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty :jamTutup ;
-                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onDataRange xsd:integer
-                                  ] .
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty :jamBuka ;
+                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/WisataAlam
@@ -1670,7 +1773,8 @@ l0122006-l0122056-project:BatikSoloTrans rdf:type owl:NamedIndividual ,
                                                   :Transportasi ;
                                          l0122006-l0122056-project:dimilikiOleh l0122006-l0122056-project:PemkotSurakarta ;
                                          :memilikiHarga l0122006-l0122056-project:HargaBst ;
-                                         :memilikiWaktuOperasional l0122006-l0122056-project:JamBst .
+                                         :jamBuka 500 ;
+                                         :jamTutup 2100 .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BukitSekipan
@@ -1768,18 +1872,11 @@ l0122006-l0122056-project:HotelSunan rdf:type owl:NamedIndividual ,
                                      :memilikiRating l0122006-l0122056-project:Rating_HotelSunan .
 
 
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#JamBst
-l0122006-l0122056-project:JamBst rdf:type owl:NamedIndividual ,
-                                          :WaktuOperasional ;
-                                 :hariBuka "Senin-Minggu" ;
-                                 :jamBuka 500 ;
-                                 :jamTutup 2100 .
-
-
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KategoriTradisional
 l0122006-l0122056-project:KategoriTradisional rdf:type owl:NamedIndividual ,
-                                                       l0122006-l0122056-project:KategoriTradisional ;
-                                              l0122006-l0122056-project:menghidangkan l0122006-l0122056-project:NasiLiwet .
+                                                       l0122006-l0122056-project:KategoriMakanan ;
+                                              l0122006-l0122056-project:menghidangkan l0122006-l0122056-project:NasiLiwet ;
+                                              l0122006-l0122056-project:kategoriMakanan "tradisional" .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KeratonSolo
@@ -1814,7 +1911,9 @@ l0122006-l0122056-project:LokanantaBloc rdf:type owl:NamedIndividual ,
                                         l0122006-l0122056-project:memilikiDayaTarik l0122006-l0122056-project:DayaTarikEdukasi ;
                                         :dekatDenganHotel l0122006-l0122056-project:HotelSunan ;
                                         :dekatDenganTransportasi l0122006-l0122056-project:BatikSoloTrans ;
-                                        :memilikiRating l0122006-l0122056-project:Rating_LokanantaBloc .
+                                        :memilikiRating l0122006-l0122056-project:Rating_LokanantaBloc ;
+                                        :jamBuka 1000 ;
+                                        :jamTutup 2300 .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MakananMahal
@@ -1840,12 +1939,6 @@ l0122006-l0122056-project:NasiLiwet rdf:type owl:NamedIndividual ,
                                              l0122006-l0122056-project:Makanan ;
                                     l0122006-l0122056-project:memilikiKategoriMakanan l0122006-l0122056-project:KategoriTradisional ;
                                     :memilikiHarga l0122006-l0122056-project:HargaNasiLiwet .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#OperasionalGoRide
-l0122006-l0122056-project:OperasionalGoRide rdf:type owl:NamedIndividual ,
-                                                     :WaktuOperasional ;
-                                            :hariBuka "Senin-Minggu" .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PasarKliwon
@@ -1928,7 +2021,9 @@ l0122006-l0122056-project:SotoGading rdf:type owl:NamedIndividual ,
                                                                               l0122006-l0122056-project:ShopeeFood ;
                                      l0122006-l0122056-project:memilikiDayaTarik l0122006-l0122056-project:DayaTarikKuliner ;
                                      :memilikiHarga l0122006-l0122056-project:MakananMurah ;
-                                     :memilikiRating l0122006-l0122056-project:Rating_SotoGading .
+                                     :memilikiRating l0122006-l0122056-project:Rating_SotoGading ;
+                                     :jamBuka 600 ;
+                                     :jamTutup 1600 .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TempatParkir
@@ -1981,23 +2076,10 @@ l0122006-l0122056-project:ToiletUmum rdf:type owl:NamedIndividual ,
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( l0122006-l0122056-project:RestoranMahal
-                l0122006-l0122056-project:RestoranMurah
-                :KakiLima
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Event
-                :Fasilitas
-                :Harga
-                :Hotel
-                :Lokasi
-                :Rating
-                :TempatWisata
-                :Transportasi
-                :WaktuOperasional
+  owl:members ( l0122006-l0122056-project:TutupMalam
+                l0122006-l0122056-project:TutupPagi
+                l0122006-l0122056-project:TutupSiang
+                l0122006-l0122056-project:TutupSore
               )
 ] .
 
