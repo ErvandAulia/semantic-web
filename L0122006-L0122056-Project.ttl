@@ -209,7 +209,8 @@ xsd:time rdf:type rdfs:Datatype .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#memilikiWaktuTutup
-:memilikiWaktuTutup rdf:type owl:ObjectProperty ;
+:memilikiWaktuTutup rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ;
                     rdfs:domain [ rdf:type owl:Class ;
                                   owl:unionOf ( :Event
                                                 :Hotel
@@ -577,81 +578,21 @@ xsd:time rdf:type rdfs:Datatype .
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BukaMalam
 :BukaMalam rdf:type owl:Class ;
-           owl:equivalentClass [ owl:intersectionOf ( :WaktuBukaHarian
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :jamBuka ;
-                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                             owl:onDatatype xsd:int ;
-                                                                             owl:withRestrictions ( [ xsd:minInclusive "1900"^^xsd:int
-                                                                                                    ]
-                                                                                                    [ xsd:maxInclusive "2359"^^xsd:int
-                                                                                                    ]
-                                                                                                  )
-                                                                           ]
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
-                               ] ;
            rdfs:subClassOf :WaktuBukaHarian .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BukaPagi
 :BukaPagi rdf:type owl:Class ;
-          owl:equivalentClass [ owl:intersectionOf ( :WaktuBukaHarian
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :jamBuka ;
-                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                            owl:onDatatype xsd:int ;
-                                                                            owl:withRestrictions ( [ xsd:minInclusive "500"^^xsd:int
-                                                                                                   ]
-                                                                                                   [ xsd:maxInclusive "1059"^^xsd:int
-                                                                                                   ]
-                                                                                                 )
-                                                                          ]
-                                                     ]
-                                                   ) ;
-                                rdf:type owl:Class
-                              ] ;
           rdfs:subClassOf :WaktuBukaHarian .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BukaSiang
 :BukaSiang rdf:type owl:Class ;
-           owl:equivalentClass [ owl:intersectionOf ( :WaktuBukaHarian
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :jamBuka ;
-                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                             owl:onDatatype xsd:int ;
-                                                                             owl:withRestrictions ( [ xsd:minInclusive "1100"^^xsd:int
-                                                                                                    ]
-                                                                                                    [ xsd:maxInclusive "1500"^^xsd:int
-                                                                                                    ]
-                                                                                                  )
-                                                                           ]
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
-                               ] ;
            rdfs:subClassOf :WaktuBukaHarian .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BukaSore
 :BukaSore rdf:type owl:Class ;
-          owl:equivalentClass [ owl:intersectionOf ( :WaktuBukaHarian
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :jamBuka ;
-                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                            owl:onDatatype xsd:int ;
-                                                                            owl:withRestrictions ( [ xsd:minInclusive "1501"^^xsd:int
-                                                                                                   ]
-                                                                                                   [ xsd:maxInclusive "1830"^^xsd:int
-                                                                                                   ]
-                                                                                                 )
-                                                                          ]
-                                                     ]
-                                                   ) ;
-                                rdf:type owl:Class
-                              ] ;
           rdfs:subClassOf :WaktuBukaHarian .
 
 
@@ -1591,81 +1532,21 @@ xsd:time rdf:type rdfs:Datatype .
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TutupMalam
 :TutupMalam rdf:type owl:Class ;
-            owl:equivalentClass [ owl:intersectionOf ( :WaktuTutupHarian
-                                                       [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :jamTutup ;
-                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                              owl:onDatatype xsd:int ;
-                                                                              owl:withRestrictions ( [ xsd:minInclusive "1900"^^xsd:int
-                                                                                                     ]
-                                                                                                     [ xsd:maxInclusive "2359"^^xsd:int
-                                                                                                     ]
-                                                                                                   )
-                                                                            ]
-                                                       ]
-                                                     ) ;
-                                  rdf:type owl:Class
-                                ] ;
             rdfs:subClassOf :WaktuTutupHarian .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TutupPagi
 :TutupPagi rdf:type owl:Class ;
-           owl:equivalentClass [ owl:intersectionOf ( :WaktuTutupHarian
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :jamTutup ;
-                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                             owl:onDatatype xsd:int ;
-                                                                             owl:withRestrictions ( [ xsd:minInclusive "0001"^^xsd:int
-                                                                                                    ]
-                                                                                                    [ xsd:maxInclusive "1059"^^xsd:int
-                                                                                                    ]
-                                                                                                  )
-                                                                           ]
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
-                               ] ;
            rdfs:subClassOf :WaktuTutupHarian .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TutupSiang
 :TutupSiang rdf:type owl:Class ;
-            owl:equivalentClass [ owl:intersectionOf ( :WaktuTutupHarian
-                                                       [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :jamTutup ;
-                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                              owl:onDatatype xsd:int ;
-                                                                              owl:withRestrictions ( [ xsd:minInclusive "1059"^^xsd:int
-                                                                                                     ]
-                                                                                                     [ xsd:maxInclusive "1500"^^xsd:int
-                                                                                                     ]
-                                                                                                   )
-                                                                            ]
-                                                       ]
-                                                     ) ;
-                                  rdf:type owl:Class
-                                ] ;
             rdfs:subClassOf :WaktuTutupHarian .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TutupSore
 :TutupSore rdf:type owl:Class ;
-           owl:equivalentClass [ owl:intersectionOf ( :WaktuTutupHarian
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :jamTutup ;
-                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                             owl:onDatatype xsd:int ;
-                                                                             owl:withRestrictions ( [ xsd:minInclusive "1501"^^xsd:int
-                                                                                                    ]
-                                                                                                    [ xsd:maxInclusive "1859"^^xsd:int
-                                                                                                    ]
-                                                                                                  )
-                                                                           ]
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
-                               ] ;
            rdfs:subClassOf :WaktuTutupHarian .
 
 
@@ -1822,8 +1703,8 @@ xsd:time rdf:type rdfs:Datatype .
                          :Transportasi ;
                 :dimilikiOleh :PemkotSurakarta ;
                 :memilikiHarga :HargaBst ;
-                :memilikiWaktuBuka :WaktuBukaBST ;
-                :memilikiWaktuTutup :WaktuTutupBST .
+                :jamBuka 500 ;
+                :jamTutup 2100 .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BukitSekipan
@@ -2067,18 +1948,6 @@ xsd:time rdf:type rdfs:Datatype .
 :ToiletUmum rdf:type owl:NamedIndividual ,
                      :Fasilitas ;
             :melayaniTujuan :FasilitasUmum .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WaktuBukaBST
-:WaktuBukaBST rdf:type owl:NamedIndividual ,
-                       :WaktuBukaHarian ;
-              :jamBuka 500 .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WaktuTutupBST
-:WaktuTutupBST rdf:type owl:NamedIndividual ,
-                        :WaktuTutupHarian ;
-               :jamTutup 2100 .
 
 
 #################################################################
@@ -2574,6 +2443,108 @@ xsd:time rdf:type rdfs:Datatype .
  ] .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Category classification for BukaSiang" ;
+   rdfs:label "S12" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WaktuBukaHarian ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :jamBuka ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :w ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :j
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :j ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 1100 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first :j ;
+                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first 1459 ;
+                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                              ]
+                                                                                                                                   ]
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :BukaSiang ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Category classification for BukaSore" ;
+   rdfs:label "S13" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WaktuBukaHarian ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :jamBuka ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :w ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :j
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :j ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 1500 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first :j ;
+                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first 1859 ;
+                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                              ]
+                                                                                                                                   ]
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :BukaSore ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
    rdfs:comment "Category classification for BukaMalam" ;
    rdfs:label "S11" ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
@@ -2669,6 +2640,261 @@ xsd:time rdf:type rdfs:Datatype .
    <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :BukaPagi ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Category classification for TutupMalam" ;
+   rdfs:label "S14a" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WaktuTutupHarian ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :jamTutup ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :w ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :j
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :j ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 0 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first :j ;
+                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first 459 ;
+                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                              ]
+                                                                                                                                   ]
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TutupMalam ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Category classification for TutupSiang" ;
+   rdfs:label "S16" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WaktuTutupHarian ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :jamTutup ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :w ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :j
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :j ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 1100 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first :j ;
+                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first 1459 ;
+                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                              ]
+                                                                                                                                   ]
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TutupSiang ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Category classification for TutupSore" ;
+   rdfs:label "S17" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WaktuTutupHarian ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :jamTutup ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :w ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :j
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :j ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 1500 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first :j ;
+                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first 1859 ;
+                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                              ]
+                                                                                                                                   ]
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TutupSore ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Category classification for TutupMalam" ;
+   rdfs:label "S14" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WaktuTutupHarian ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :jamTutup ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :w ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :j
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :j ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 1900 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first :j ;
+                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first 2359 ;
+                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                              ]
+                                                                                                                                   ]
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TutupMalam ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Category classification for TutupPagi" ;
+   rdfs:label "S15" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WaktuTutupHarian ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :w
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :jamTutup ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :w ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :j
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :j ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 500 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first :j ;
+                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first 1059 ;
+                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                              ]
+                                                                                                                                   ]
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TutupPagi ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> :w
                                                      ] ;
                                            rdf:rest rdf:nil
