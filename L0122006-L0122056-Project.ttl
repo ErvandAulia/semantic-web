@@ -140,12 +140,6 @@ xsd:time rdf:type rdfs:Datatype .
                 owl:inverseOf :merupakanBagianDari .
 
 
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#memilikiDayaTarik
-:memilikiDayaTarik rdf:type owl:ObjectProperty ;
-                   rdfs:domain :TempatWisata ;
-                   rdfs:range :DayaTarikWisata .
-
-
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#memilikiFasilitas
 :memilikiFasilitas rdf:type owl:ObjectProperty ;
                    rdfs:domain [ rdf:type owl:Class ;
@@ -394,7 +388,7 @@ xsd:time rdf:type rdfs:Datatype .
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#kategoriDayaTarik
 :kategoriDayaTarik rdf:type owl:DatatypeProperty ;
-                   rdfs:domain :DayaTarikWisata ;
+                   rdfs:domain :TempatWisata ;
                    rdfs:range xsd:string .
 
 
@@ -659,87 +653,6 @@ xsd:time rdf:type rdfs:Datatype .
                                 rdf:type owl:Class
                               ] ;
           rdfs:subClassOf :WaktuBukaHarian .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikAlam
-:DayaTarikAlam rdf:type owl:Class ;
-               owl:equivalentClass [ owl:intersectionOf ( :DayaTarikWisata
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :kategoriDayaTarik ;
-                                                            owl:hasValue "alam"
-                                                          ]
-                                                        ) ;
-                                     rdf:type owl:Class
-                                   ] ;
-               rdfs:subClassOf :DayaTarikWisata .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikEdukasi
-:DayaTarikEdukasi rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( :DayaTarikWisata
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :kategoriDayaTarik ;
-                                                               owl:hasValue "edukasi"
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
-                  rdfs:subClassOf :DayaTarikWisata .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikKuliner
-:DayaTarikKuliner rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( :DayaTarikWisata
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :kategoriDayaTarik ;
-                                                               owl:hasValue "kuliner"
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
-                  rdfs:subClassOf :DayaTarikWisata .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikReligi
-:DayaTarikReligi rdf:type owl:Class ;
-                 owl:equivalentClass [ owl:intersectionOf ( :DayaTarikWisata
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty :kategoriDayaTarik ;
-                                                              owl:hasValue "religi"
-                                                            ]
-                                                          ) ;
-                                       rdf:type owl:Class
-                                     ] ;
-                 rdfs:subClassOf :DayaTarikWisata .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikSejarah
-:DayaTarikSejarah rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( :DayaTarikWisata
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :kategoriDayaTarik ;
-                                                               owl:hasValue "sejarah"
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
-                  rdfs:subClassOf :DayaTarikWisata .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikWisata
-:DayaTarikWisata rdf:type owl:Class ;
-                 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                   owl:onProperty :berlokasiDi ;
-                                   owl:someValuesFrom :Lokasi
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty :memilikiFasilitas ;
-                                   owl:someValuesFrom :Fasilitas
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty :memilikiRating ;
-                                   owl:someValuesFrom :Rating
-                                 ] .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Edukasi
@@ -1546,26 +1459,6 @@ xsd:time rdf:type rdfs:Datatype .
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#RestoranPopuler
 :RestoranPopuler rdf:type owl:Class ;
-                 owl:equivalentClass [ owl:intersectionOf ( :Restoran
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty :memilikiRating ;
-                                                              owl:someValuesFrom [ owl:intersectionOf ( :RatingRestoran
-                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty :nilaiRating ;
-                                                                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                                                                               owl:onDatatype xsd:float ;
-                                                                                                                               owl:withRestrictions ( [ xsd:minInclusive "4.5"^^xsd:float
-                                                                                                                                                      ]
-                                                                                                                                                    )
-                                                                                                                             ]
-                                                                                                        ]
-                                                                                                      ) ;
-                                                                                   rdf:type owl:Class
-                                                                                 ]
-                                                            ]
-                                                          ) ;
-                                       rdf:type owl:Class
-                                     ] ;
                  rdfs:subClassOf :Restoran .
 
 
@@ -1845,14 +1738,6 @@ xsd:time rdf:type rdfs:Datatype .
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataAlam
 :WisataAlam rdf:type owl:Class ;
-            owl:equivalentClass [ owl:intersectionOf ( :TempatWisata
-                                                       [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :memilikiDayaTarik ;
-                                                         owl:someValuesFrom :DayaTarikAlam
-                                                       ]
-                                                     ) ;
-                                  rdf:type owl:Class
-                                ] ;
             rdfs:subClassOf :TempatWisata .
 
 
@@ -1871,56 +1756,16 @@ xsd:time rdf:type rdfs:Datatype .
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataEdukasi
 :WisataEdukasi rdf:type owl:Class ;
-               owl:equivalentClass [ owl:intersectionOf ( :TempatWisata
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :memilikiDayaTarik ;
-                                                            owl:someValuesFrom :DayaTarikEdukasi
-                                                          ]
-                                                        ) ;
-                                     rdf:type owl:Class
-                                   ] ;
                rdfs:subClassOf :TempatWisata .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataKuliner
 :WisataKuliner rdf:type owl:Class ;
-               owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                            owl:unionOf ( :Restoran
-                                                                          :TempatWisata
-                                                                        )
-                                                          ]
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :memilikiDayaTarik ;
-                                                            owl:someValuesFrom :DayaTarikKuliner
-                                                          ]
-                                                        ) ;
-                                     rdf:type owl:Class
-                                   ] ;
                rdfs:subClassOf :TempatWisata .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataPopuler
 :WisataPopuler rdf:type owl:Class ;
-               owl:equivalentClass [ owl:intersectionOf ( :TempatWisata
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :memilikiRating ;
-                                                            owl:someValuesFrom [ owl:intersectionOf ( :RatingTempatWisata
-                                                                                                      [ rdf:type owl:Restriction ;
-                                                                                                        owl:onProperty :nilaiRating ;
-                                                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                                                                             owl:onDatatype xsd:float ;
-                                                                                                                             owl:withRestrictions ( [ xsd:minInclusive "4.5"^^xsd:float
-                                                                                                                                                    ]
-                                                                                                                                                  )
-                                                                                                                           ]
-                                                                                                      ]
-                                                                                                    ) ;
-                                                                                 rdf:type owl:Class
-                                                                               ]
-                                                          ]
-                                                        ) ;
-                                     rdf:type owl:Class
-                                   ] ;
                rdfs:subClassOf :TempatWisata .
 
 
@@ -1939,14 +1784,6 @@ xsd:time rdf:type rdfs:Datatype .
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WisataSejarah
 :WisataSejarah rdf:type owl:Class ;
-               owl:equivalentClass [ owl:intersectionOf ( :TempatWisata
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :memilikiDayaTarik ;
-                                                            owl:someValuesFrom :DayaTarikSejarah
-                                                          ]
-                                                        ) ;
-                                     rdf:type owl:Class
-                                   ] ;
                rdfs:subClassOf :TempatWisata .
 
 
@@ -1992,25 +1829,7 @@ xsd:time rdf:type rdfs:Datatype .
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#BukitSekipan
 :BukitSekipan rdf:type owl:NamedIndividual ,
                        :TempatWisata ;
-              :memilikiDayaTarik :DayaTarikAlam .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikAlam
-:DayaTarikAlam rdf:type owl:NamedIndividual ,
-                        :DayaTarikWisata ;
-               :kategoriDayaTarik "alam" .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikEdukasi
-:DayaTarikEdukasi rdf:type owl:NamedIndividual ,
-                           :DayaTarikWisata ;
-                  :kategoriDayaTarik "edukasi" .
-
-
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#DayaTarikKuliner
-:DayaTarikKuliner rdf:type owl:NamedIndividual ,
-                           :DayaTarikWisata ;
-                  :kategoriDayaTarik "kuliner" .
+              :kategoriDayaTarik "alam" .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FasilitasAnak
@@ -2122,10 +1941,10 @@ xsd:time rdf:type rdfs:Datatype .
                :berlokasiDi :Laweyan ;
                :dekatDenganHotel :HotelSunan ;
                :dekatDenganTransportasi :BatikSoloTrans ;
-               :memilikiDayaTarik :DayaTarikEdukasi ;
                :memilikiRating :Rating_LokanantaBloc ;
                :jamBuka 1000 ;
-               :jamTutup 2300 .
+               :jamTutup 2300 ;
+               :kategoriDayaTarik "edukasi" .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MakananMahal
@@ -2231,11 +2050,11 @@ xsd:time rdf:type rdfs:Datatype .
             :dipesanMelalui :GoFood ,
                             :GrabFood ,
                             :ShopeeFood ;
-            :memilikiDayaTarik :DayaTarikKuliner ;
             :memilikiHarga :MakananMurah ;
             :memilikiRating :Rating_SotoGading ;
             :jamBuka 600 ;
-            :jamTutup 1600 .
+            :jamTutup 1600 ;
+            :kategoriDayaTarik "kuliner" .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TempatParkir
@@ -2368,8 +2187,6 @@ xsd:time rdf:type rdfs:Datatype .
 :n rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 :t rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-:dt rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 :k rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
@@ -2516,236 +2333,6 @@ xsd:time rdf:type rdfs:Datatype .
  ] .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Category classification for DayaTarikAlam" ;
-   rdfs:label "S5" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TempatWisata ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :memilikiDayaTarik ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :t ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> :dt
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :kategoriDayaTarik ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> :dt ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument2> :k
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
-                                                                                                                                     rdf:first :k ;
-                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                                rdf:first "alam" ;
-                                                                                                                                                rdf:rest rdf:nil
-                                                                                                                                              ]
-                                                                                                                                   ]
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WisataAlam ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Category classification for DayaTarikEdukasi" ;
-   rdfs:label "S6" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TempatWisata ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :memilikiDayaTarik ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :t ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> :dt
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :kategoriDayaTarik ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> :dt ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument2> :k
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
-                                                                                                                                     rdf:first :k ;
-                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                                rdf:first "edukasi" ;
-                                                                                                                                                rdf:rest rdf:nil
-                                                                                                                                              ]
-                                                                                                                                   ]
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WisataEdukasi ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Category classification for DayaTarikKuliner" ;
-   rdfs:label "S7" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TempatWisata ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :memilikiDayaTarik ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :t ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> :dt
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :kategoriDayaTarik ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> :dt ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument2> :k
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
-                                                                                                                                     rdf:first :k ;
-                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                                rdf:first "kuliner" ;
-                                                                                                                                                rdf:rest rdf:nil
-                                                                                                                                              ]
-                                                                                                                                   ]
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WisataKuliner ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Category classification for DayaTarikReligi" ;
-   rdfs:label "S8" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TempatWisata ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :memilikiDayaTarik ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :t ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> :dt
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :kategoriDayaTarik ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> :dt ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument2> :k
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
-                                                                                                                                     rdf:first :k ;
-                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                                rdf:first "religi" ;
-                                                                                                                                                rdf:rest rdf:nil
-                                                                                                                                              ]
-                                                                                                                                   ]
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WisataReligi ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Category classification for DayaTarikReligi" ;
-   rdfs:label "S9" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TempatWisata ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :memilikiDayaTarik ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :t ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> :dt
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :kategoriDayaTarik ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> :dt ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument2> :k
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
-                                                                                                                                     rdf:first :k ;
-                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                                rdf:first "sejarah" ;
-                                                                                                                                                rdf:rest rdf:nil
-                                                                                                                                              ]
-                                                                                                                                   ]
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WisataSejarah ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
    rdfs:comment "Rating classification for TempatWisata" ;
    rdfs:label "S1" ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
@@ -2785,6 +2372,201 @@ xsd:time rdf:type rdfs:Datatype .
    <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :WisataPopuler ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Category classification for WisataAlam" ;
+   rdfs:label "S5" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TempatWisata ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :kategoriDayaTarik ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :k
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :k ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first "alam" ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WisataAlam ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Category classification for WisataEdukasi" ;
+   rdfs:label "S6" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TempatWisata ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :kategoriDayaTarik ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :k
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :k ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first "edukasi" ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WisataEdukasi ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Category classification for WisataKuliner" ;
+   rdfs:label "S7" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TempatWisata ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :kategoriDayaTarik ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :k
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :k ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first "kuliner" ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WisataKuliner ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Category classification for WisataReligi" ;
+   rdfs:label "S8" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TempatWisata ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :kategoriDayaTarik ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :k
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :k ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first "religi" ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WisataReligi ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Category classification for WisataSejarah" ;
+   rdfs:label "S9" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TempatWisata ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :kategoriDayaTarik ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :k
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :k ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first "sejarah" ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :WisataSejarah ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> :t
                                                      ] ;
                                            rdf:rest rdf:nil
