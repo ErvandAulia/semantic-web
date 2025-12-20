@@ -1,0 +1,3452 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project">
+    <Prefix name="" IRI="http://www.semanticweb.org/acer/ontologies/2025/10/untitled-ontology-9/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="l0122006-l0122056-project" IRI="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#"/>
+    <Declaration>
+        <Class IRI="#Anak"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Aplikasi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AplikasiTransportasi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BintangEmpat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BintangLima"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BintangTiga"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BukaMalam"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BukaPagi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BukaSiang"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BukaSore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DayaTarikAlam"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DayaTarikEdukasi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DayaTarikKuliner"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DayaTarikReligi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DayaTarikSejarah"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DayaTarikWisata"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Edukasi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EventBudaya"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EventOrganizer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EventReligi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fasilitas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FasilitasAkomodasi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FasilitasAnak"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FasilitasDisabilitas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FasilitasEdukasi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FasilitasUmum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Harga"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HargaKamar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HargaMakanan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HargaTiket"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HargaTransportasi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HariOperasional"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HotelBintangEmpat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HotelBintangLima"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HotelBintangTiga"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KategoriCepatSaji"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KategoriMakanan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KategoriModern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KategoriTradisional"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Kecamatan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Khusus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Kota"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lokasi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mahal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Makanan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MakananCepatSaji"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MakananModern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MakananMurah"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MakananTradisional"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Masyarakat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MitraGoFood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MitraGrabFood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MitraShopeeFood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Murah"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PemangkuKepentingan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pemerintah"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PeringkatHotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PerusahaanHotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PerusahaanRestoran"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RatingEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RatingHotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RatingRestoran"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RatingTempatWisata"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Regulasi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RegulasiPariwisata"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RegulasiPerizinan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Restoran"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RestoranCepatSaji"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RestoranMahal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RestoranMurah"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RestoranPopuler"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RestoranTradisional"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sedang"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Swasta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TempatWisata"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transportasi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TransportasiOnline"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TransportasiUmum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TujuanFasilitas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TutupMalam"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TutupPagi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TutupSiang"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TutupSore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UUPariwisata"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UUPerizinan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Umum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UndangUndang"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WaktuBukaHarian"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WaktuTutupHarian"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WisataAlam"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WisataBudaya"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WisataEdukasi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WisataKuliner"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WisataPopuler"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WisataReligi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WisataSejarah"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#berjarakDengan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#berkepentinganPada"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#berlokasiDi"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dekatDenganHotel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dekatDenganRestoran"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dekatDenganTransportasi"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#diBuatOleh"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#digunakanOleh"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dilaluiOlehTransportasi"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dimilikiOleh"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dipesanMelalui"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#melayaniTujuan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#memilikiBagian"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#memilikiDayaTarik"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#memilikiFasilitas"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#memilikiHarga"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#memilikiHargaMakanan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#memilikiKategoriMakanan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#memilikiPeringkat"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#memilikiRating"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#memilikiWaktuBuka"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#memilikiWaktuTutup"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#memprosesPesanan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#mengacuPada"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#mengatur"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#mengelola"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#menghidangkan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#menikmati"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#menjadiDasar"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#menyelenggarakan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#merupakanBagianDari"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#peringkatHotel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ratingDari"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#terletakDi"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#aksesDisabilitas"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#alamat"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#bintangHotel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#deskripsiTempat"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hariBuka"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#jamBuka"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#jamTutup"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#jumlahUlasan"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#kapasitasPengunjung"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#kategoriDayaTarik"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#kategoriEvent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#kategoriHarga"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#kategoriMakanan"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#komentarRating"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#membahasPeraturan"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#namaAplikasi"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#namaEvent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#namaFasilitas"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#namaHotel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#namaRestoran"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#namaTempat"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nilaiHarga"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nilaiRating"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#satuanHarga"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tanggalEvent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tujuanLayanan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AksesKursiRoda"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AplikasiGojek"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AreaBermainAnak"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banjarsari"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BatikSoloTrans"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BukitSekipan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DayaTarikAlam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DayaTarikEdukasi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DayaTarikKuliner"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FasilitasAnak"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FasilitasKhusus"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FasilitasUmum"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FreeWiFi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GoFood"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GoRide"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GrabFood"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HargaBst"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HargaNasiLiwet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HaulSolo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HotelSunan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KategoriTradisional"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KeratonSolo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KotaSurakarta"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Laweyan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lift"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LokanantaBloc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MakananMahal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MakananMurah"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mushola"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NasiLiwet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PasarKliwon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PemilikMasyarakat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PemilikSwasta"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PemkotSurakarta"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PeringkatHotelBintangEmpat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PracimaTuin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rating_HotelSunan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rating_LokanantaBloc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rating_SotoGading"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sekaten"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ShopeeFood"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SotoGading"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TempatParkir"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ToiletUmum"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WaktuBukaBST"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WaktuTutupBST"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:time"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Anak"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TujuanFasilitas"/>
+            <DataHasValue>
+                <DataProperty IRI="#tujuanLayanan"/>
+                <Literal>anak</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AplikasiTransportasi"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Aplikasi"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memprosesPesanan"/>
+                <Class IRI="#TransportasiOnline"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BintangEmpat"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PeringkatHotel"/>
+            <DataHasValue>
+                <DataProperty IRI="#bintangHotel"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BintangLima"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PeringkatHotel"/>
+            <DataHasValue>
+                <DataProperty IRI="#bintangHotel"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">5</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BintangTiga"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PeringkatHotel"/>
+            <DataHasValue>
+                <DataProperty IRI="#bintangHotel"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BukaMalam"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#WaktuBukaHarian"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#jamBuka"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:int"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1900</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2359</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BukaPagi"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#WaktuBukaHarian"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#jamBuka"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:int"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">500</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1059</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BukaSiang"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#WaktuBukaHarian"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#jamBuka"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:int"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1100</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1500</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BukaSore"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#WaktuBukaHarian"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#jamBuka"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:int"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1501</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1830</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DayaTarikAlam"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#DayaTarikWisata"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriDayaTarik"/>
+                <Literal>alam</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DayaTarikEdukasi"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#DayaTarikWisata"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriDayaTarik"/>
+                <Literal>edukasi</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DayaTarikKuliner"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#DayaTarikWisata"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriDayaTarik"/>
+                <Literal>kuliner</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DayaTarikReligi"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#DayaTarikWisata"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriDayaTarik"/>
+                <Literal>religi</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DayaTarikSejarah"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#DayaTarikWisata"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriDayaTarik"/>
+                <Literal>sejarah</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Edukasi"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TujuanFasilitas"/>
+            <DataHasValue>
+                <DataProperty IRI="#tujuanLayanan"/>
+                <Literal>edukasi</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EventBudaya"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Event"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriEvent"/>
+                <Literal>budaya</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EventOrganizer"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Swasta"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#mengelola"/>
+                <Class IRI="#Event"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EventReligi"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Event"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriEvent"/>
+                <Literal>religi</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FasilitasAkomodasi"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Fasilitas"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#digunakanOleh"/>
+                <Class IRI="#Hotel"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FasilitasAnak"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Fasilitas"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#melayaniTujuan"/>
+                <Class IRI="#Anak"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FasilitasDisabilitas"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Fasilitas"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#melayaniTujuan"/>
+                <Class IRI="#Khusus"/>
+            </ObjectSomeValuesFrom>
+            <DataHasValue>
+                <DataProperty IRI="#aksesDisabilitas"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FasilitasEdukasi"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Fasilitas"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#melayaniTujuan"/>
+                <Class IRI="#Edukasi"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FasilitasUmum"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Fasilitas"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#melayaniTujuan"/>
+                <Class IRI="#Umum"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#HargaKamar"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Harga"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriHarga"/>
+                <Literal>kamar</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#HargaMakanan"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Harga"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriHarga"/>
+                <Literal>makanan</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#HargaTiket"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Harga"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriHarga"/>
+                <Literal>tiket</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#HargaTransportasi"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Harga"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriHarga"/>
+                <Literal>transportasi</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#HotelBintangEmpat"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Hotel"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#peringkatHotel"/>
+                <Class IRI="#BintangEmpat"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#HotelBintangLima"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Hotel"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#peringkatHotel"/>
+                <Class IRI="#BintangLima"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#HotelBintangTiga"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Hotel"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#peringkatHotel"/>
+                <Class IRI="#BintangTiga"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#KategoriCepatSaji"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#KategoriMakanan"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriMakanan"/>
+                <Literal>makanancepatsaji</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#KategoriModern"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#KategoriMakanan"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriMakanan"/>
+                <Literal>makananmodern</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#KategoriTradisional"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#KategoriMakanan"/>
+            <DataHasValue>
+                <DataProperty IRI="#kategoriMakanan"/>
+                <Literal>tradisional</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Kecamatan"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Lokasi"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#merupakanBagianDari"/>
+                <Class IRI="#Kota"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Khusus"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TujuanFasilitas"/>
+            <DataHasValue>
+                <DataProperty IRI="#tujuanLayanan"/>
+                <Literal>khusus</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Kota"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Lokasi"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiBagian"/>
+                <Class IRI="#Lokasi"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Mahal"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HargaMakanan"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#nilaiHarga"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:float"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">100000.0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MakananCepatSaji"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Makanan"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiKategoriMakanan"/>
+                <Class IRI="#KategoriCepatSaji"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MakananModern"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Makanan"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiKategoriMakanan"/>
+                <Class IRI="#KategoriModern"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MakananMurah"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Makanan"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiHarga"/>
+                <Class IRI="#Murah"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MakananTradisional"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Makanan"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiKategoriMakanan"/>
+                <Class IRI="#KategoriTradisional"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Masyarakat"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PemangkuKepentingan"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#menikmati"/>
+                <Class IRI="#TempatWisata"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MitraGoFood"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Restoran"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#dipesanMelalui"/>
+                <NamedIndividual IRI="#GoFood"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MitraGrabFood"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Restoran"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#dipesanMelalui"/>
+                <NamedIndividual IRI="#GrabFood"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MitraShopeeFood"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Restoran"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#dipesanMelalui"/>
+                <NamedIndividual IRI="#ShopeeFood"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Murah"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HargaMakanan"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#nilaiHarga"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:float"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxExclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">25000.0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Pemerintah"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PemangkuKepentingan"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#mengatur"/>
+                <Class IRI="#RegulasiPariwisata"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#mengatur"/>
+                <Class IRI="#RegulasiPerizinan"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PerusahaanHotel"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Swasta"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#mengelola"/>
+                <Class IRI="#Hotel"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PerusahaanRestoran"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Swasta"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#mengelola"/>
+                <Class IRI="#Restoran"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RatingEvent"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Rating"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#ratingDari"/>
+                <Class IRI="#Event"/>
+            </ObjectSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#nilaiRating"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:float"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">1.0</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">5.0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RatingHotel"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Rating"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#ratingDari"/>
+                <Class IRI="#Hotel"/>
+            </ObjectSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#nilaiRating"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:float"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">1.0</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">5.0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RatingRestoran"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Rating"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#ratingDari"/>
+                <Class IRI="#Restoran"/>
+            </ObjectSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#nilaiRating"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:float"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">1.0</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">5.0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RatingTempatWisata"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Rating"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#ratingDari"/>
+                <Class IRI="#TempatWisata"/>
+            </ObjectSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#nilaiRating"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:float"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">1.0</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">5.0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RegulasiPariwisata"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Regulasi"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#mengacuPada"/>
+                <Class IRI="#UUPariwisata"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RegulasiPerizinan"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Regulasi"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#mengacuPada"/>
+                <Class IRI="#UUPerizinan"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RestoranCepatSaji"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Restoran"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#menghidangkan"/>
+                <Class IRI="#MakananCepatSaji"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RestoranMahal"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Restoran"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiHarga"/>
+                <Class IRI="#Mahal"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RestoranMurah"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Restoran"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiHarga"/>
+                <Class IRI="#Murah"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RestoranPopuler"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Restoran"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiRating"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#RatingRestoran"/>
+                    <DataSomeValuesFrom>
+                        <DataProperty IRI="#nilaiRating"/>
+                        <DatatypeRestriction>
+                            <Datatype abbreviatedIRI="xsd:float"/>
+                            <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">4.5</Literal>
+                            </FacetRestriction>
+                        </DatatypeRestriction>
+                    </DataSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RestoranTradisional"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Restoran"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#menghidangkan"/>
+                <Class IRI="#MakananTradisional"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Sedang"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HargaMakanan"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#nilaiHarga"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:float"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">25000.0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#nilaiHarga"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:float"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">100000.0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TransportasiOnline"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Transportasi"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#dipesanMelalui"/>
+                <Class IRI="#Aplikasi"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TransportasiUmum"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Transportasi"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiWaktuBuka"/>
+                <Class IRI="#WaktuBukaHarian"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiWaktuTutup"/>
+                <Class IRI="#WaktuTutupHarian"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TutupMalam"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#WaktuTutupHarian"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#jamTutup"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:int"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1900</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2359</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TutupPagi"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#WaktuTutupHarian"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#jamTutup"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:int"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">0001</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1059</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TutupSiang"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#WaktuTutupHarian"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#jamTutup"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:int"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1059</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1500</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TutupSore"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#WaktuTutupHarian"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#jamTutup"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:int"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1501</Literal>
+                    </FacetRestriction>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1859</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UUPariwisata"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#UndangUndang"/>
+            <DataHasValue>
+                <DataProperty IRI="#membahasPeraturan"/>
+                <Literal>pariwisata</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UUPerizinan"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#UndangUndang"/>
+            <DataHasValue>
+                <DataProperty IRI="#membahasPeraturan"/>
+                <Literal>perizinan</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Umum"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TujuanFasilitas"/>
+            <DataHasValue>
+                <DataProperty IRI="#tujuanLayanan"/>
+                <Literal>umum</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#WisataAlam"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TempatWisata"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiDayaTarik"/>
+                <Class IRI="#DayaTarikAlam"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#WisataBudaya"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TempatWisata"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#menyelenggarakan"/>
+                <Class IRI="#EventBudaya"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#WisataEdukasi"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TempatWisata"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiDayaTarik"/>
+                <Class IRI="#DayaTarikEdukasi"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#WisataKuliner"/>
+        <ObjectIntersectionOf>
+            <ObjectUnionOf>
+                <Class IRI="#Restoran"/>
+                <Class IRI="#TempatWisata"/>
+            </ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiDayaTarik"/>
+                <Class IRI="#DayaTarikKuliner"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#WisataPopuler"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TempatWisata"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiRating"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#RatingTempatWisata"/>
+                    <DataSomeValuesFrom>
+                        <DataProperty IRI="#nilaiRating"/>
+                        <DatatypeRestriction>
+                            <Datatype abbreviatedIRI="xsd:float"/>
+                            <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">4.5</Literal>
+                            </FacetRestriction>
+                        </DatatypeRestriction>
+                    </DataSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#WisataReligi"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TempatWisata"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#menyelenggarakan"/>
+                <Class IRI="#EventReligi"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#WisataSejarah"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TempatWisata"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#memilikiDayaTarik"/>
+                <Class IRI="#DayaTarikSejarah"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Anak"/>
+        <Class IRI="#TujuanFasilitas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Aplikasi"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memprosesPesanan"/>
+            <Class IRI="#Transportasi"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AplikasiTransportasi"/>
+        <Class IRI="#Aplikasi"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BintangEmpat"/>
+        <Class IRI="#PeringkatHotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BintangLima"/>
+        <Class IRI="#PeringkatHotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BintangTiga"/>
+        <Class IRI="#PeringkatHotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BukaMalam"/>
+        <Class IRI="#WaktuBukaHarian"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BukaPagi"/>
+        <Class IRI="#WaktuBukaHarian"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BukaSiang"/>
+        <Class IRI="#WaktuBukaHarian"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BukaSore"/>
+        <Class IRI="#WaktuBukaHarian"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DayaTarikAlam"/>
+        <Class IRI="#DayaTarikWisata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DayaTarikEdukasi"/>
+        <Class IRI="#DayaTarikWisata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DayaTarikKuliner"/>
+        <Class IRI="#DayaTarikWisata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DayaTarikReligi"/>
+        <Class IRI="#DayaTarikWisata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DayaTarikSejarah"/>
+        <Class IRI="#DayaTarikWisata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DayaTarikWisata"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#berlokasiDi"/>
+            <Class IRI="#Lokasi"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DayaTarikWisata"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiFasilitas"/>
+            <Class IRI="#Fasilitas"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DayaTarikWisata"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiRating"/>
+            <Class IRI="#Rating"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Edukasi"/>
+        <Class IRI="#TujuanFasilitas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#berlokasiDi"/>
+            <Class IRI="#Lokasi"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiHarga"/>
+            <Class IRI="#HargaTiket"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#memilikiRating"/>
+            <Class IRI="#RatingEvent"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#tanggalEvent"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#namaEvent"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventBudaya"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventOrganizer"/>
+        <Class IRI="#Swasta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventReligi"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fasilitas"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#namaFasilitas"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FasilitasAkomodasi"/>
+        <Class IRI="#Fasilitas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FasilitasAnak"/>
+        <Class IRI="#Fasilitas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FasilitasDisabilitas"/>
+        <Class IRI="#Fasilitas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FasilitasEdukasi"/>
+        <Class IRI="#Fasilitas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FasilitasUmum"/>
+        <Class IRI="#Fasilitas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Harga"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#kategoriHarga"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HargaKamar"/>
+        <Class IRI="#Harga"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HargaMakanan"/>
+        <Class IRI="#Harga"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HargaTiket"/>
+        <Class IRI="#Harga"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HargaTransportasi"/>
+        <Class IRI="#Harga"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotel"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#berlokasiDi"/>
+            <Class IRI="#Lokasi"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotel"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiFasilitas"/>
+            <Class IRI="#FasilitasAkomodasi"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotel"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiHarga"/>
+            <Class IRI="#HargaKamar"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotel"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiWaktuBuka"/>
+            <Class IRI="#WaktuBukaHarian"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotel"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#memilikiRating"/>
+            <Class IRI="#RatingHotel"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotel"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#namaHotel"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HotelBintangEmpat"/>
+        <Class IRI="#Hotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HotelBintangLima"/>
+        <Class IRI="#Hotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HotelBintangTiga"/>
+        <Class IRI="#Hotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KategoriCepatSaji"/>
+        <Class IRI="#KategoriMakanan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KategoriMakanan"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#memilikiKategoriMakanan"/>
+            </ObjectInverseOf>
+            <Class IRI="#Makanan"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KategoriModern"/>
+        <Class IRI="#KategoriMakanan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KategoriTradisional"/>
+        <Class IRI="#KategoriMakanan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Khusus"/>
+        <Class IRI="#TujuanFasilitas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lokasi"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#memilikiBagian"/>
+            <Class IRI="#Lokasi"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lokasi"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#merupakanBagianDari"/>
+            <Class IRI="#Lokasi"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mahal"/>
+        <Class IRI="#HargaMakanan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Makanan"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiHarga"/>
+            <Class IRI="#HargaMakanan"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Makanan"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiKategoriMakanan"/>
+            <Class IRI="#KategoriMakanan"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MakananCepatSaji"/>
+        <Class IRI="#Makanan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MakananModern"/>
+        <Class IRI="#Makanan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MakananMurah"/>
+        <Class IRI="#Makanan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MakananTradisional"/>
+        <Class IRI="#Makanan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Masyarakat"/>
+        <Class IRI="#PemangkuKepentingan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MitraGoFood"/>
+        <Class IRI="#Restoran"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MitraGrabFood"/>
+        <Class IRI="#Restoran"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MitraShopeeFood"/>
+        <Class IRI="#Restoran"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Murah"/>
+        <Class IRI="#HargaMakanan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PemangkuKepentingan"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#berkepentinganPada"/>
+            <Class IRI="#TempatWisata"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pemerintah"/>
+        <Class IRI="#PemangkuKepentingan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PerusahaanHotel"/>
+        <Class IRI="#Swasta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PerusahaanRestoran"/>
+        <Class IRI="#Swasta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RatingEvent"/>
+        <Class IRI="#Rating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RatingHotel"/>
+        <Class IRI="#Rating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RatingRestoran"/>
+        <Class IRI="#Rating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RatingTempatWisata"/>
+        <Class IRI="#Rating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Regulasi"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#diBuatOleh"/>
+            <Class IRI="#PemangkuKepentingan"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RegulasiPariwisata"/>
+        <Class IRI="#Regulasi"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RegulasiPerizinan"/>
+        <Class IRI="#Regulasi"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Restoran"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#berlokasiDi"/>
+            <Class IRI="#Lokasi"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Restoran"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiFasilitas"/>
+            <Class IRI="#FasilitasUmum"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Restoran"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiHarga"/>
+            <Class IRI="#HargaMakanan"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Restoran"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiWaktuBuka"/>
+            <Class IRI="#WaktuBukaHarian"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Restoran"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiWaktuTutup"/>
+            <Class IRI="#WaktuTutupHarian"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Restoran"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#memilikiRating"/>
+            <Class IRI="#RatingRestoran"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Restoran"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#namaRestoran"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RestoranCepatSaji"/>
+        <Class IRI="#Restoran"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RestoranMahal"/>
+        <Class IRI="#Restoran"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RestoranMurah"/>
+        <Class IRI="#Restoran"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RestoranPopuler"/>
+        <Class IRI="#Restoran"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RestoranTradisional"/>
+        <Class IRI="#Restoran"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sedang"/>
+        <Class IRI="#HargaMakanan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Swasta"/>
+        <Class IRI="#PemangkuKepentingan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TempatWisata"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiFasilitas"/>
+            <Class IRI="#FasilitasUmum"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TempatWisata"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiHarga"/>
+            <Class IRI="#HargaTiket"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TempatWisata"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiWaktuBuka"/>
+            <Class IRI="#WaktuBukaHarian"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TempatWisata"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiWaktuTutup"/>
+            <Class IRI="#WaktuTutupHarian"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TempatWisata"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#memilikiRating"/>
+            <Class IRI="#RatingTempatWisata"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TempatWisata"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#memilikiFasilitas"/>
+            <Class IRI="#FasilitasUmum"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TempatWisata"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#berlokasiDi"/>
+            <Class IRI="#Lokasi"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TempatWisata"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#namaTempat"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transportasi"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#memilikiHarga"/>
+            <Class IRI="#HargaTransportasi"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportasiOnline"/>
+        <Class IRI="#Transportasi"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportasiUmum"/>
+        <Class IRI="#Transportasi"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TutupMalam"/>
+        <Class IRI="#WaktuTutupHarian"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TutupPagi"/>
+        <Class IRI="#WaktuTutupHarian"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TutupSiang"/>
+        <Class IRI="#WaktuTutupHarian"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TutupSore"/>
+        <Class IRI="#WaktuTutupHarian"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UUPariwisata"/>
+        <Class IRI="#UndangUndang"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UUPerizinan"/>
+        <Class IRI="#UndangUndang"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Umum"/>
+        <Class IRI="#TujuanFasilitas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UndangUndang"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#membahasPeraturan"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WaktuBukaHarian"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#jamBuka"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WaktuTutupHarian"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#jamTutup"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WisataAlam"/>
+        <Class IRI="#TempatWisata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WisataBudaya"/>
+        <Class IRI="#TempatWisata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WisataEdukasi"/>
+        <Class IRI="#TempatWisata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WisataKuliner"/>
+        <Class IRI="#TempatWisata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WisataPopuler"/>
+        <Class IRI="#TempatWisata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WisataReligi"/>
+        <Class IRI="#TempatWisata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WisataSejarah"/>
+        <Class IRI="#TempatWisata"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#DayaTarikAlam"/>
+        <Class IRI="#DayaTarikEdukasi"/>
+        <Class IRI="#DayaTarikKuliner"/>
+        <Class IRI="#DayaTarikSejarah"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#EventBudaya"/>
+        <Class IRI="#EventReligi"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#EventOrganizer"/>
+        <Class IRI="#PerusahaanHotel"/>
+        <Class IRI="#PerusahaanRestoran"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HargaKamar"/>
+        <Class IRI="#HargaMakanan"/>
+        <Class IRI="#HargaTiket"/>
+        <Class IRI="#HargaTransportasi"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HotelBintangEmpat"/>
+        <Class IRI="#HotelBintangLima"/>
+        <Class IRI="#HotelBintangTiga"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#KategoriCepatSaji"/>
+        <Class IRI="#KategoriModern"/>
+        <Class IRI="#KategoriTradisional"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Kecamatan"/>
+        <Class IRI="#Kota"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Mahal"/>
+        <Class IRI="#Murah"/>
+        <Class IRI="#Sedang"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Masyarakat"/>
+        <Class IRI="#Pemerintah"/>
+        <Class IRI="#Swasta"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#RatingEvent"/>
+        <Class IRI="#RatingHotel"/>
+        <Class IRI="#RatingRestoran"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#RatingEvent"/>
+        <Class IRI="#RatingHotel"/>
+        <Class IRI="#RatingTempatWisata"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#RegulasiPariwisata"/>
+        <Class IRI="#RegulasiPerizinan"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#TutupMalam"/>
+        <Class IRI="#TutupPagi"/>
+        <Class IRI="#TutupSiang"/>
+        <Class IRI="#TutupSore"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#UUPariwisata"/>
+        <Class IRI="#UUPerizinan"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#WisataAlam"/>
+        <Class IRI="#WisataBudaya"/>
+        <Class IRI="#WisataEdukasi"/>
+        <Class IRI="#WisataKuliner"/>
+        <Class IRI="#WisataReligi"/>
+        <Class IRI="#WisataSejarah"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Fasilitas"/>
+        <NamedIndividual IRI="#AksesKursiRoda"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Aplikasi"/>
+        <NamedIndividual IRI="#AplikasiGojek"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fasilitas"/>
+        <NamedIndividual IRI="#AreaBermainAnak"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Lokasi"/>
+        <NamedIndividual IRI="#Banjarsari"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transportasi"/>
+        <NamedIndividual IRI="#BatikSoloTrans"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TempatWisata"/>
+        <NamedIndividual IRI="#BukitSekipan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DayaTarikWisata"/>
+        <NamedIndividual IRI="#DayaTarikAlam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DayaTarikWisata"/>
+        <NamedIndividual IRI="#DayaTarikEdukasi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DayaTarikWisata"/>
+        <NamedIndividual IRI="#DayaTarikKuliner"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TujuanFasilitas"/>
+        <NamedIndividual IRI="#FasilitasAnak"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TujuanFasilitas"/>
+        <NamedIndividual IRI="#FasilitasKhusus"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TujuanFasilitas"/>
+        <NamedIndividual IRI="#FasilitasUmum"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fasilitas"/>
+        <NamedIndividual IRI="#FreeWiFi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Aplikasi"/>
+        <NamedIndividual IRI="#GoFood"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transportasi"/>
+        <NamedIndividual IRI="#GoRide"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Aplikasi"/>
+        <NamedIndividual IRI="#GrabFood"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Harga"/>
+        <NamedIndividual IRI="#HargaBst"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HargaMakanan"/>
+        <NamedIndividual IRI="#HargaNasiLiwet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Event"/>
+        <NamedIndividual IRI="#HaulSolo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hotel"/>
+        <NamedIndividual IRI="#HotelSunan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#KategoriMakanan"/>
+        <NamedIndividual IRI="#KategoriTradisional"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TempatWisata"/>
+        <NamedIndividual IRI="#KeratonSolo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Lokasi"/>
+        <NamedIndividual IRI="#KotaSurakarta"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Lokasi"/>
+        <NamedIndividual IRI="#Laweyan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fasilitas"/>
+        <NamedIndividual IRI="#Lift"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TempatWisata"/>
+        <NamedIndividual IRI="#LokanantaBloc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HargaMakanan"/>
+        <NamedIndividual IRI="#MakananMahal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HargaMakanan"/>
+        <NamedIndividual IRI="#MakananMurah"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fasilitas"/>
+        <NamedIndividual IRI="#Mushola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Makanan"/>
+        <NamedIndividual IRI="#NasiLiwet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Lokasi"/>
+        <NamedIndividual IRI="#PasarKliwon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Masyarakat"/>
+        <NamedIndividual IRI="#PemilikMasyarakat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Swasta"/>
+        <NamedIndividual IRI="#PemilikSwasta"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pemerintah"/>
+        <NamedIndividual IRI="#PemkotSurakarta"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PeringkatHotel"/>
+        <NamedIndividual IRI="#PeringkatHotelBintangEmpat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Restoran"/>
+        <NamedIndividual IRI="#PracimaTuin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rating"/>
+        <NamedIndividual IRI="#Rating_HotelSunan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rating"/>
+        <NamedIndividual IRI="#Rating_LokanantaBloc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rating"/>
+        <NamedIndividual IRI="#Rating_SotoGading"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Event"/>
+        <NamedIndividual IRI="#Sekaten"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Aplikasi"/>
+        <NamedIndividual IRI="#ShopeeFood"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Restoran"/>
+        <NamedIndividual IRI="#SotoGading"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fasilitas"/>
+        <NamedIndividual IRI="#TempatParkir"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fasilitas"/>
+        <NamedIndividual IRI="#ToiletUmum"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WaktuBukaHarian"/>
+        <NamedIndividual IRI="#WaktuBukaBST"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WaktuTutupHarian"/>
+        <NamedIndividual IRI="#WaktuTutupBST"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#melayaniTujuan"/>
+        <NamedIndividual IRI="#AksesKursiRoda"/>
+        <NamedIndividual IRI="#FasilitasKhusus"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memprosesPesanan"/>
+        <NamedIndividual IRI="#AplikasiGojek"/>
+        <NamedIndividual IRI="#GoFood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memprosesPesanan"/>
+        <NamedIndividual IRI="#AplikasiGojek"/>
+        <NamedIndividual IRI="#GoRide"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#melayaniTujuan"/>
+        <NamedIndividual IRI="#AreaBermainAnak"/>
+        <NamedIndividual IRI="#FasilitasAnak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#merupakanBagianDari"/>
+        <NamedIndividual IRI="#Banjarsari"/>
+        <NamedIndividual IRI="#KotaSurakarta"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dimilikiOleh"/>
+        <NamedIndividual IRI="#BatikSoloTrans"/>
+        <NamedIndividual IRI="#PemkotSurakarta"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiHarga"/>
+        <NamedIndividual IRI="#BatikSoloTrans"/>
+        <NamedIndividual IRI="#HargaBst"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiWaktuBuka"/>
+        <NamedIndividual IRI="#BatikSoloTrans"/>
+        <NamedIndividual IRI="#WaktuBukaBST"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiWaktuTutup"/>
+        <NamedIndividual IRI="#BatikSoloTrans"/>
+        <NamedIndividual IRI="#WaktuTutupBST"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiDayaTarik"/>
+        <NamedIndividual IRI="#BukitSekipan"/>
+        <NamedIndividual IRI="#DayaTarikAlam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#melayaniTujuan"/>
+        <NamedIndividual IRI="#FreeWiFi"/>
+        <NamedIndividual IRI="#FasilitasUmum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#berlokasiDi"/>
+        <NamedIndividual IRI="#HaulSolo"/>
+        <NamedIndividual IRI="#PasarKliwon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#berlokasiDi"/>
+        <NamedIndividual IRI="#HotelSunan"/>
+        <NamedIndividual IRI="#Laweyan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dimilikiOleh"/>
+        <NamedIndividual IRI="#HotelSunan"/>
+        <NamedIndividual IRI="#PemilikSwasta"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiFasilitas"/>
+        <NamedIndividual IRI="#HotelSunan"/>
+        <NamedIndividual IRI="#Lift"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiRating"/>
+        <NamedIndividual IRI="#HotelSunan"/>
+        <NamedIndividual IRI="#Rating_HotelSunan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#peringkatHotel"/>
+        <NamedIndividual IRI="#HotelSunan"/>
+        <NamedIndividual IRI="#PeringkatHotelBintangEmpat"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#menghidangkan"/>
+        <NamedIndividual IRI="#KategoriTradisional"/>
+        <NamedIndividual IRI="#NasiLiwet"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dimilikiOleh"/>
+        <NamedIndividual IRI="#KeratonSolo"/>
+        <NamedIndividual IRI="#PemilikSwasta"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#menyelenggarakan"/>
+        <NamedIndividual IRI="#KeratonSolo"/>
+        <NamedIndividual IRI="#Sekaten"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#merupakanBagianDari"/>
+        <NamedIndividual IRI="#Laweyan"/>
+        <NamedIndividual IRI="#KotaSurakarta"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#melayaniTujuan"/>
+        <NamedIndividual IRI="#Lift"/>
+        <NamedIndividual IRI="#FasilitasKhusus"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#berlokasiDi"/>
+        <NamedIndividual IRI="#LokanantaBloc"/>
+        <NamedIndividual IRI="#Laweyan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dekatDenganHotel"/>
+        <NamedIndividual IRI="#LokanantaBloc"/>
+        <NamedIndividual IRI="#HotelSunan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dekatDenganTransportasi"/>
+        <NamedIndividual IRI="#LokanantaBloc"/>
+        <NamedIndividual IRI="#BatikSoloTrans"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiDayaTarik"/>
+        <NamedIndividual IRI="#LokanantaBloc"/>
+        <NamedIndividual IRI="#DayaTarikEdukasi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiRating"/>
+        <NamedIndividual IRI="#LokanantaBloc"/>
+        <NamedIndividual IRI="#Rating_LokanantaBloc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#melayaniTujuan"/>
+        <NamedIndividual IRI="#Mushola"/>
+        <NamedIndividual IRI="#FasilitasUmum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiHarga"/>
+        <NamedIndividual IRI="#NasiLiwet"/>
+        <NamedIndividual IRI="#HargaNasiLiwet"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiKategoriMakanan"/>
+        <NamedIndividual IRI="#NasiLiwet"/>
+        <NamedIndividual IRI="#KategoriTradisional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#merupakanBagianDari"/>
+        <NamedIndividual IRI="#PasarKliwon"/>
+        <NamedIndividual IRI="#KotaSurakarta"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#berlokasiDi"/>
+        <NamedIndividual IRI="#PracimaTuin"/>
+        <NamedIndividual IRI="#Banjarsari"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dimilikiOleh"/>
+        <NamedIndividual IRI="#PracimaTuin"/>
+        <NamedIndividual IRI="#PemilikSwasta"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiHarga"/>
+        <NamedIndividual IRI="#PracimaTuin"/>
+        <NamedIndividual IRI="#MakananMahal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ratingDari"/>
+        <NamedIndividual IRI="#Rating_HotelSunan"/>
+        <NamedIndividual IRI="#HotelSunan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ratingDari"/>
+        <NamedIndividual IRI="#Rating_LokanantaBloc"/>
+        <NamedIndividual IRI="#LokanantaBloc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ratingDari"/>
+        <NamedIndividual IRI="#Rating_SotoGading"/>
+        <NamedIndividual IRI="#SotoGading"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#berlokasiDi"/>
+        <NamedIndividual IRI="#Sekaten"/>
+        <NamedIndividual IRI="#PasarKliwon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#berlokasiDi"/>
+        <NamedIndividual IRI="#SotoGading"/>
+        <NamedIndividual IRI="#PasarKliwon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dimilikiOleh"/>
+        <NamedIndividual IRI="#SotoGading"/>
+        <NamedIndividual IRI="#PemilikMasyarakat"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dipesanMelalui"/>
+        <NamedIndividual IRI="#SotoGading"/>
+        <NamedIndividual IRI="#GoFood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dipesanMelalui"/>
+        <NamedIndividual IRI="#SotoGading"/>
+        <NamedIndividual IRI="#GrabFood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#dipesanMelalui"/>
+        <NamedIndividual IRI="#SotoGading"/>
+        <NamedIndividual IRI="#ShopeeFood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiDayaTarik"/>
+        <NamedIndividual IRI="#SotoGading"/>
+        <NamedIndividual IRI="#DayaTarikKuliner"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiHarga"/>
+        <NamedIndividual IRI="#SotoGading"/>
+        <NamedIndividual IRI="#MakananMurah"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#memilikiRating"/>
+        <NamedIndividual IRI="#SotoGading"/>
+        <NamedIndividual IRI="#Rating_SotoGading"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#melayaniTujuan"/>
+        <NamedIndividual IRI="#TempatParkir"/>
+        <NamedIndividual IRI="#FasilitasUmum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#melayaniTujuan"/>
+        <NamedIndividual IRI="#ToiletUmum"/>
+        <NamedIndividual IRI="#FasilitasUmum"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aksesDisabilitas"/>
+        <NamedIndividual IRI="#AksesKursiRoda"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#kategoriDayaTarik"/>
+        <NamedIndividual IRI="#DayaTarikAlam"/>
+        <Literal>alam</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#kategoriDayaTarik"/>
+        <NamedIndividual IRI="#DayaTarikEdukasi"/>
+        <Literal>edukasi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#kategoriDayaTarik"/>
+        <NamedIndividual IRI="#DayaTarikKuliner"/>
+        <Literal>kuliner</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tujuanLayanan"/>
+        <NamedIndividual IRI="#FasilitasAnak"/>
+        <Literal>anak</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tujuanLayanan"/>
+        <NamedIndividual IRI="#FasilitasKhusus"/>
+        <Literal>khusus</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tujuanLayanan"/>
+        <NamedIndividual IRI="#FasilitasUmum"/>
+        <Literal>umum</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#kategoriHarga"/>
+        <NamedIndividual IRI="#HargaBst"/>
+        <Literal>transportasi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nilaiHarga"/>
+        <NamedIndividual IRI="#HargaBst"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">3700.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nilaiHarga"/>
+        <NamedIndividual IRI="#HargaNasiLiwet"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">12000.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#kategoriEvent"/>
+        <NamedIndividual IRI="#HaulSolo"/>
+        <Literal>religi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#namaEvent"/>
+        <NamedIndividual IRI="#HaulSolo"/>
+        <Literal>Haul Habib Ali</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tanggalEvent"/>
+        <NamedIndividual IRI="#HaulSolo"/>
+        <Literal>2025-10-12</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#kategoriMakanan"/>
+        <NamedIndividual IRI="#KategoriTradisional"/>
+        <Literal>tradisional</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aksesDisabilitas"/>
+        <NamedIndividual IRI="#Lift"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#jamBuka"/>
+        <NamedIndividual IRI="#LokanantaBloc"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#jamTutup"/>
+        <NamedIndividual IRI="#LokanantaBloc"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2300</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nilaiHarga"/>
+        <NamedIndividual IRI="#MakananMahal"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">120000.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nilaiHarga"/>
+        <NamedIndividual IRI="#MakananMurah"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">15000.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#bintangHotel"/>
+        <NamedIndividual IRI="#PeringkatHotelBintangEmpat"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nilaiRating"/>
+        <NamedIndividual IRI="#Rating_HotelSunan"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">4.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nilaiRating"/>
+        <NamedIndividual IRI="#Rating_LokanantaBloc"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">4.8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nilaiRating"/>
+        <NamedIndividual IRI="#Rating_SotoGading"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">4.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#kategoriEvent"/>
+        <NamedIndividual IRI="#Sekaten"/>
+        <Literal>budaya</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#namaEvent"/>
+        <NamedIndividual IRI="#Sekaten"/>
+        <Literal>Sekatan Solo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tanggalEvent"/>
+        <NamedIndividual IRI="#Sekaten"/>
+        <Literal>2025-09-09</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#jamBuka"/>
+        <NamedIndividual IRI="#SotoGading"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">600</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#jamTutup"/>
+        <NamedIndividual IRI="#SotoGading"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1600</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#jamBuka"/>
+        <NamedIndividual IRI="#WaktuBukaBST"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">500</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#jamTutup"/>
+        <NamedIndividual IRI="#WaktuTutupBST"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2100</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#menghidangkan"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#dekatDenganTransportasi"/>
+        <ObjectProperty IRI="#dilaluiOlehTransportasi"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#digunakanOleh"/>
+        <ObjectProperty IRI="#memilikiFasilitas"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#dipesanMelalui"/>
+        <ObjectProperty IRI="#memprosesPesanan"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#memilikiBagian"/>
+        <ObjectProperty IRI="#merupakanBagianDari"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#berlokasiDi"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#memilikiWaktuBuka"/>
+    </FunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#berjarakDengan"/>
+    </SymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#merupakanBagianDari"/>
+    </TransitiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#berjarakDengan"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#berjarakDengan"/>
+        <ObjectUnionOf>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restoran"/>
+            <Class IRI="#TempatWisata"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#berkepentinganPada"/>
+        <Class IRI="#PemangkuKepentingan"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#berlokasiDi"/>
+        <ObjectUnionOf>
+            <Class IRI="#Event"/>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restoran"/>
+            <Class IRI="#TempatWisata"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#dekatDenganHotel"/>
+        <Class IRI="#TempatWisata"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#dekatDenganRestoran"/>
+        <ObjectUnionOf>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#TempatWisata"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#dekatDenganTransportasi"/>
+        <ObjectUnionOf>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#TempatWisata"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#diBuatOleh"/>
+        <Class IRI="#Regulasi"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#dimilikiOleh"/>
+        <ObjectUnionOf>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restoran"/>
+            <Class IRI="#TempatWisata"/>
+            <Class IRI="#Transportasi"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#melayaniTujuan"/>
+        <Class IRI="#Fasilitas"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#memilikiDayaTarik"/>
+        <Class IRI="#TempatWisata"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#memilikiFasilitas"/>
+        <ObjectUnionOf>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restoran"/>
+            <Class IRI="#TempatWisata"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#memilikiHarga"/>
+        <ObjectUnionOf>
+            <Class IRI="#Event"/>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restoran"/>
+            <Class IRI="#TempatWisata"/>
+            <Class IRI="#Transportasi"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#memilikiHargaMakanan"/>
+        <Class IRI="#Makanan"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#memilikiKategoriMakanan"/>
+        <Class IRI="#Makanan"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#memilikiPeringkat"/>
+        <Class IRI="#Hotel"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#memilikiRating"/>
+        <ObjectUnionOf>
+            <Class IRI="#Event"/>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restoran"/>
+            <Class IRI="#TempatWisata"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#memilikiWaktuBuka"/>
+        <ObjectUnionOf>
+            <Class IRI="#Event"/>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restoran"/>
+            <Class IRI="#TempatWisata"/>
+            <Class IRI="#Transportasi"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#memilikiWaktuTutup"/>
+        <ObjectUnionOf>
+            <Class IRI="#Event"/>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restoran"/>
+            <Class IRI="#TempatWisata"/>
+            <Class IRI="#Transportasi"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#memprosesPesanan"/>
+        <Class IRI="#Aplikasi"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#mengacuPada"/>
+        <Class IRI="#Regulasi"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#mengatur"/>
+        <Class IRI="#PemangkuKepentingan"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#mengelola"/>
+        <Class IRI="#PemangkuKepentingan"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#menghidangkan"/>
+        <ObjectUnionOf>
+            <Class IRI="#KategoriMakanan"/>
+            <Class IRI="#Restoran"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#menikmati"/>
+        <Class IRI="#PemangkuKepentingan"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#menjadiDasar"/>
+        <Class IRI="#UndangUndang"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#menyelenggarakan"/>
+        <Class IRI="#TempatWisata"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#merupakanBagianDari"/>
+        <Class IRI="#Lokasi"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#peringkatHotel"/>
+        <Class IRI="#Hotel"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ratingDari"/>
+        <Class IRI="#Rating"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#terletakDi"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#berjarakDengan"/>
+        <ObjectUnionOf>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restoran"/>
+            <Class IRI="#TempatWisata"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#berkepentinganPada"/>
+        <Class IRI="#TempatWisata"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#berlokasiDi"/>
+        <Class IRI="#Lokasi"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#dekatDenganHotel"/>
+        <Class IRI="#Hotel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#dekatDenganRestoran"/>
+        <Class IRI="#Restoran"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#dekatDenganTransportasi"/>
+        <Class IRI="#Transportasi"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#diBuatOleh"/>
+        <Class IRI="#PemangkuKepentingan"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#dimilikiOleh"/>
+        <Class IRI="#PemangkuKepentingan"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#dipesanMelalui"/>
+        <Class IRI="#Aplikasi"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#melayaniTujuan"/>
+        <Class IRI="#TujuanFasilitas"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#memilikiDayaTarik"/>
+        <Class IRI="#DayaTarikWisata"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#memilikiFasilitas"/>
+        <Class IRI="#Fasilitas"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#memilikiHarga"/>
+        <Class IRI="#Harga"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#memilikiHargaMakanan"/>
+        <Class IRI="#HargaMakanan"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#memilikiKategoriMakanan"/>
+        <Class IRI="#KategoriMakanan"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#memilikiPeringkat"/>
+        <Class IRI="#PeringkatHotel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#memilikiRating"/>
+        <Class IRI="#Rating"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#memilikiWaktuBuka"/>
+        <Class IRI="#WaktuBukaHarian"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#memilikiWaktuTutup"/>
+        <Class IRI="#WaktuTutupHarian"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#memprosesPesanan"/>
+        <ObjectUnionOf>
+            <Class IRI="#Aplikasi"/>
+            <Class IRI="#Restoran"/>
+            <Class IRI="#Transportasi"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#mengacuPada"/>
+        <Class IRI="#UndangUndang"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#mengatur"/>
+        <Class IRI="#Regulasi"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#mengelola"/>
+        <ObjectUnionOf>
+            <Class IRI="#Event"/>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restoran"/>
+            <Class IRI="#TempatWisata"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#menghidangkan"/>
+        <Class IRI="#Makanan"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#menikmati"/>
+        <Class IRI="#TempatWisata"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#menjadiDasar"/>
+        <Class IRI="#Regulasi"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#menyelenggarakan"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#merupakanBagianDari"/>
+        <Class IRI="#Lokasi"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#peringkatHotel"/>
+        <Class IRI="#PeringkatHotel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ratingDari"/>
+        <ObjectUnionOf>
+            <Class IRI="#Event"/>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Restoran"/>
+            <Class IRI="#TempatWisata"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#terletakDi"/>
+        <ObjectUnionOf>
+            <Class IRI="#Lokasi"/>
+            <Class IRI="#TempatWisata"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#deskripsiTempat"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#jumlahUlasan"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#kapasitasPengunjung"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#namaHotel"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#namaRestoran"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#namaTempat"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#nilaiHarga"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#nilaiRating"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#satuanHarga"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#alamat"/>
+        <ObjectUnionOf>
+            <Class IRI="#Hotel"/>
+            <Class IRI="#Lokasi"/>
+            <Class IRI="#Restoran"/>
+            <Class IRI="#TempatWisata"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#bintangHotel"/>
+        <Class IRI="#PeringkatHotel"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#deskripsiTempat"/>
+        <Class IRI="#TempatWisata"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hariBuka"/>
+        <Class IRI="#WaktuBukaHarian"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#jamBuka"/>
+        <Class IRI="#WaktuBukaHarian"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#jamTutup"/>
+        <Class IRI="#WaktuTutupHarian"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#jumlahUlasan"/>
+        <Class IRI="#Rating"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#kapasitasPengunjung"/>
+        <Class IRI="#TempatWisata"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#kategoriDayaTarik"/>
+        <Class IRI="#DayaTarikWisata"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#kategoriEvent"/>
+        <Class IRI="#Event"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#kategoriHarga"/>
+        <Class IRI="#Harga"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#kategoriMakanan"/>
+        <Class IRI="#KategoriMakanan"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#komentarRating"/>
+        <Class IRI="#Rating"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#membahasPeraturan"/>
+        <Class IRI="#UndangUndang"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#namaAplikasi"/>
+        <Class IRI="#Aplikasi"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#namaEvent"/>
+        <Class IRI="#Event"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#namaFasilitas"/>
+        <Class IRI="#Fasilitas"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#namaHotel"/>
+        <Class IRI="#Hotel"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#namaRestoran"/>
+        <Class IRI="#Restoran"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#namaTempat"/>
+        <Class IRI="#TempatWisata"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nilaiHarga"/>
+        <ObjectUnionOf>
+            <Class IRI="#HargaMakanan"/>
+            <Class IRI="#HargaTransportasi"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nilaiRating"/>
+        <Class IRI="#Rating"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#satuanHarga"/>
+        <Class IRI="#Harga"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tanggalEvent"/>
+        <Class IRI="#Event"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tujuanLayanan"/>
+        <Class IRI="#TujuanFasilitas"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#aksesDisabilitas"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#alamat"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#bintangHotel"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#deskripsiTempat"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hariBuka"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#jamBuka"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#jamTutup"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#jumlahUlasan"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#kapasitasPengunjung"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#kategoriDayaTarik"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#kategoriEvent"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#kategoriHarga"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#kategoriMakanan"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#komentarRating"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#membahasPeraturan"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#namaAplikasi"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#namaEvent"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#namaFasilitas"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#namaHotel"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#namaRestoran"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#namaTempat"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nilaiHarga"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nilaiRating"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#satuanHarga"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tanggalEvent"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tujuanLayanan"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Masyarakat</IRI>
+        <Literal>Masyarakat di sini berperan sebagai pelaku konsume yang menikmati pariwisata kota solo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PeringkatHotel</IRI>
+        <Literal>Ini adalah Class yang menunjukkan hotel bintang berapa nya</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rating</IRI>
+        <Literal>Ini adalah class untuk memberikan nilai Rating berdasarkan Google</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TujuanFasilitas</IRI>
+        <Literal>Class untuk mengkategorikan tujuan Fasilitas yang disediakan</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

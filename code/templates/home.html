@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daftar Fasilitas</title>
+</head>
+<body>
+    <h1>Daftar Semua Fasilitas</h1>
+    <ul>
+        {% for f in all_fasilitas %}
+        <li>
+            <p href="/fasilitas/{{ f.name }}">{{ f.name }}</p>
+            
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

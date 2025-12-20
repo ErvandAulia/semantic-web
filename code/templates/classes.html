@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Semua Class Ontology</title>
+    <link rel="stylesheet" 
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Daftar Semua Class di Ontology</h1>
+
+    <div class="card shadow p-4">
+        <ul class="list-group">
+            {% for cls in all_classes %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ cls.name }}
+                <a href="/class/{{ cls.name }}" class="btn btn-primary btn-sm">Lihat Instances</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/" class="btn btn-secondary">Kembali ke Home</a>
+    </div>
+</div>
+
+</body>
+</html>
