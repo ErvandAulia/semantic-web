@@ -155,12 +155,18 @@ def show_instance_detail(instancename):
     # Ambil rating (jika ada)
     # -----------------------------
     rating = "-"
-    if hasattr(hotel, "memilikiRating") and hotel.memilikiRating:
-        r = hotel.memilikiRating
-        if isinstance(r, list):
-            r = r[0]
+    # Cek apakah properti ada dan tidak kosong (None)
+    if hasattr(hotel, "nilaiRating") and hotel.nilaiRating is not None:
+        raw_val = hotel.nilaiRating
+        # Cek apakah hasilnya berupa List (jika property TIDAK Functional)
+        if isinstance(raw_val, list):
+            if len(raw_val) > 0:
+                rating = raw_val[0]
+        # Jika hasilnya langsung Angka/Float (jika property Functional)
+        else:
+            rating = raw_val
 
-    rating = r.name if hasattr(r, "name") else str(r)
+    # rating = r.name if hasattr(r, "name") else str(r)
 
     return render_template(
         "hotel_detail.html",
