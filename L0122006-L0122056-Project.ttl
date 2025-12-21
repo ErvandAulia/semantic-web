@@ -1322,6 +1322,28 @@ l0122006-l0122056-project:BukitSekipan rdf:type owl:NamedIndividual ,
                                        l0122006-l0122056-project:nilaiRating "4.4"^^xsd:float .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FaveHotel
+l0122006-l0122056-project:FaveHotel rdf:type owl:NamedIndividual ,
+                                             l0122006-l0122056-project:Hotel ;
+                                    l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:Laweyan ;
+                                    l0122006-l0122056-project:memilikiFasilitas l0122006-l0122056-project:AksesKursiRoda ,
+                                                                                l0122006-l0122056-project:FreeWiFi ,
+                                                                                l0122006-l0122056-project:Lift ,
+                                                                                l0122006-l0122056-project:TempatParkir ,
+                                                                                l0122006-l0122056-project:ToiletUmum ;
+                                    l0122006-l0122056-project:bintangHotel 3 ;
+                                    l0122006-l0122056-project:nilaiRating "4.5"^^xsd:float .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FortVastenBurg
+l0122006-l0122056-project:FortVastenBurg rdf:type owl:NamedIndividual ,
+                                                  l0122006-l0122056-project:TempatWisata ;
+                                         l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:PasarKliwon ;
+                                         l0122006-l0122056-project:dekatDenganHotel l0122006-l0122056-project:TheRoyalSurakartaHeritage ;
+                                         l0122006-l0122056-project:kategoriDayaTarik "sejarah" ;
+                                         l0122006-l0122056-project:nilaiRating "4.5"^^xsd:float .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FreeWiFi
 l0122006-l0122056-project:FreeWiFi rdf:type owl:NamedIndividual ,
                                             l0122006-l0122056-project:Fasilitas ;
@@ -1405,6 +1427,17 @@ l0122006-l0122056-project:KotaSurakarta rdf:type owl:NamedIndividual ,
                                                  l0122006-l0122056-project:Lokasi .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#LaksanaSolo
+l0122006-l0122056-project:LaksanaSolo rdf:type owl:NamedIndividual ,
+                                               l0122006-l0122056-project:Hotel ;
+                                      l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:Banjarsari ;
+                                      l0122006-l0122056-project:memilikiFasilitas l0122006-l0122056-project:AksesKursiRoda ,
+                                                                                  l0122006-l0122056-project:FreeWiFi ,
+                                                                                  l0122006-l0122056-project:Lift ;
+                                      l0122006-l0122056-project:bintangHotel 3 ;
+                                      l0122006-l0122056-project:nilaiRating "4.1"^^xsd:float .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Laweyan
 l0122006-l0122056-project:Laweyan rdf:type owl:NamedIndividual ,
                                            l0122006-l0122056-project:Lokasi ;
@@ -1416,6 +1449,18 @@ l0122006-l0122056-project:Lift rdf:type owl:NamedIndividual ,
                                         l0122006-l0122056-project:Fasilitas ;
                                l0122006-l0122056-project:tujuanLayanan "khusus" ,
                                                                        "umum" .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#LojiHotel
+l0122006-l0122056-project:LojiHotel rdf:type owl:NamedIndividual ,
+                                             l0122006-l0122056-project:Hotel ;
+                                    l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:Banjarsari ;
+                                    l0122006-l0122056-project:memilikiFasilitas l0122006-l0122056-project:AksesKursiRoda ,
+                                                                                l0122006-l0122056-project:FreeWiFi ,
+                                                                                l0122006-l0122056-project:Mushola ,
+                                                                                l0122006-l0122056-project:TempatParkir ;
+                                    l0122006-l0122056-project:bintangHotel 3 ;
+                                    l0122006-l0122056-project:nilaiRating "4.2"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#LokanantaBloc
@@ -1446,6 +1491,28 @@ l0122006-l0122056-project:MakananMurah rdf:type owl:NamedIndividual ,
                                        l0122006-l0122056-project:nilaiHarga "15000.0"^^xsd:float .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MasjidRayaSheikhZayed
+l0122006-l0122056-project:MasjidRayaSheikhZayed rdf:type owl:NamedIndividual ,
+                                                         l0122006-l0122056-project:TempatWisata ;
+                                                l0122006-l0122056-project:dekatDenganHotel l0122006-l0122056-project:LojiHotel ;
+                                                l0122006-l0122056-project:memilikiFasilitas l0122006-l0122056-project:AksesKursiRoda ;
+                                                l0122006-l0122056-project:jamBuka 2100 ,
+                                                                                  300 ;
+                                                l0122006-l0122056-project:kategoriDayaTarik "religi" ;
+                                                l0122006-l0122056-project:nilaiRating "4.7"^^xsd:float .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MuseumBatikDanarHadi
+l0122006-l0122056-project:MuseumBatikDanarHadi rdf:type owl:NamedIndividual ,
+                                                        l0122006-l0122056-project:TempatWisata ;
+                                               l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:Laweyan ;
+                                               l0122006-l0122056-project:dekatDenganHotel l0122006-l0122056-project:LaksanaSolo ;
+                                               l0122006-l0122056-project:jamBuka 900 ;
+                                               l0122006-l0122056-project:jamTutup 1700 ;
+                                               l0122006-l0122056-project:kategoriDayaTarik "edukasi" ;
+                                               l0122006-l0122056-project:nilaiRating "4.7"^^xsd:float .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Mushola
 l0122006-l0122056-project:Mushola rdf:type owl:NamedIndividual ,
                                            l0122006-l0122056-project:Fasilitas ;
@@ -1457,6 +1524,14 @@ l0122006-l0122056-project:NasiLiwet rdf:type owl:NamedIndividual ,
                                              l0122006-l0122056-project:Makanan ;
                                     l0122006-l0122056-project:memilikiHarga l0122006-l0122056-project:HargaNasiLiwet ;
                                     l0122006-l0122056-project:memilikiKategoriMakanan l0122006-l0122056-project:KategoriTradisional .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PasarGedeHardjonagoro
+l0122006-l0122056-project:PasarGedeHardjonagoro rdf:type owl:NamedIndividual ,
+                                                         l0122006-l0122056-project:TempatWisata ;
+                                                l0122006-l0122056-project:dekatDenganHotel l0122006-l0122056-project:TheRoyalSurakartaHeritage ;
+                                                l0122006-l0122056-project:kategoriDayaTarik "kuliner" ;
+                                                l0122006-l0122056-project:nilaiRating "4.6"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PasarKliwon
@@ -1484,6 +1559,7 @@ l0122006-l0122056-project:PemkotSurakarta rdf:type owl:NamedIndividual ,
 l0122006-l0122056-project:PracimaTuin rdf:type owl:NamedIndividual ,
                                                l0122006-l0122056-project:Restoran ;
                                       l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:Banjarsari ;
+                                      l0122006-l0122056-project:dekatDenganHotel l0122006-l0122056-project:LojiHotel ;
                                       l0122006-l0122056-project:dimilikiOleh l0122006-l0122056-project:PemilikSwasta ;
                                       l0122006-l0122056-project:memilikiFasilitas l0122006-l0122056-project:AksesKursiRoda ,
                                                                                   l0122006-l0122056-project:FreeWiFi ,
@@ -1491,7 +1567,8 @@ l0122006-l0122056-project:PracimaTuin rdf:type owl:NamedIndividual ,
                                                                                   l0122006-l0122056-project:ToiletUmum ;
                                       l0122006-l0122056-project:memilikiHarga l0122006-l0122056-project:MakananMahal ;
                                       l0122006-l0122056-project:jamBuka 1000 ;
-                                      l0122006-l0122056-project:jamTutup 2100 .
+                                      l0122006-l0122056-project:jamTutup 2100 ;
+                                      l0122006-l0122056-project:kategoriDayaTarik "kuliner" .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Sekaten
@@ -1529,6 +1606,20 @@ l0122006-l0122056-project:SotoGading rdf:type owl:NamedIndividual ,
 l0122006-l0122056-project:TempatParkir rdf:type owl:NamedIndividual ,
                                                 l0122006-l0122056-project:Fasilitas ;
                                        l0122006-l0122056-project:tujuanLayanan "umum" .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TheRoyalSurakartaHeritage
+l0122006-l0122056-project:TheRoyalSurakartaHeritage rdf:type owl:NamedIndividual ,
+                                                             l0122006-l0122056-project:Hotel ;
+                                                    l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:PasarKliwon ;
+                                                    l0122006-l0122056-project:memilikiFasilitas l0122006-l0122056-project:AksesKursiRoda ,
+                                                                                                l0122006-l0122056-project:FreeWiFi ,
+                                                                                                l0122006-l0122056-project:Lift ,
+                                                                                                l0122006-l0122056-project:Mushola ,
+                                                                                                l0122006-l0122056-project:TempatParkir ,
+                                                                                                l0122006-l0122056-project:ToiletUmum ;
+                                                    l0122006-l0122056-project:bintangHotel 5 ;
+                                                    l0122006-l0122056-project:nilaiRating "4.6"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#ToiletUmum
