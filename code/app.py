@@ -9,11 +9,11 @@ from owlready2 import *
 # LOAD ONTOLOGY
 # ------------------------------------------------
 onto_path.append("ontology")  # Folder tempat file OWL berada
-onto = get_ontology("ontology/L0122006-Project-Ver2.owx").load()
+onto = get_ontology("ontology/L0122006-L0122056-Project.owl").load()
 
 # Jalankan reasoner agar hasil inference ikut terbaca
 with onto:
-    sync_reasoner()
+    sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
 
 # ------------------------------------------------
 # INISIASI FLASK
