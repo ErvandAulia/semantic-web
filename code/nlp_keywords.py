@@ -60,4 +60,10 @@ NLP_MAP = {
     "malam":        {"type": "waktu", "value": "Malam"},
     "buka":         {"type": "status", "value": "Buka"},
     "tutup":        {"type": "status", "value": "Tutup"},
+
+    # --- HUBUNGAN / RELASI (BARU!) ---
+    "dekat":        {"type": "relation", "value": "nearby"},
+    "sekitar":      {"type": "relation", "value": "nearby"},
+    "sebelah":      {"type": "relation", "value": "nearby"},
+    "pinggir":      {"type": "relation", "value": "nearby"},
 }

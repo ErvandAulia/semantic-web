@@ -34,31 +34,60 @@ with onto:
 
 app = Flask(__name__)
 
-# ==========================================
-# HELPER: NLP SEARCH ENGINE
+# ===================# ==========================================
+# HELPER: NLP SEARCH ENGINE (UPGRADED)
 # ==========================================
 def nlp_search_engine(query_text):
     tokens = word_tokenize(query_text.lower())
     
     filters = {
-        "target_class": None, # Akan diisi Object Class Ontologi
+        "target_class": None,
         "lokasi": None,
         "kategori": None,
         "waktu": None,
-        "status": None
+        "status": None,
+        "relation_prop": None # Filter Baru: Properti Relasi
     }
     
-    # 1. Parsing Token & Mapping
-    for token in tokens:
+    # Set untuk melacak token yang sudah terpakai sebagai objek relasi
+    skip_indices = set()
+
+    # 1. SCAN RELASI ("... dekat Hotel")
+    # Kita scan dulu apakah ada kata "dekat" diikuti Tipe Tempat
+    for i, token in enumerate(tokens):
+        if token in NLP_MAP and NLP_MAP[token]["type"] == "relation":
+            # Cek token setelahnya (Next Token)
+            if i + 1 < len(tokens):
+                next_token = tokens[i+1]
+                if next_token in NLP_MAP and NLP_MAP[next_token]["type"] == "class":
+                    # Mapping Class Target -> Nama Properti di Ontologi
+                    target_obj_type = NLP_MAP[next_token]["value"] # e.g. "Hotel"
+                    
+                    if target_obj_type == "Hotel":
+                        filters["relation_prop"] = "dekatDenganHotel"
+                    elif target_obj_type == "Restoran":
+                        filters["relation_prop"] = "dekatDenganRestoran"
+                    elif target_obj_type == "Transportasi":
+                        filters["relation_prop"] = "dekatDenganTransportasi"
+                    
+                    # Tandai token ini agar tidak dianggap sebagai Tipe Utama
+                    skip_indices.add(i+1) 
+
+    # 2. PARSING STANDARD
+    for i, token in enumerate(tokens):
+        # Skip jika token ini adalah objek dari relasi "dekat X"
+        if i in skip_indices:
+            continue
+
         if token in NLP_MAP:
             mapping = NLP_MAP[token]
-            val = mapping["value"] # String, misal "Hotel" atau "Laweyan"
+            val = mapping["value"]
             typ = mapping["type"]
 
             if typ == "class":
-                # KONVERSI STRING JADI CLASS ONTOLOGY
-                # onto[val] akan mencari Class dengan nama "Hotel" di ontologi
-                filters["target_class"] = onto[val]
+                # Hanya set jika belum ada (Prioritaskan subjek di awal kalimat)
+                if not filters["target_class"]: 
+                    filters["target_class"] = onto[val]
             elif typ == "lokasi":
                 filters["lokasi"] = val
             elif typ == "kategori":
@@ -68,116 +97,88 @@ def nlp_search_engine(query_text):
             elif typ == "status":
                 filters["status"] = val
 
-    # 2. Tentukan Kandidat (Scope)
+    # 3. TENTUKAN KANDIDAT
     candidates = []
     if filters["target_class"]:
-        # Jika user minta spesifik (misal "Hotel"), ambil instance Class itu
         candidates = list(filters["target_class"].instances())
     else:
-        # Jika tidak, ambil SEMUA instance relevan
+        # Jika user cuma ketik "yang dekat hotel" (tanpa subjek), cari di semua tempat
         candidates = list(onto.TempatWisata.instances()) + \
                      list(onto.Restoran.instances()) + \
-                     list(onto.Hotel.instances()) + \
-                     list(onto.Transportasi.instances())
-        candidates = list(set(candidates)) # Hapus duplikat
+                     list(onto.Hotel.instances())
+        candidates = list(set(candidates))
 
     results = []
     
-    # 3. Filtering Logic
+    # 4. FILTERING
     for obj in candidates:
         match = True
         
-        # --- A. Filter Lokasi ---
+        # --- Filter Lokasi ---
         if filters["lokasi"]:
             obj_loc = "-"
             if hasattr(obj, "berlokasiDi") and obj.berlokasiDi:
-                # Handle jika lokasi berupa list atau single object
                 loc_data = obj.berlokasiDi
-                if isinstance(loc_data, list):
-                    # Cek salah satu lokasi cocok
-                    found_loc = False
-                    for l in loc_data:
-                        if filters["lokasi"].lower() in l.name.lower():
-                            found_loc = True
-                            obj_loc = l.name # Simpan untuk display
-                            break
-                    if not found_loc: match = False
-                else:
-                    if filters["lokasi"].lower() not in loc_data.name.lower():
-                        match = False
-                    else:
-                        obj_loc = loc_data.name
+                # Handle list or single value
+                loc_name = loc_data[0].name if isinstance(loc_data, list) else loc_data.name
+                if filters["lokasi"].lower() not in loc_name.lower().replace("_", " "):
+                    match = False
             else:
-                match = False # Kalau user minta lokasi tapi obj gak punya lokasi
-
-        # --- B. Filter Kategori (Case Insensitive) ---
-        if match and filters["kategori"]:
-            obj_cat = []
-            # Kumpulkan semua properti kategori
-            if hasattr(obj, "kategoriDayaTarik") and obj.kategoriDayaTarik:
-                obj_cat.extend(obj.kategoriDayaTarik)
-            if hasattr(obj, "kategoriEvent") and obj.kategoriEvent:
-                obj_cat.extend(obj.kategoriEvent)
-            if hasattr(obj, "kategoriMakanan") and obj.kategoriMakanan:
-                obj_cat.extend(obj.kategoriMakanan)
-            
-            # Cek kecocokan
-            found_cat = False
-            for cat in obj_cat:
-                if filters["kategori"].lower() in cat.lower():
-                    found_cat = True
-                    break
-            if not found_cat:
                 match = False
 
-        # --- C. Filter Waktu (SWRL Buka/Tutup) ---
-        if match and (filters["waktu"] or filters["status"]):
-            has_time_class = False
-            target_waktu = filters["waktu"] if filters["waktu"] else ""
-            target_status = filters["status"] if filters["status"] else ""
+        # --- Filter Kategori ---
+        if match and filters["kategori"]:
+            obj_cat = []
+            if hasattr(obj, "kategoriDayaTarik") and obj.kategoriDayaTarik: obj_cat.extend(obj.kategoriDayaTarik)
+            if hasattr(obj, "kategoriEvent") and obj.kategoriEvent: obj_cat.extend(obj.kategoriEvent)
+            if hasattr(obj, "kategoriMakanan") and obj.kategoriMakanan: obj_cat.extend(obj.kategoriMakanan)
             
+            found_cat = False
+            for cat in obj_cat:
+                if filters["kategori"].lower() in cat.lower(): found_cat = True; break
+            if not found_cat: match = False
+
+        # --- Filter Waktu ---
+        if match and (filters["waktu"] or filters["status"]):
+            has_time = False
+            t_waktu = filters["waktu"] if filters["waktu"] else ""
+            t_status = filters["status"] if filters["status"] else ""
             for cls in obj.is_a:
                 if hasattr(cls, "name"):
                     c_name = cls.name
-                    # Skip helper classes
                     if "Harian" in c_name: continue
-                    
-                    # Logic Matching
-                    time_match = True
-                    if target_status and target_status not in c_name: time_match = False
-                    if target_waktu and target_waktu not in c_name: time_match = False
-                    
-                    # Pastikan ini class waktu (mengandung Buka atau Tutup)
-                    if time_match and ("Buka" in c_name or "Tutup" in c_name):
-                        has_time_class = True
-                        break
+                    if (not t_status or t_status in c_name) and (not t_waktu or t_waktu in c_name) and ("Buka" in c_name or "Tutup" in c_name):
+                        has_time = True; break
+            if not has_time: match = False
+
+        # --- FILTER RELASI (BARU!) ---
+        # Cek apakah objek ini punya properti 'dekatDenganX'
+        if match and filters["relation_prop"]:
+            # getattr akan mengambil value properti secara dinamis
+            # misal: obj.dekatDenganHotel
+            rel_value = getattr(obj, filters["relation_prop"], None)
             
-            if not has_time_class:
+            # Jika properti kosong atau None, berarti tidak dekat -> match False
+            if not rel_value:
                 match = False
 
-        # --- Jika Lolos Semua Filter ---
+        # --- HASIL ---
         if match:
-            # Format Nama
             nama = obj.name.replace("_", " ")
             if hasattr(obj, "namaTempat") and obj.namaTempat: nama = obj.namaTempat[0]
             elif hasattr(obj, "namaRestoran") and obj.namaRestoran: nama = obj.namaRestoran[0]
             elif hasattr(obj, "namaHotel") and obj.namaHotel: nama = obj.namaHotel[0]
-            elif hasattr(obj, "namaTransportasi") and obj.namaTransportasi: nama = obj.namaTransportasi[0]
-            elif hasattr(obj, "namaEvent") and obj.namaEvent: nama = obj.namaEvent[0]
             
-            # Format Lokasi (untuk display)
             lokasi_display = "-"
             if hasattr(obj, "berlokasiDi") and obj.berlokasiDi:
                  l = obj.berlokasiDi
                  if isinstance(l, list): lokasi_display = l[0].name.replace("_", " ")
                  else: lokasi_display = l.name.replace("_", " ")
             
-            # Format Tipe (untuk Badge)
             tipe = "Tempat Wisata"
             if onto.Hotel in obj.is_a: tipe = "Hotel"
             elif onto.Restoran in obj.is_a: tipe = "Restoran"
             elif onto.Transportasi in obj.is_a: tipe = "Transportasi"
-            elif onto.Event in obj.is_a: tipe = "Event"
 
             results.append({
                 "id": obj.name,

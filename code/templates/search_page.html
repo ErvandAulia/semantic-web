@@ -117,17 +117,22 @@
             <div class="me-3 fs-3">🤖</div>
             <div>
                 <strong class="text-primary">Analisis AI:</strong><br>
-                <small class="text-muted">
-                    Saya mencari 
-                    {% if filters.target_class %} <span class="badge bg-primary">{{ filters.target_class.name }}</span> {% else %} <span class="badge bg-secondary">Semua Tempat</span> {% endif %}
-                    
-                    {% if filters.lokasi %} di <span class="badge bg-info text-dark">{{ filters.lokasi }}</span> {% endif %}
-                    
-                    {% if filters.kategori %} kategori <span class="badge bg-warning text-dark">{{ filters.kategori }}</span> {% endif %}
-                    
-                    {% if filters.status or filters.waktu %} 
-                        saat <span class="badge bg-success">{{ filters.status }} {{ filters.waktu }}</span>
-                    {% endif %}
+            <small class="text-muted">
+                Saya mencari 
+                {% if filters.target_class %} 
+                    <span class="badge bg-primary">{{ filters.target_class.name }}</span> 
+                {% else %} 
+                    <span class="badge bg-secondary">Semua Tempat</span> 
+                {% endif %}
+                
+                {% if filters.relation_prop %}
+                    yang <span class="badge bg-danger">
+                        {% if filters.relation_prop == 'dekatDenganHotel' %}Dekat Hotel
+                        {% elif filters.relation_prop == 'dekatDenganRestoran' %}Dekat Restoran
+                        {% else %}Dekat Transportasi{% endif %}
+                    </span>
+                {% endif %}
+                {% if filters.lokasi %} di <span class="badge bg-info text-dark">{{ filters.lokasi }}</span> {% endif %}
                 </small>
             </div>
         </div>
