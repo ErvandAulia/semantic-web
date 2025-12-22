@@ -2018,6 +2018,34 @@
     
 
 
+    <!-- http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FaveHotel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FaveHotel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Hotel"/>
+        <berlokasiDi rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Laweyan"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#AksesKursiRoda"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FreeWiFi"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Lift"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TempatParkir"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#ToiletUmum"/>
+        <bintangHotel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</bintangHotel>
+        <nilaiRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.5</nilaiRating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FortVastenBurg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FortVastenBurg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TempatWisata"/>
+        <berlokasiDi rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PasarKliwon"/>
+        <dekatDenganHotel rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TheRoyalSurakartaHeritage"/>
+        <kategoriDayaTarik>sejarah</kategoriDayaTarik>
+        <nilaiRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.5</nilaiRating>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FreeWiFi -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FreeWiFi">
@@ -2114,6 +2142,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KeratonSolo">
         <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TempatWisata"/>
+        <berlokasiDi rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PasarKliwon"/>
         <dimilikiOleh rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PemilikSwasta"/>
         <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Mushola"/>
         <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TempatParkir"/>
@@ -2122,6 +2151,7 @@
         <jamBuka rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</jamBuka>
         <jamTutup rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1400</jamTutup>
         <kategoriDayaTarik>budaya</kategoriDayaTarik>
+        <nilaiRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.6</nilaiRating>
     </owl:NamedIndividual>
     
 
@@ -2130,6 +2160,20 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KotaSurakarta">
         <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Lokasi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#LaksanaSolo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#LaksanaSolo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Hotel"/>
+        <berlokasiDi rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Banjarsari"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#AksesKursiRoda"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FreeWiFi"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Lift"/>
+        <bintangHotel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</bintangHotel>
+        <nilaiRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.1</nilaiRating>
     </owl:NamedIndividual>
     
 
@@ -2149,6 +2193,21 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Fasilitas"/>
         <tujuanLayanan>khusus</tujuanLayanan>
         <tujuanLayanan>umum</tujuanLayanan>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#LojiHotel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#LojiHotel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Hotel"/>
+        <berlokasiDi rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Banjarsari"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#AksesKursiRoda"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FreeWiFi"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Mushola"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TempatParkir"/>
+        <bintangHotel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</bintangHotel>
+        <nilaiRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.2</nilaiRating>
     </owl:NamedIndividual>
     
 
@@ -2190,6 +2249,34 @@
     
 
 
+    <!-- http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MasjidRayaSheikhZayed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MasjidRayaSheikhZayed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TempatWisata"/>
+        <dekatDenganHotel rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#LojiHotel"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#AksesKursiRoda"/>
+        <jamBuka rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2100</jamBuka>
+        <jamBuka rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</jamBuka>
+        <kategoriDayaTarik>religi</kategoriDayaTarik>
+        <nilaiRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.7</nilaiRating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MuseumBatikDanarHadi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MuseumBatikDanarHadi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TempatWisata"/>
+        <berlokasiDi rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Laweyan"/>
+        <dekatDenganHotel rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#LaksanaSolo"/>
+        <jamBuka rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">900</jamBuka>
+        <jamTutup rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1700</jamTutup>
+        <kategoriDayaTarik>edukasi</kategoriDayaTarik>
+        <nilaiRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.7</nilaiRating>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Mushola -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Mushola">
@@ -2205,6 +2292,17 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Makanan"/>
         <memilikiHarga rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HargaNasiLiwet"/>
         <memilikiKategoriMakanan rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KategoriTradisional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PasarGedeHardjonagoro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PasarGedeHardjonagoro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TempatWisata"/>
+        <dekatDenganHotel rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TheRoyalSurakartaHeritage"/>
+        <kategoriDayaTarik>kuliner</kategoriDayaTarik>
+        <nilaiRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.6</nilaiRating>
     </owl:NamedIndividual>
     
 
@@ -2247,6 +2345,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PracimaTuin">
         <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Restoran"/>
         <berlokasiDi rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Banjarsari"/>
+        <dekatDenganHotel rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#LojiHotel"/>
         <dimilikiOleh rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PemilikSwasta"/>
         <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#AksesKursiRoda"/>
         <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FreeWiFi"/>
@@ -2255,6 +2354,7 @@
         <memilikiHarga rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#MakananMahal"/>
         <jamBuka rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</jamBuka>
         <jamTutup rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2100</jamTutup>
+        <kategoriDayaTarik>kuliner</kategoriDayaTarik>
     </owl:NamedIndividual>
     
 
@@ -2304,6 +2404,23 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TempatParkir">
         <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Fasilitas"/>
         <tujuanLayanan>umum</tujuanLayanan>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TheRoyalSurakartaHeritage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TheRoyalSurakartaHeritage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Hotel"/>
+        <berlokasiDi rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PasarKliwon"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#AksesKursiRoda"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#FreeWiFi"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Lift"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Mushola"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#TempatParkir"/>
+        <memilikiFasilitas rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#ToiletUmum"/>
+        <bintangHotel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</bintangHotel>
+        <nilaiRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.6</nilaiRating>
     </owl:NamedIndividual>
     
 

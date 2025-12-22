@@ -250,15 +250,24 @@ def wisata_table():
     for w in TempatWisata.instances():
 
         # -----------------------------
-        # Nama
+        # Nama (Cek Nama Tempat atau Nama Event)
         # -----------------------------
-        nama = w.name
+        # Default pakai ID/Name instance
+        nama = w.name.replace("_", " ") 
+
+        # Jika ada data property namaTempat, pakai itu
+        if hasattr(w, "namaTempat") and w.namaTempat:
+            nama = w.namaTempat[0]
+        # Jika tidak, cek namaEvent (khusus untuk Event)
+        elif hasattr(w, "namaEvent") and w.namaEvent:
+            nama = w.namaEvent[0]
 
         # -----------------------------
-        # Daya Tarik (data property)
+        # Daya Tarik (LOGIC PERBAIKAN DI SINI)
         # -----------------------------
         daya_tarik = "-"
 
+        # 1. Cek Kategori Daya Tarik (untuk Wisata Alam/Edukasi/dll)
         if hasattr(w, "kategoriDayaTarik") and w.kategoriDayaTarik:
             raw_dt = w.kategoriDayaTarik
             if isinstance(raw_dt, list):
@@ -266,6 +275,15 @@ def wisata_table():
             else:
                 daya_tarik = raw_dt
 
+        # 2. Jika masih kosong, Cek Kategori Event (untuk Event Budaya/Religi)
+        elif hasattr(w, "kategoriEvent") and w.kategoriEvent:
+            raw_evt = w.kategoriEvent
+            if isinstance(raw_evt, list):
+                daya_tarik = raw_evt[0]
+            else:
+                daya_tarik = raw_evt
+
+        # Masukkan ke daftar filter jika ada isinya
         if daya_tarik != "-":
             daftar_daya_tarik.add(daya_tarik)
 
@@ -273,7 +291,6 @@ def wisata_table():
         # Lokasi (object property)
         # -----------------------------
         lokasi = "-"
-
         if hasattr(w, "berlokasiDi") and w.berlokasiDi:
             lokasi = w.berlokasiDi.name
             daftar_lokasi.add(lokasi)
@@ -282,7 +299,6 @@ def wisata_table():
         # Rating (data property)
         # -----------------------------
         rating = "-"
-
         if hasattr(w, "nilaiRating") and w.nilaiRating is not None:
             raw_rating = w.nilaiRating
             if isinstance(raw_rating, list):
@@ -314,8 +330,8 @@ def wisata_table():
     return render_template(
         "wisata_table.html",
         wisata=wisata_data,
-        daftar_daya_tarik=sorted(daftar_daya_tarik),
-        daftar_lokasi=sorted(daftar_lokasi),
+        daftar_daya_tarik=sorted(list(daftar_daya_tarik)), # Convert set to list agar bisa disort
+        daftar_lokasi=sorted(list(daftar_lokasi)),
         selected_daya_tarik=selected_daya_tarik,
         selected_lokasi=selected_lokasi
     )
