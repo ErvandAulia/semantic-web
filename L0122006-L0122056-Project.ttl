@@ -1412,6 +1412,7 @@ l0122006-l0122056-project:KategoriTradisional rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KeratonSolo
 l0122006-l0122056-project:KeratonSolo rdf:type owl:NamedIndividual ,
                                                l0122006-l0122056-project:TempatWisata ;
+                                      l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:PasarKliwon ;
                                       l0122006-l0122056-project:dimilikiOleh l0122006-l0122056-project:PemilikSwasta ;
                                       l0122006-l0122056-project:memilikiFasilitas l0122006-l0122056-project:Mushola ,
                                                                                   l0122006-l0122056-project:TempatParkir ,
@@ -1419,7 +1420,8 @@ l0122006-l0122056-project:KeratonSolo rdf:type owl:NamedIndividual ,
                                       l0122006-l0122056-project:menyelenggarakan l0122006-l0122056-project:Sekaten ;
                                       l0122006-l0122056-project:jamBuka 800 ;
                                       l0122006-l0122056-project:jamTutup 1400 ;
-                                      l0122006-l0122056-project:kategoriDayaTarik "budaya" .
+                                      l0122006-l0122056-project:kategoriDayaTarik "budaya" ;
+                                      l0122006-l0122056-project:nilaiRating "4.6"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KotaSurakarta

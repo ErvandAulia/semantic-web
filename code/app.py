@@ -2,7 +2,7 @@
 # app.py – Flask + Owlready2 Ontology Viewer
 # ===========================================
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from owlready2 import *
 
 # ------------------------------------------------
@@ -123,59 +123,104 @@ def hotel_table():
 @app.route("/instance/<instancename>")
 def show_instance_detail(instancename):
     try:
-        hotel = onto[instancename]
+        instance = onto[instancename]
     except KeyError:
         return f"Instance '{instancename}' tidak ditemukan."
 
-    # -----------------------------
-    # Ambil informasi utama
-    # -----------------------------
-    nama = hotel.name
+    # =====================================================
+    # CASE 1: HOTEL
+    # =====================================================
+    if onto.Hotel in instance.is_a:
 
-    # Lokasi
-    lokasi = "-"
-    if hasattr(hotel, "berlokasiDi") and hotel.berlokasiDi:
-        lokasi = hotel.berlokasiDi.name
+        nama = instance.name
 
-    # Kategori bintang (dari class)
-    bintang = "-"
-    for cls in hotel.is_a:
-        if "Bintang" in cls.name:
-            bintang = cls.name.replace("Hotel", "").replace("Bintang", " ⭐")
+        # Lokasi
+        lokasi = "-"
+        if hasattr(instance, "berlokasiDi") and instance.berlokasiDi:
+            lokasi = instance.berlokasiDi.name
 
-    # -----------------------------
-    # Ambil fasilitas (object property)
-    # -----------------------------
-    fasilitas = []
-    if hasattr(hotel, "memilikiFasilitas"):
-        for f in hotel.memilikiFasilitas:
-            fasilitas.append(f.name)
+        # Bintang (dari class)
+        bintang = "-"
+        for cls in instance.is_a:
+            if "Bintang" in cls.name:
+                bintang = cls.name.replace("Hotel", "").replace("Bintang", " ⭐")
+                break
 
-    # -----------------------------
-    # Ambil rating (jika ada)
-    # -----------------------------
-    rating = "-"
-    # Cek apakah properti ada dan tidak kosong (None)
-    if hasattr(hotel, "nilaiRating") and hotel.nilaiRating is not None:
-        raw_val = hotel.nilaiRating
-        # Cek apakah hasilnya berupa List (jika property TIDAK Functional)
-        if isinstance(raw_val, list):
-            if len(raw_val) > 0:
-                rating = raw_val[0]
-        # Jika hasilnya langsung Angka/Float (jika property Functional)
-        else:
-            rating = raw_val
+        # Fasilitas
+        fasilitas = []
+        if hasattr(instance, "memilikiFasilitas"):
+            for f in instance.memilikiFasilitas:
+                fasilitas.append(f.name)
 
-    # rating = r.name if hasattr(r, "name") else str(r)
+        # Rating
+        rating = "-"
+        if hasattr(instance, "nilaiRating") and instance.nilaiRating is not None:
+            raw_val = instance.nilaiRating
+            if isinstance(raw_val, list):
+                if len(raw_val) > 0:
+                    rating = raw_val[0]
+            else:
+                rating = raw_val
 
-    return render_template(
-        "hotel_detail.html",
-        nama=nama,
-        lokasi=lokasi,
-        bintang=bintang,
-        fasilitas=fasilitas,
-        rating=rating
-    )
+        return render_template(
+            "hotel_detail.html",
+            nama=nama,
+            lokasi=lokasi,
+            bintang=bintang,
+            fasilitas=fasilitas,
+            rating=rating
+        )
+
+    # =====================================================
+    # CASE 2: TEMPAT WISATA
+    # =====================================================
+    if onto.TempatWisata in instance.is_a:
+
+        nama = instance.name
+
+        # Lokasi
+        lokasi = "-"
+        if hasattr(instance, "berlokasiDi") and instance.berlokasiDi:
+            lokasi = instance.berlokasiDi.name
+
+        # -----------------------------
+        # Daya Tarik (HASIL REASONING)
+        # -----------------------------
+        daya_tarik = "-"
+        for cls in instance.is_a:
+            if cls.name.startswith("Wisata"):
+                daya_tarik = cls.name.replace("Wisata", "")
+                break
+
+        # Rating
+        rating = "-"
+        if hasattr(instance, "nilaiRating") and instance.nilaiRating is not None:
+            raw_val = instance.nilaiRating
+            if isinstance(raw_val, list):
+                if len(raw_val) > 0:
+                    rating = raw_val[0]
+            else:
+                rating = raw_val
+
+        # Fasilitas
+        fasilitas = []
+        if hasattr(instance, "memilikiFasilitas"):
+            for f in instance.memilikiFasilitas:
+                fasilitas.append(f.name)
+
+        return render_template(
+            "wisata_detail.html",
+            nama=nama,
+            lokasi=lokasi,
+            daya_tarik=daya_tarik,
+            rating=rating,
+            fasilitas=fasilitas
+        )
+
+    # =====================================================
+    # FALLBACK
+    # =====================================================
+    return "Tipe instance belum didukung."
 
 # ==========================================
 # ROUTE : ONTOLOGY SELURUH CLASS
@@ -185,6 +230,95 @@ def ontology_structure():
     all_classes = list(onto.classes())
     return render_template("ontology_strucure.html", all_classes=all_classes)
 
+# ==========================================
+# ROUTE : TABEL TEMPAT WISATA
+# ==========================================
+@app.route("/wisata")
+def wisata_table():
+    TempatWisata = onto.TempatWisata
+
+    # =========================
+    # Ambil parameter filter
+    # =========================
+    selected_daya_tarik = request.args.get("daya_tarik", "")
+    selected_lokasi = request.args.get("lokasi", "")
+
+    wisata_data = []
+    daftar_daya_tarik = set()
+    daftar_lokasi = set()
+
+    for w in TempatWisata.instances():
+
+        # -----------------------------
+        # Nama
+        # -----------------------------
+        nama = w.name
+
+        # -----------------------------
+        # Daya Tarik (data property)
+        # -----------------------------
+        daya_tarik = "-"
+
+        if hasattr(w, "kategoriDayaTarik") and w.kategoriDayaTarik:
+            raw_dt = w.kategoriDayaTarik
+            if isinstance(raw_dt, list):
+                daya_tarik = raw_dt[0]
+            else:
+                daya_tarik = raw_dt
+
+        if daya_tarik != "-":
+            daftar_daya_tarik.add(daya_tarik)
+
+        # -----------------------------
+        # Lokasi (object property)
+        # -----------------------------
+        lokasi = "-"
+
+        if hasattr(w, "berlokasiDi") and w.berlokasiDi:
+            lokasi = w.berlokasiDi.name
+            daftar_lokasi.add(lokasi)
+
+        # -----------------------------
+        # Rating (data property)
+        # -----------------------------
+        rating = "-"
+
+        if hasattr(w, "nilaiRating") and w.nilaiRating is not None:
+            raw_rating = w.nilaiRating
+            if isinstance(raw_rating, list):
+                if len(raw_rating) > 0:
+                    rating = raw_rating[0]
+            else:
+                rating = raw_rating
+
+        # -----------------------------
+        # FILTERING
+        # -----------------------------
+        if selected_daya_tarik and daya_tarik != selected_daya_tarik:
+            continue
+
+        if selected_lokasi and lokasi != selected_lokasi:
+            continue
+
+        # -----------------------------
+        # Tambahkan ke tabel
+        # -----------------------------
+        wisata_data.append({
+            "id": w.name,
+            "nama": nama,
+            "daya_tarik": daya_tarik,
+            "rating": rating,
+            "lokasi": lokasi
+        })
+
+    return render_template(
+        "wisata_table.html",
+        wisata=wisata_data,
+        daftar_daya_tarik=sorted(daftar_daya_tarik),
+        daftar_lokasi=sorted(daftar_lokasi),
+        selected_daya_tarik=selected_daya_tarik,
+        selected_lokasi=selected_lokasi
+    )
 
 # ------------------------------------------------
 # RUN FLASK SERVER
