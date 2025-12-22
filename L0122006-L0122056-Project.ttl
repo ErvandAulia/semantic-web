@@ -332,7 +332,11 @@ l0122006-l0122056-project:kategoriHarga rdf:type owl:DatatypeProperty ;
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#kategoriMakanan
 l0122006-l0122056-project:kategoriMakanan rdf:type owl:DatatypeProperty ;
-                                          rdfs:domain l0122006-l0122056-project:KategoriMakanan ;
+                                          rdfs:domain [ rdf:type owl:Class ;
+                                                        owl:unionOf ( l0122006-l0122056-project:KategoriMakanan
+                                                                      l0122006-l0122056-project:Restoran
+                                                                    )
+                                                      ] ;
                                           rdfs:range xsd:string .
 
 
@@ -1019,6 +1023,10 @@ l0122006-l0122056-project:Restoran rdf:type owl:Class ;
                                                      owl:someValuesFrom l0122006-l0122056-project:HargaMakanan
                                                    ] ,
                                                    [ rdf:type owl:Restriction ;
+                                                     owl:onProperty l0122006-l0122056-project:memilikiKategoriMakanan ;
+                                                     owl:someValuesFrom l0122006-l0122056-project:KategoriMakanan
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
                                                      owl:onProperty l0122006-l0122056-project:namaRestoran ;
                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                      owl:onDataRange xsd:string
@@ -1352,6 +1360,8 @@ l0122006-l0122056-project:FortVastenBurg rdf:type owl:NamedIndividual ,
                                                   l0122006-l0122056-project:TempatWisata ;
                                          l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:PasarKliwon ;
                                          l0122006-l0122056-project:dekatDenganHotel l0122006-l0122056-project:TheRoyalSurakartaHeritage ;
+                                         l0122006-l0122056-project:jamBuka 800 ;
+                                         l0122006-l0122056-project:jamTutup 2000 ;
                                          l0122006-l0122056-project:kategoriDayaTarik "sejarah" ;
                                          l0122006-l0122056-project:nilaiRating "4.5"^^xsd:float .
 
@@ -1421,6 +1431,34 @@ l0122006-l0122056-project:Jebres rdf:type owl:NamedIndividual ,
                                  l0122006-l0122056-project:merupakanBagianDari l0122006-l0122056-project:KotaSurakarta .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KampungBatikKauman
+l0122006-l0122056-project:KampungBatikKauman rdf:type owl:NamedIndividual ,
+                                                      l0122006-l0122056-project:TempatWisata ;
+                                             l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:PasarKliwon ;
+                                             l0122006-l0122056-project:dimilikiOleh l0122006-l0122056-project:PaguyubanKampungWisataBatikKauman ;
+                                             l0122006-l0122056-project:memilikiFasilitas l0122006-l0122056-project:AksesKursiRoda ,
+                                                                                         l0122006-l0122056-project:TempatParkir ,
+                                                                                         l0122006-l0122056-project:ToiletUmum ;
+                                             l0122006-l0122056-project:jamBuka 900 ;
+                                             l0122006-l0122056-project:jamTutup 1800 ;
+                                             l0122006-l0122056-project:nilaiRating "4.7"^^xsd:float .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KampungKecil
+l0122006-l0122056-project:KampungKecil rdf:type owl:NamedIndividual ,
+                                                l0122006-l0122056-project:Restoran ;
+                                       l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:Jebres ;
+                                       l0122006-l0122056-project:dipesanMelalui l0122006-l0122056-project:GoFood ,
+                                                                                l0122006-l0122056-project:GrabFood ,
+                                                                                l0122006-l0122056-project:ShopeeFood ;
+                                       l0122006-l0122056-project:memilikiFasilitas l0122006-l0122056-project:TempatParkir ,
+                                                                                   l0122006-l0122056-project:ToiletUmum ;
+                                       l0122006-l0122056-project:jamBuka 1000 ;
+                                       l0122006-l0122056-project:jamTutup 2200 ;
+                                       l0122006-l0122056-project:kategoriMakanan "tradisional" ;
+                                       l0122006-l0122056-project:nilaiRating "4.9"^^xsd:float .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KategoriTradisional
 l0122006-l0122056-project:KategoriTradisional rdf:type owl:NamedIndividual ,
                                                        l0122006-l0122056-project:KategoriMakanan ;
@@ -1446,6 +1484,24 @@ l0122006-l0122056-project:KeratonSolo rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KotaSurakarta
 l0122006-l0122056-project:KotaSurakarta rdf:type owl:NamedIndividual ,
                                                  l0122006-l0122056-project:Lokasi .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KusumaSari
+l0122006-l0122056-project:KusumaSari rdf:type owl:NamedIndividual ,
+                                              l0122006-l0122056-project:Restoran ;
+                                     l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:Serengan ;
+                                     l0122006-l0122056-project:dekatDenganHotel l0122006-l0122056-project:TheRoyalSurakartaHeritage ;
+                                     l0122006-l0122056-project:dipesanMelalui l0122006-l0122056-project:GoFood ,
+                                                                              l0122006-l0122056-project:GrabFood ,
+                                                                              l0122006-l0122056-project:ShopeeFood ;
+                                     l0122006-l0122056-project:memilikiFasilitas l0122006-l0122056-project:Mushola ,
+                                                                                 l0122006-l0122056-project:TempatParkir ,
+                                                                                 l0122006-l0122056-project:ToiletUmum ;
+                                     l0122006-l0122056-project:jamBuka 900 ;
+                                     l0122006-l0122056-project:jamTutup 2200 ;
+                                     l0122006-l0122056-project:kategoriDayaTarik "kuliner" ;
+                                     l0122006-l0122056-project:kategoriMakanan "tradisional" ;
+                                     l0122006-l0122056-project:nilaiRating "4.5"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#LaksanaSolo
@@ -1520,8 +1576,8 @@ l0122006-l0122056-project:MasjidRayaSheikhZayed rdf:type owl:NamedIndividual ,
                                                 l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:Banjarsari ;
                                                 l0122006-l0122056-project:dekatDenganHotel l0122006-l0122056-project:LojiHotel ;
                                                 l0122006-l0122056-project:memilikiFasilitas l0122006-l0122056-project:AksesKursiRoda ;
-                                                l0122006-l0122056-project:jamBuka 2100 ,
-                                                                                  300 ;
+                                                l0122006-l0122056-project:jamBuka 301 ;
+                                                l0122006-l0122056-project:jamTutup 2100 ;
                                                 l0122006-l0122056-project:kategoriDayaTarik "religi" ;
                                                 l0122006-l0122056-project:nilaiRating "4.7"^^xsd:float .
 
@@ -1562,11 +1618,19 @@ l0122006-l0122056-project:PTLaksanaHotelIndonesia rdf:type owl:NamedIndividual ,
                                                   l0122006-l0122056-project:mengelola l0122006-l0122056-project:LaksanaSolo .
 
 
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PaguyubanKampungWisataBatikKauman
+l0122006-l0122056-project:PaguyubanKampungWisataBatikKauman rdf:type owl:NamedIndividual ,
+                                                                     l0122006-l0122056-project:PemangkuKepentingan ;
+                                                            l0122006-l0122056-project:mengelola l0122006-l0122056-project:KampungBatikKauman .
+
+
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#PasarGedeHardjonagoro
 l0122006-l0122056-project:PasarGedeHardjonagoro rdf:type owl:NamedIndividual ,
                                                          l0122006-l0122056-project:TempatWisata ;
                                                 l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:Jebres ;
                                                 l0122006-l0122056-project:dekatDenganHotel l0122006-l0122056-project:TheRoyalSurakartaHeritage ;
+                                                l0122006-l0122056-project:jamBuka 501 ;
+                                                l0122006-l0122056-project:jamTutup 2358 ;
                                                 l0122006-l0122056-project:kategoriDayaTarik "kuliner" ;
                                                 l0122006-l0122056-project:nilaiRating "4.6"^^xsd:float .
 
@@ -1606,6 +1670,7 @@ l0122006-l0122056-project:PracimaTuin rdf:type owl:NamedIndividual ,
                                       l0122006-l0122056-project:jamBuka 1000 ;
                                       l0122006-l0122056-project:jamTutup 2100 ;
                                       l0122006-l0122056-project:kategoriDayaTarik "kuliner" ;
+                                      l0122006-l0122056-project:kategoriMakanan "tradisional" ;
                                       l0122006-l0122056-project:nilaiRating "4.8"^^xsd:float .
 
 
@@ -1617,6 +1682,12 @@ l0122006-l0122056-project:Sekaten rdf:type owl:NamedIndividual ,
                                   l0122006-l0122056-project:namaEvent "Sekatan Solo" ;
                                   l0122006-l0122056-project:nilaiRating "4.3"^^xsd:float ;
                                   l0122006-l0122056-project:tanggalEvent "2025-09-09" .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Serengan
+l0122006-l0122056-project:Serengan rdf:type owl:NamedIndividual ,
+                                            l0122006-l0122056-project:Lokasi ;
+                                   l0122006-l0122056-project:merupakanBagianDari l0122006-l0122056-project:KotaSurakarta .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#ShopeeFood
@@ -1638,6 +1709,7 @@ l0122006-l0122056-project:SotoGading rdf:type owl:NamedIndividual ,
                                      l0122006-l0122056-project:jamBuka 600 ;
                                      l0122006-l0122056-project:jamTutup 1600 ;
                                      l0122006-l0122056-project:kategoriDayaTarik "kuliner" ;
+                                     l0122006-l0122056-project:kategoriMakanan "tradisional" ;
                                      l0122006-l0122056-project:nilaiRating "4.5"^^xsd:float .
 
 
@@ -1678,6 +1750,16 @@ l0122006-l0122056-project:TheRoyalSurakartaHeritage rdf:type owl:NamedIndividual
 l0122006-l0122056-project:ToiletUmum rdf:type owl:NamedIndividual ,
                                               l0122006-l0122056-project:Fasilitas ;
                                      l0122006-l0122056-project:tujuanLayanan "umum" .
+
+
+###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#WeTheFork
+l0122006-l0122056-project:WeTheFork rdf:type owl:NamedIndividual ,
+                                             l0122006-l0122056-project:Restoran ;
+                                    l0122006-l0122056-project:berlokasiDi l0122006-l0122056-project:Banjarsari ;
+                                    l0122006-l0122056-project:jamBuka 301 ;
+                                    l0122006-l0122056-project:jamTutup 2358 ;
+                                    l0122006-l0122056-project:kategoriMakanan "makanan modern" ;
+                                    l0122006-l0122056-project:nilaiRating "4.6"^^xsd:float .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Wstay
@@ -2712,7 +2794,7 @@ l0122006-l0122056-project:j rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
                                                                              <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
                                                                                                                           rdf:first l0122006-l0122056-project:j ;
                                                                                                                           rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                     rdf:first 500 ;
+                                                                                                                                     rdf:first 300 ;
                                                                                                                                      rdf:rest rdf:nil
                                                                                                                                    ]
                                                                                                                         ]
