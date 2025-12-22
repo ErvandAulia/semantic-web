@@ -25,26 +25,27 @@
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
         <a class="navbar-brand fw-bold" href="/">Ontologi Pariwisata Solo</a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto align-items-center">
+                
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Beranda</a>
+                    <a class="nav-link" href="/">Beranda</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/ontology">Ontologi</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/hotel">Hotel</a>
+                <li class="nav-item ms-lg-2">
+                    <a class="btn btn-warning btn-sm fw-bold px-3 rounded-pill" href="/search">
+                        🤖 Tanya AI
+                    </a>
                 </li>
             </ul>
         </div>
