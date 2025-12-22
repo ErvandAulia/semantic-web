@@ -666,7 +666,8 @@ l0122006-l0122056-project:Hotel rdf:type owl:Class ;
                                                   owl:onProperty l0122006-l0122056-project:namaHotel ;
                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                   owl:onDataRange xsd:string
-                                                ] .
+                                                ] ;
+                                rdfs:seeAlso "http://dbpedia.org/page/Hotel" .
 
 
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HotelBintangEmpat

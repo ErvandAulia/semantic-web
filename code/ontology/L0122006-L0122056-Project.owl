@@ -1030,6 +1030,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:seeAlso>http://dbpedia.org/page/Hotel</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -1184,6 +1185,7 @@
                 <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Lokasi"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:seeAlso>http://dbpedia.org/page/Location</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -1231,6 +1233,7 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#KategoriMakanan"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:seeAlso>http://dbpedia.org/page/Cuisine</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -1576,6 +1579,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:seeAlso>http://dbpedia.org/page/Restaurant</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -1749,6 +1753,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:seeAlso>http://dbpedia.org/page/Tourist_attraction</rdfs:seeAlso>
     </owl:Class>
     
 
