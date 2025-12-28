@@ -640,10 +640,6 @@ l0122006-l0122056-project:HargaTransportasi rdf:type owl:Class ;
                                             rdfs:subClassOf l0122006-l0122056-project:Harga .
 
 
-###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#HariOperasional
-l0122006-l0122056-project:HariOperasional rdf:type owl:Class .
-
-
 ###  http://www.semanticweb.org/acer/ontologies/2025/10/L0122006-L0122056-Project#Hotel
 l0122006-l0122056-project:Hotel rdf:type owl:Class ;
                                 rdfs:subClassOf [ rdf:type owl:Restriction ;
